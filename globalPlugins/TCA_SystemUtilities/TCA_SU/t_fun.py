@@ -4,8 +4,10 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 
-import os
+import os, subprocess
 import ctypes 
+from threading import Thread
+
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -28,4 +30,13 @@ def ejecutar(modo, aplicacion, parametros, directorio, ventana):
 		directorio,
 		ventana)
 	return p
-
+#Clase para hilos.
+class T_h(Thread):
+	def __init__(self, frame):
+		super(T_h, self).__init__()
+		self.frame = frame
+		self.daemon = True
+		self.start()
+	def run(self):
+		subprocess.Popen('Systeminfo | clip', shell=True)
+		

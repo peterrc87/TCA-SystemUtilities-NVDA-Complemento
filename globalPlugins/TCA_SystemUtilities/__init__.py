@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
-	@script(description='Apagado del sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
+	@script(description='Apagar el sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
 		ui.message('Apagando el Pc.')
 		winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
@@ -32,7 +32,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 		subprocess.run('shutdown.exe -r -t 3', shell=True)
 	
-	@script(description='Anulando apagado', category='TCA-SystemUtilities', gesture='kb:nvda+0')
+	@script(description='Anular apagado', category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
 		
 		ui.message('anulando el apagado o reinicio del pc.')
@@ -42,11 +42,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_OpenEx(self,gesture):
 		os.system('explorer')
 	
-	@script(description='Abre opciones de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+3')
+	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+3')
 	def script_TCARexplo(self,gesture):
 		subprocess.run('mmsys.cpl', shell=True)
 	
-	@script(description='Abre carpeta Roaming', category='TCA-SystemUtilities', gesture='kb:nvda+9')
+	@script(description='Abrir carpeta Roaming', category='TCA-SystemUtilities', gesture='kb:nvda+9')
 	def script_TCARoa(self,gesture):
 		os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
 	
@@ -54,7 +54,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAopti(self,gesture):
 		subprocess.Popen('fsquirt')
 			 
-	@script(description='Saber arquitectura del sistema', category='TCA-SystemUtilities')
+	@script(description='Saber la arquitectura del sistema', category='TCA-SystemUtilities')
 	def script_TCAar(self,gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
@@ -119,7 +119,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
 	
-	@script(description='Hacer análisis del sistema  ', category='TCA-SystemUtilities', gesture='kb:nvda+shift+4')
+	@script(description='Hacer análisis del sistema Con SFC  ', category='TCA-SystemUtilities', gesture='kb:nvda+shift+4')
 	def script_TCAsfc(self, gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
@@ -130,7 +130,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			
 	@script(description='Copiar información de todo el sistema al portapapeles', category='TCA-SystemUtilities', gesture='kb:nvda+shift+6')
 	def script_TCAinfo(self, gesture):
-		subprocess.Popen('Systeminfo | clip', shell=True)
+		tsu.T_h(self)
 		ui.message('información del sistema copiada al portapapeles')
 	
 	@script(description='Abrir mapa de caracteres', category='TCA-SystemUtilities', gesture='kb:nvda+shift+7')
@@ -141,7 +141,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 
-	@script(description='Optimizar las unidades', category='TCA-SystemUtilities', gesture='kb:nvda+shift+1')
+	@script(description='Abrir Optimizar las unidades', category='TCA-SystemUtilities', gesture='kb:nvda+shift+1')
 	def script_TCAoptim(self, gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
@@ -160,3 +160,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 		subprocess.run(lt, shell=True)
 		ui.message('Copiada la info del sonido al portapapeles')
+	
