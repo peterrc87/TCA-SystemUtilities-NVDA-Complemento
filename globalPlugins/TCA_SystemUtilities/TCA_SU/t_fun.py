@@ -5,7 +5,7 @@
 # This file is covered by the GNU General Public License.
 
 import os
-import ctypes
+import ctypes 
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -28,3 +28,4 @@ def ejecutar(modo, aplicacion, parametros, directorio, ventana):
 		directorio,
 		ventana)
 	return p
+
