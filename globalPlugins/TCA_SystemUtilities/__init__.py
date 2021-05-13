@@ -10,41 +10,30 @@ import subprocess, os, sys
 import webbrowser
 import tones
 import ui
-import winsound
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	@script(description='Apagar el sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
-		ui.message('Apagando el Pc.')
-		winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-		si = subprocess.STARTUPINFO()
-		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-		subprocess.run('shutdown.exe -s -t 3', shell=True, startupinfo=si)
+		tsu.T_h(self,1)
 	
 	@script(description='Reinicio del sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
 	def script_TCAShutR(self,gesture):
 		
-		ui.message('Reiniciando el PC.')
-		winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-		si = subprocess.STARTUPINFO()
-		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-		subprocess.run('shutdown.exe -r -t 3', shell=True)
+		tsu.T_h(self, 2)
 	
 	@script(description='Anular apagado', category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
+		tsu.T_h(self, 3)
 		
-		ui.message('anulando el apagado o reinicio del pc.')
-		subprocess.run('shutdown.exe -a', shell=True)
-
 	@script(description='Abrir Explorador Windows', category='TCA-SystemUtilities', gesture='kb:nvda+e')
 	def script_OpenEx(self,gesture):
 		os.system('explorer')
 	
 	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+3')
 	def script_TCARexplo(self,gesture):
-		subprocess.run('mmsys.cpl', shell=True)
+		subprocess.Popen('mmsys.cpl', shell=True)
 	
 	@script(description='Abrir carpeta Roaming', category='TCA-SystemUtilities', gesture='kb:nvda+9')
 	def script_TCARoa(self,gesture):
@@ -82,7 +71,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		
 	@script(description='Abrir el administrador de discos', category='TCA-SystemUtilities')
 	def script_TCAdisk(self,gesture):
-		subprocess.run('diskmgmt.msc', shell=True)
+		subprocess.Popen('diskmgmt.msc', shell=True)
 	
 	@script(description='Abrir la tienda oficial de complementos', category='TCA-SystemUtilities', gesture='kb:nvda+x')
 	def script_TCAtien(self,gesture):
@@ -93,18 +82,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		subprocess.Popen('resmon')
 	
 	@script(description='Copiar al portapapeles la lista de carpetas y archivos', category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
-	def script_TCAList(self,gesture):
-		f = api.getForegroundObject()
-		try:
-			obj = f.children[1].children[2].children[0].children[0].children[0]
-		except:
-			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-
-		c_obj=obj.name
-		a=c_obj.replace('Dirección: ', '')
-		os.chdir('{}'.format(a))
-		subprocess.Popen('dir /b|clip', shell=True)
-		ui.message('Copiada la lista al portapeles')
+	def script_TCAList(self, gesture):
+		tsu.T_h(self, 5)
 	
 	@script(description='Saber la versión de Windows', category='TCA-SystemUtilities')
 	def script_TCAver(self, gesture):
@@ -112,7 +91,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description='Abrir el administrador de dispositivoss', category='TCA-SystemUtilities')
 	def script_TCAdispo(self,gesture):
-		subprocess.run('devmgmt.msc', shell=True)
+		subprocess.Popen('devmgmt.msc', shell=True)
 	
 	@script(description='Abrir Opciones de carpeta', category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
 	def script_TCAcar(self,gesture):
@@ -121,16 +100,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description='Hacer análisis del sistema Con SFC  ', category='TCA-SystemUtilities', gesture='kb:nvda+shift+4')
 	def script_TCAsfc(self, gesture):
-		try:
-			os.environ['PROGRAMFILES(X86)']
-			with tsu.disable_file_system_redirection():
-				tsu.ejecutar('runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)				
-		except:
-			tsu.ejecutar('runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)								
+		tsu.T_h(self, 6)
 			
 	@script(description='Copiar información de todo el sistema al portapapeles', category='TCA-SystemUtilities', gesture='kb:nvda+shift+6')
-	def script_TCAinfo(self, gesture):
-		tsu.T_h(self)
+	def script_TCAcopy_sys(self, gesture):
+		tsu.T_h(self, 4)
 		ui.message('información del sistema copiada al portapapeles')
 	
 	@script(description='Abrir mapa de caracteres', category='TCA-SystemUtilities', gesture='kb:nvda+shift+7')
@@ -147,7 +121,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			os.environ['PROGRAMFILES(X86)']
 			with tsu.disable_file_system_redirection():
 				subprocess.Popen('dfrgui')	
-				ui.message('se va a ejecutar en 64 bits')
 		except:
 			subprocess.Popen('dfrgui')
 	
@@ -157,7 +130,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description='Copiar al portapapeles la información sobre las tarjetas de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+5')
 	def script_TCAcopitar(self, gesture):
-		lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
-		subprocess.run(lt, shell=True)
-		ui.message('Copiada la info del sonido al portapapeles')
-	
+		tsu.T_h(self, 7)
+		
