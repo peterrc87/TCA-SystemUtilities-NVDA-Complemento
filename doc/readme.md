@@ -50,6 +50,8 @@ Que nos permite guardar las credenciales (nombres, contraseñas y más), de las 
 Su atajo de teclado es: NVDA+SHIFT+8(teclado Alpha numérico).
 * Abrir Asistente transferir archivos por BlueTooth: Nos permite lanzar directamente éste asistente para recibir o enviar archivos mediante nuestros dispositivos BlueTooth. 
 Su atajo de teclado es: NVDA+SHIFT+9(teclado Alpha numérico).
+* Abrir Opciones de carpeta: Abre directamente ésta funcionalidad muy utilizada, para gestionar el explorador de Windows, las vistas de las carpetas, la visualización de las extensiones de archivos y más. 
+Su atajo de teclado es: NVDA+SHIFT+0(teclado Alpha numérico).
 * Abrir Carpeta Roaming: Abre de forma directa la carpeta Appdata>Roaming (Aquí encontramos la carpeta de configuración del NVDA, y de muchos otros programas).).
 Mediante el atajo de teclado: NVDA+9 (Alpha numérico).
 * Abrir Administrador de discos: Nos permite abrir directamente ésta interesante funcionalidad para gestionar los discos, particiones y otros dispositivos de almacenamiento, instalados en nuestro PC.
@@ -61,8 +63,6 @@ Nos abrirá éste útil Asistente poco conocido que nos permite hacer un respald
 Aparte podremos saber cuánta memoria, disco, red y más consumen.
 (No tiene un atajo asignado).
 * Abrir el administrador de dispositivos: Nos permite abrir esta útil funcionalidad de Windows para gestionar el hardware y los controladores del equipo.
-(No tiene un atajo asignado).
-* Abrir Opciones de carpeta: Abre directamente ésta funcionalidad muy utilizada, para gestionar el explorador de Windows, las vistas de las carpetas, la visualización de las extensiones de archivos y más. 
 (No tiene un atajo asignado).
 * Saber la versión de Windows: Nos abrirá la información con la versión del sistema operativo. 
 (No tiene atajo asignado).
