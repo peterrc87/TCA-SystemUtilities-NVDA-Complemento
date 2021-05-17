@@ -28,23 +28,23 @@ Realizar un análisis / reparación del sistema de archivos de Windows SFC /SCAN
 * Copiar al portapapeles el listado de carpetas o archivos de la ruta actual: Mediante el atajo de teclado: NVDA+SHIFT+L.
 Nos copia directamente al portapapeles la lista de elementos de la ruta donde nos encontremos, así podremos pegarla en cualquier sitio editable.
 * Copiar al portapapeles la información sobre las tarjetas de sonido: Nos permite copiar de forma directa al portapapeles la información sobre todos los dispositivos de sonido que tengamos en el sistema.
-así podremos pegarla en cualquier sitio editable. Su atajo de teclado es: NVDA+SHIFT+5 (teclado Alpha numérico).
+así podremos pegarla en cualquier sitio editable. (No tiene atajo asignado).
 * Copiar información de todo el sistema al portapapeles: Nos permite copiar de forma directa, todo un resumen de nuestro sistema. 
-así podremos pegarla en cualquier sitio editable. Su atajo de teclado es: NVDA+SHIFT+6 (teclado Alpha numérico).
+así podremos pegarla en cualquier sitio editable. (No tiene atajo asignado).
 * Copiar la ruta: Nos copiará al portapapeles la ruta de la carpeta donde estemos. 
  así podremos pegarla en cualquier sitio editable. 
 (no tiene atajo asignado).
 
 ## Abrir rápidamente algunas funciones del sistema:
 * Abrir Optimizar las unidades: Nos permite abrir de forma directa ésta interesante funcionalidad de Windows, para mejorar el rendimiento de nuestros discos duros. 
-Su atajo de teclado es: NVDA+SHIFT+1 (teclado Alpha numérico).
+(No tiene atajo asignado).
 * Abrir opciones de voz: Nos abre rápidamente las Opciones o Propiedades de texto a voz. Aquí podemos elegir nuestra voz TTS instalada en el sistema por defecto. 
-Su atajo de teclado es: NVDA+SHIFT+2 (teclado Alpha numérico).
+(No tiene atajo asignado).
  * Abrir Opciones de Sonido: Nos permite abrir de forma directa las opciones de Sonido del Panel de Control (Sonido, Reproducción, Grabación, Comunicaciones). 
-Su atajo de teclado es: NVDA+SHIFT+3 (teclado Alpha numérico).
+(No tiene atajo asignado).
 * Abrir mapa de caracteres: Abre de forma directa ésta interesante funcionalidad de Windows. Que nos permite elegir y conocer cualquiera de los signos, números y letras existentes en el sistema. 
 Muy útil para saber signos raros o difíciles de sacar con el teclado.
-Su atajo de teclado es: NVDA+SHIFT+7(teclado Alpha numérico).
+(No tiene atajo asignado).
 * nivel 1 Abrir Asistente guardar contraseñas de usuarios: Abre el asistente de esta muy útil pero poco conocida utilidad de Windows.
 Que nos permite guardar las credenciales (nombres, contraseñas y más), de las cuentas de usuario que tengamos en el sistema. 
 Su atajo de teclado es: NVDA+SHIFT+8(teclado Alpha numérico).
