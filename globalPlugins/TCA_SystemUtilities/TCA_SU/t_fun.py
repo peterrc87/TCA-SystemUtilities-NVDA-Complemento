@@ -4,12 +4,12 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 
-import os, subprocess
+import os, subprocess, threading
 import ctypes 
 from threading import Thread
 import wx
 import winsound
-import ui, api
+import ui, api, 	keyboardHandler
 
 class disable_file_system_redirection:
 
@@ -86,6 +86,112 @@ class T_h(Thread):
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
 			ui.message('Copiada la info del sonido al portapapeles')
+		
+		def ocu():
+			r_ac=os.getcwd()
+			f = api.getForegroundObject()
+			try:
+				obj = f.children[1].children[2].children[0].children[0].children[0]
+			except:
+				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+			c_obj=obj.name
+			a=c_obj.replace('Dirección: ', '')
+			d=os.path.dirname(a)
+			b=os.path.basename(a)
+			os.chdir(d)
+			#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
+
+			try:
+				os.environ['PROGRAMFILES(X86)']
+				with disable_file_system_redirection():
+
+					#subprocess.run('attrib /d /s +h {}'.format(b), shell=True)
+					ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
+				#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
+				
+				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
+				os.startfile(d)
+				winsound.Beep(900,300)
+				os.chdir(r_ac)
+			except:
+				ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h'.format(b), None, 10)		
+				#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
+				
+				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
+				os.startfile(d)
+				#subprocess.run('attrib -h {}'.format(b), shell=True)
+				winsound.Beep(900,300)
+				os.chdir(r_ac)
+
+		
+		def mos(*args, **kwargs):
+			r_ac = os.getcwd()
+			f = api.getForegroundObject()
+			try:
+				obj = f.children[1].children[2].children[0].children[0].children[0]
+			except:
+				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+			c_obj=obj.name
+			a=c_obj.replace('Dirección: ', '')
+			d=os.path.dirname(a)
+			b=os.path.basename(a)
+			os.chdir(a)
+			try:
+				os.environ['PROGRAMFILES(X86)']
+				with disable_file_system_redirection():  
+					subprocess.Popen('attrib /d -h', shell=True)
+					#ejecutar(None,'cmd.exe','/c' + 'attrib /d /s -h', None, 10)		
+					os.chdir(r_ac)
+					winsound.Beep(300,300)
+			except:
+				#pass
+				ejecutar('runas','cmd.exe','/c' + 'attrib /d /s -h', None, 10)		
+				os.chdir(r_ac)
+				winsound.Beep(300,300)
+
+
+		
+		def clean():
+			if os.path.isfile(os.path.join(os.environ["userprofile"], "appdata", "Roaming", "nvda", "tsu.ini"),  ):
+				pass
+			else:
+				dlg=wx.RichMessageDialog(None,"Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea mmofificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje.", style=wx.CANCEL) 
+				dlg.SetOKLabel("Crear perfil")
+				dlg.ShowCheckBox("No volver  a mostrar este mensaje")		
+				rp = dlg.ShowModal()
+				if dlg.IsCheckBoxChecked():
+					with open(os.path.join(os.environ["userprofile"], "appdata", "Roaming", "nvda", "tsu.ini"), "w") as tsu_i:
+						tsu_i.write("sageset: True")
+				else:
+					pass
+				
+				if rp == wx.ID_OK:
+					try:
+						os.environ['PROGRAMFILES(X86)']
+						with disable_file_system_redirection(): 
+							#try:
+							ejecutar('runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)	
+					
+					except:
+						ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sageset:1', None, 10)		
+				else:
+					dlg.Destroy()
+			
+			try:
+				os.environ['PROGRAMFILES(X86)']
+				with disable_file_system_redirection():  
+					ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sagerun:1', None, 10)	
+					
+			except:
+				ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sagerun:1', None, 10)				
+				
+
+
+
+
+			
+
+		
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -101,3 +207,35 @@ class T_h(Thread):
 			wx.CallAfter(TCAsfc)
 		elif self.op == 7:
 			wx.CallAfter(TCAcopitar)
+		elif self.op == 8:
+			wx.CallAfter(ocu)
+		elif self.op == 9:
+			wx.CallAfter(mos)
+		elif self.op == 10:
+			wx.CallAfter(clean)
+
+def mos(*args, **kwargs):
+	r_ac = os.getcwd()
+	f = api.getForegroundObject()
+	try:
+		obj = f.children[1].children[2].children[0].children[0].children[0]
+	except:
+		obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+	c_obj=obj.name
+	a=c_obj.replace('Dirección: ', '')
+	d=os.path.dirname(a)
+	b=os.path.basename(a)
+	os.chdir(a)
+	try:
+		os.environ['PROGRAMFILES(X86)']
+		with disable_file_system_redirection():  
+			subprocess.run('attrib /d -h', shell=True)
+			#ejecutar(None,'cmd.exe','/c' + 'attrib /d -h', None, 10)		
+			os.chdir(r_ac)
+			winsound.Beep(300,300)
+	except:
+		#pass
+		ejecutar('runas','cmd.exe','/c' + 'attrib /d /s -h', None, 10)		
+		os.chdir(r_ac)
+		winsound.Beep(300,300)
+

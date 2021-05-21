@@ -6,7 +6,7 @@ from scriptHandler import script
 import api
 import keyboardHandler
 import globalPluginHandler
-import subprocess, os, sys
+import subprocess, os, sys, threading
 import webbrowser
 import tones
 import ui
@@ -31,7 +31,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_OpenEx(self,gesture):
 		os.system('explorer')
 	
-	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities')
+	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+3')
 	def script_TCARexplo(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
@@ -98,16 +98,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
 	
-	@script(description='Hacer análisis del sistema Con SFC  ', category='TCA-SystemUtilities')
+	@script(description='Hacer análisis del sistema Con SFC  ', category='TCA-SystemUtilities', gesture='kb:nvda+shift+4')
 	def script_TCAsfc(self, gesture):
 		tsu.T_h(self, 6)
 			
-	@script(description='Copiar información de todo el sistema al portapapeles', category='TCA-SystemUtilities')
+	@script(description='Copiar información de todo el sistema al portapapeles', category='TCA-SystemUtilities', gesture='kb:nvda+shift+6')
 	def script_TCAcopy_sys(self, gesture):
 		tsu.T_h(self, 4)
 		ui.message('información del sistema copiada al portapapeles')
 	
-	@script(description='Abrir mapa de caracteres', category='TCA-SystemUtilities')
+	@script(description='Abrir mapa de caracteres', category='TCA-SystemUtilities', gesture='kb:nvda+shift+7')
 	def script_TCAchar(self, gesture):
 		subprocess.Popen('charmap')
 	
@@ -115,7 +115,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 
-	@script(description='Abrir Optimizar las unidades', category='TCA-SystemUtilities')
+	@script(description='Abrir Optimizar las unidades', category='TCA-SystemUtilities', gesture='kb:nvda+shift+1')
 	def script_TCAoptim(self, gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
@@ -124,11 +124,28 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except:
 			subprocess.Popen('dfrgui')
 	
-	@script(description='Abrir opciones de voz', category='TCA-SystemUtilities')
+	@script(description='Abrir opciones de voz', category='TCA-SystemUtilities', gesture='kb:nvda+shift+2')
 	def script_TCAopvox(self, gesture):
 		subprocess.Popen(os.path.join(os.environ['systemroot'], 'system32', 'Speech', 'SpeechUX', 'sapi.cpl'), shell=True)
 	
-	@script(description='Copiar al portapapeles la información sobre las tarjetas de sonido', category='TCA-SystemUtilities')
+	@script(description='Copiar al portapapeles la información sobre las tarjetas de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+5')
 	def script_TCAcopitar(self, gesture):
 		tsu.T_h(self, 7)
+		
+	
+	@script(description='Ocultar carpetas', category='TCA-SystemUtilities', gesture='kb:nvda+shift+f4')
+	def script_TCAocu(self, gesture):
+		tsu.T_h(self, 8)
+		
+		
+	
+	@script(description='Mostrar carpetas ocultas', category='TCA-SystemUtilities', gesture='kb:nvda+shift+f5')
+	def script_TCAmos(self, gesture):
+		#t= threading.Thread(target = tsu.mos)
+		#t.start()
+		tsu.T_h(self, 9)
+	
+	@script(description='Limpiar disco', category='TCA-SystemUtilities', gesture='kb:nvda+shift+f6')
+	def script_TCAclean(self, gesture):
+		tsu.T_h(self, 10)
 		
