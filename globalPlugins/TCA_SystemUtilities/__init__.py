@@ -3,17 +3,18 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 from scriptHandler import script
-import api
-import keyboardHandler
-import globalPluginHandler
-import subprocess, os, sys 
+import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars
+import subprocess, os, sys, threading
 import webbrowser
-import tones
-import ui
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
+	def __init__(self):
+		if globalVars.appArgs.secure:
+			return
+		super(GlobalPlugin, self).__init__()		
+
 	@script(description='Apagar el sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
