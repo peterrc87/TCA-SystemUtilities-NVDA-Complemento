@@ -27,10 +27,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description='Anular apagado', category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
-		
-	@script(description='Abrir Explorador Windows', category='TCA-SystemUtilities', gesture='kb:nvda+e')
-	def script_OpenEx(self,gesture):
-		os.system('explorer')
 	
 	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities', gesture='kb:nvda+shift+3')
 	def script_TCARexplo(self,gesture):
