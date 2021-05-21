@@ -9,7 +9,7 @@ import ctypes
 from threading import Thread
 import wx
 import winsound
-import ui, api, 	keyboardHandler
+import ui, api, 	keyboardHandler, globalVars
 
 class disable_file_system_redirection:
 
@@ -152,7 +152,7 @@ class T_h(Thread):
 
 		
 		def clean():
-			if os.path.isfile(os.path.join(os.environ["userprofile"], "appdata", "Roaming", "nvda", "tsu.ini"),  ):
+			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
 				pass
 			else:
 				dlg=wx.RichMessageDialog(None,"Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea mmofificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje.", style=wx.CANCEL) 
@@ -160,7 +160,7 @@ class T_h(Thread):
 				dlg.ShowCheckBox("No volver  a mostrar este mensaje")		
 				rp = dlg.ShowModal()
 				if dlg.IsCheckBoxChecked():
-					with open(os.path.join(os.environ["userprofile"], "appdata", "Roaming", "nvda", "tsu.ini"), "w") as tsu_i:
+					with open(os.path.join(globalVars.appArgs.configPath,"tsu.ini"), "w") as tsu_i:
 						tsu_i.write("sageset: True")
 				else:
 					pass
