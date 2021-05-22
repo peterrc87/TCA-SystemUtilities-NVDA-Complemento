@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2020.4.
+* Compatibilidad: NVDA 2018 a 2021.
 
 ## Funciones del sistema:
 
@@ -18,9 +18,16 @@ También podremos abrir el sitio oficial para conseguir complementos para NVDA d
 * Anular (apagado o reinicio): Nos permite anular cualquiera de las 2 opciones anteriores (apagado o reinicio) mediante el atajo de teclado: NVDA+0 (del teclado Alpha numérico).
 Además, nos avisa con un mensaje que se está anulando el apagado/reinicio.
  ! ¡Nota! solo contamos con 3 segundos para realizar esta acción.
-* Hacer un análisis del sistema con SFC: Nos permite mediante el atajo de teclado: NVDA+SHIFT+4 (teclado Alpha numérico) 
-Realizar un análisis / reparación del sistema de archivos de Windows SFC /SCANNOW.
+* Hacer un análisis del sistema con SFC: Nos permiteRealizar un análisis / reparación del sistema de archivos de Windows SFC /SCANNOW. 
+(No tiene atajo asignado).
 * Saber arquitectura del sistema: Nos dirá cuál es la arquitectura de Windows (32 o 64 Bits). 
+(No tiene atajo asignado).
+* Limpiar disco: Nos permite lanzar el limpiador de Discos de Windows, pero con opciones mucho más avanzadas. Nos limpiará todos y cada uno de los discos y dispositivos de almacenamiento que tengamos conectados al sistema. 
+La primera vez que lo ejecutemos, nos sacará una ventana de diálogo, para crear un perfil de limpieza, podremos marcar todas las casillas que deseemos para limpiar de forma más exhaustiva. es conveniente que pulsemos el botón: "Crear perfil" esto solo es necesario hacerlo una vez. Disponemos de una casilla de verificación que podemos marcar si no queremos que salga más éste diálogo. 
+(No tiene atajo asignado).
+* Ocultar carpetas: Nos permite ponerle el atributo de ocultas a la carpeta donde nos encontremos, es decir no se mostrará dicha carpeta (debemos entrar en la misma para que surta efecto).
+(No tiene atajo asignado).
+* Mostrar carpetas ocultas: Esta función nos permite hacer visibles todas las carpetas y archivos que estén ocultos (vale en pendrives USB, discos externos y más), muy útil a la hora de enchufar cualquier dispositivo externo. Debemos entrar en la carpeta y pulsar el atajo de teclado.
 (No tiene atajo asignado).
 
 ## Funciones directas del portapapeles:
