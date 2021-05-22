@@ -10,6 +10,8 @@ from threading import Thread
 import wx
 import winsound
 import ui, api, 	keyboardHandler, globalVars
+a_path = os.getcwd()
+
 
 class disable_file_system_redirection:
 
@@ -72,6 +74,7 @@ class T_h(Thread):
 			a=c_obj.replace('Dirección: ', '')
 			os.chdir('{}'.format(a))
 			subprocess.Popen('dir /b|clip', shell=True)
+			os.chdir(a_path)
 			ui.message('Copiada la lista al portapapeles')
 		def TCAsfc():
 			try:
@@ -88,7 +91,6 @@ class T_h(Thread):
 			ui.message('Copiada la info del sonido al portapapeles')
 		
 		def ocu():
-			r_ac=os.getcwd()
 			f = api.getForegroundObject()
 			try:
 				obj = f.children[1].children[2].children[0].children[0].children[0]
@@ -107,12 +109,10 @@ class T_h(Thread):
 
 					#subprocess.run('attrib /d /s +h {}'.format(b), shell=True)
 					ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
-				#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
-				
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
 				winsound.Beep(900,300)
-				os.chdir(r_ac)
+				os.chdir(a_path)
 			except:
 				ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h'.format(b), None, 10)		
 				#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
@@ -121,11 +121,10 @@ class T_h(Thread):
 				os.startfile(d)
 				#subprocess.run('attrib -h {}'.format(b), shell=True)
 				winsound.Beep(900,300)
-				os.chdir(r_ac)
+				os.chdir(a_path)
 
 		
 		def mos():
-			r_ac = os.getcwd()
 			f = api.getForegroundObject()
 			try:
 				obj = f.children[1].children[2].children[0].children[0].children[0]
@@ -141,12 +140,12 @@ class T_h(Thread):
 				with disable_file_system_redirection():  
 					subprocess.Popen('attrib /d -h', shell=True)
 					#ejecutar(None,'cmd.exe','/c' + 'attrib /d /s -h', None, 10)		
-					os.chdir(r_ac)
+					os.chdir(a_path)
 					winsound.Beep(300,300)
 			except:
 				#ejecutar('runas','cmd.exe','/c' + 'attrib /d -h', None, 10)		
 				subprocess.Popen("attrib /d -h", shell = True)
-				os.chdir(r_ac)
+				os.chdir(a_path)
 				winsound.Beep(300,300)
 
 
@@ -184,14 +183,8 @@ class T_h(Thread):
 					
 			except:
 				ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sagerun:1', None, 10)				
-				
-
-
-
 
 			
-
-		
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
