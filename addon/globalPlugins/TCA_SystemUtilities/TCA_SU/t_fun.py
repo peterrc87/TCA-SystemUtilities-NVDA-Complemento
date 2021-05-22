@@ -9,8 +9,9 @@ import ctypes
 from threading import Thread
 import wx
 import winsound
-import ui, api, 	keyboardHandler, globalVars
+import ui, api, 	keyboardHandler, globalVars, addonHandler
 a_path = os.getcwd()
+addonHandler.initTranslation()
 
 
 class disable_file_system_redirection:
