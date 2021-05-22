@@ -13,7 +13,6 @@ import ui, api, 	keyboardHandler, globalVars, addonHandler
 a_path = os.getcwd()
 addonHandler.initTranslation()
 
-
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -46,20 +45,20 @@ class T_h(Thread):
 		self.start()
 	def run(self):
 		def TCAShut():		
-			ui.message('Apagando el Pc.')
+			ui.message(_('Apagando el Pc.'))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
 			si = subprocess.STARTUPINFO()
 			si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 			subprocess.run('shutdown.exe -s -t 3', shell=True, startupinfo=si)
 		def TCAShutR():
-			ui.message('Reiniciando el PC.')
+			ui.message(_('Reiniciando el PC.'))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
 			si = subprocess.STARTUPINFO()
 			si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 			subprocess.run('shutdown.exe -r -t 3', shell=True)
 	
 		def TCAShutA():
-			ui.message('anulando el apagado o reinicio del pc.')
+			ui.message(_('anulando el apagado o reinicio del pc.'))
 			subprocess.run('shutdown.exe -a', shell=True)
 
 		def TCAcopy_sys():
@@ -76,7 +75,7 @@ class T_h(Thread):
 			os.chdir('{}'.format(a))
 			subprocess.Popen('dir /b|clip', shell=True)
 			os.chdir(a_path)
-			ui.message('Copiada la lista al portapapeles')
+			ui.message(_('Copiada la lista al portapapeles'))
 		def TCAsfc():
 			try:
 				os.environ['PROGRAMFILES(X86)']
@@ -89,7 +88,7 @@ class T_h(Thread):
 		def TCAcopitar():
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
-			ui.message('Copiada la info del sonido al portapapeles')
+			ui.message(_('Copiada la info del sonido al portapapeles'))
 		
 		def ocu():
 			f = api.getForegroundObject()
@@ -133,8 +132,6 @@ class T_h(Thread):
 				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
 			c_obj=obj.name
 			a=c_obj.replace('Dirección: ', '')
-			#d=os.path.dirname(a)
-			#b=os.path.basename(a)
 			os.chdir(a)
 			try:
 				os.environ['PROGRAMFILES(X86)']
@@ -149,15 +146,13 @@ class T_h(Thread):
 				os.chdir(a_path)
 				winsound.Beep(300,300)
 
-
-		
 		def clean():
 			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
 				pass
 			else:
-				dlg=wx.RichMessageDialog(None,"Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea mmofificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje.", style=wx.CANCEL) 
-				dlg.SetOKLabel("Crear perfil")
-				dlg.ShowCheckBox("No volver  a mostrar este mensaje")		
+				dlg=wx.RichMessageDialog(None, _("Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea mmofificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje."), style=wx.CANCEL) 
+				dlg.SetOKLabel(_("Crear perfil"))
+				dlg.ShowCheckBox(_("No volver  a mostrar este mensaje"))		
 				rp = dlg.ShowModal()
 				if dlg.IsCheckBoxChecked():
 					with open(os.path.join(globalVars.appArgs.configPath,"tsu.ini"), "w") as tsu_i:
@@ -169,7 +164,6 @@ class T_h(Thread):
 					try:
 						os.environ['PROGRAMFILES(X86)']
 						with disable_file_system_redirection(): 
-							#try:
 							ejecutar('runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)	
 					
 					except:
@@ -207,4 +201,3 @@ class T_h(Thread):
 			wx.CallAfter(mos)
 		elif self.op == 10:
 			wx.CallAfter(clean)
-

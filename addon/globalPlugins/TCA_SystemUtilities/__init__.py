@@ -15,46 +15,46 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		super(GlobalPlugin, self).__init__()		
 
-	@script(description='Apagar el sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description='Reinicio del sistema', category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description='Anular apagado', category='TCA-SystemUtilities', gesture='kb:nvda+0')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
-	@script(description='Abrir opciones de sonido', category='TCA-SystemUtilities')
+	@script(description= _('Abrir opciones de sonido'), category='TCA-SystemUtilities')
 	def script_TCARexplo(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
-	@script(description='Abrir carpeta Roaming', category='TCA-SystemUtilities', gesture='kb:nvda+9')
+	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
 	def script_TCARoa(self,gesture):
 		os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
 	
-	@script(description='Abrir Asistente transferir archivos por Bluetooth  ', category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
+	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
 	def script_TCAopti(self,gesture):
 		subprocess.Popen('fsquirt')
 			 
-	@script(description='Saber la arquitectura del sistema', category='TCA-SystemUtilities')
+	@script(description=_('Saber la arquitectura del sistema'), category='TCA-SystemUtilities')
 	def script_TCAar(self,gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
 			version_sys=64
 		except:
 			version_sys=32
-		ui.message('Su sistema operativo es de: {} Bits'.format(version_sys))
+		ui.message(_('Su sistema operativo es de: {} Bits').format(version_sys))
 		
-	@script(description='Abrir el asistente para guardar la contraseña del sistema', category='TCA-SystemUtilities')
+	@script(description=_('Abrir el asistente para guardar la contraseña del sistema'), category='TCA-SystemUtilities')
 	def script_TCArcon(self,gesture):
-		ui.message('Abriendo restablecer   contraseñas de Windows')
+		ui.message(_('Abriendo restablecer   contraseñas de Windows'))
 		subprocess.Popen('RunDll32.exe keymgr.dll,PRShowSaveWizardExW')
 	
-	@script(description='Copiar al portapapeles la ruta', category='TCA-SystemUtilities')
+	@script(description=_('Copiar al portapapeles la ruta'), category='TCA-SystemUtilities')
 	def script_TCAclip(self,gesture):
 		f = api.getForegroundObject()
 		try:
@@ -64,55 +64,55 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		c_obj=obj.name
 		a=c_obj.replace('Dirección: ', '')
 		api.copyToClip('"{}"'.format(a))
-		ui.message('Ruta copiada ')
+		ui.message(_('Ruta copiada '))
 		
-	@script(description='Abrir el administrador de discos', category='TCA-SystemUtilities')
+	@script(description= _('Abrir el administrador de discos'), category='TCA-SystemUtilities')
 	def script_TCAdisk(self,gesture):
 		subprocess.Popen('diskmgmt.msc', shell=True)
 	
-	@script(description='Abrir la tienda oficial de complementos', category='TCA-SystemUtilities', gesture='kb:nvda+x')
+	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities', gesture='kb:nvda+x')
 	def script_TCAtien(self,gesture):
 		webbrowser.open_new_tab('https://addons.nvda-project.org/index.es.html')
 	
-	@script(description='Abrir monitor de recursos', category='TCA-SystemUtilities')
+	@script(description=_('Abrir monitor de recursos'), category='TCA-SystemUtilities')
 	def script_TCAmon(self, gesture):
 		subprocess.Popen('resmon')
 	
-	@script(description='Copiar al portapapeles la lista de carpetas y archivos', category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
+	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
 	def script_TCAList(self, gesture):
 		tsu.T_h(self, 5)
 	
-	@script(description='Saber la versión de Windows', category='TCA-SystemUtilities')
+	@script(description=_('Saber la versión de Windows'), category='TCA-SystemUtilities')
 	def script_TCAver(self, gesture):
 		subprocess.Popen('winver')
 	
-	@script(description='Abrir el administrador de dispositivoss', category='TCA-SystemUtilities')
+	@script(description=_('Abrir el administrador de dispositivoss'), category='TCA-SystemUtilities')
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
-	@script(description='Abrir Opciones de carpeta', category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
+	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
 	def script_TCAcar(self,gesture):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
 	
-	@script(description='Hacer análisis del sistema Con SFC  ', category='TCA-SystemUtilities')
+	@script(description=_('Hacer análisis del sistema Con SFC  '), category='TCA-SystemUtilities')
 	def script_TCAsfc(self, gesture):
 		tsu.T_h(self, 6)
 			
-	@script(description='Copiar información de todo el sistema al portapapeles', category='TCA-SystemUtilities')
+	@script(description=_('Copiar información de todo el sistema al portapapeles'), category='TCA-SystemUtilities')
 	def script_TCAcopy_sys(self, gesture):
 		tsu.T_h(self, 4)
-		ui.message('información del sistema copiada al portapapeles')
+		ui.message(_('información del sistema copiada al portapapeles'))
 	
-	@script(description='Abrir mapa de caracteres', category='TCA-SystemUtilities')
+	@script(description=_('Abrir mapa de caracteres'), category='TCA-SystemUtilities')
 	def script_TCAchar(self, gesture):
 		subprocess.Popen('charmap')
 	
-	@script(description='Abrir Asistente guardar contraseñas de usuarios', category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
+	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 
-	@script(description='Abrir Optimizar las unidades', category='TCA-SystemUtilities')
+	@script(description=_('Abrir Optimizar las unidades'), category='TCA-SystemUtilities')
 	def script_TCAoptim(self, gesture):
 		try:
 			os.environ['PROGRAMFILES(X86)']
@@ -121,24 +121,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except:
 			subprocess.Popen('dfrgui')
 	
-	@script(description='Abrir opciones de voz', category='TCA-SystemUtilities')
+	@script(description=_('Abrir opciones de voz'), category='TCA-SystemUtilities')
 	def script_TCAopvox(self, gesture):
 		subprocess.Popen(os.path.join(os.environ['systemroot'], 'system32', 'Speech', 'SpeechUX', 'sapi.cpl'), shell=True)
 	
-	@script(description='Copiar al portapapeles la información sobre las tarjetas de sonido', category='TCA-SystemUtilities')
+	@script(description=_('Copiar al portapapeles la información sobre las tarjetas de sonido'), category='TCA-SystemUtilities')
 	def script_TCAcopitar(self, gesture):
 		tsu.T_h(self, 7)
 		
 	
-	@script(description='Ocultar carpetas', category='TCA-SystemUtilities')
+	@script(description=_('Ocultar carpetas'), category='TCA-SystemUtilities')
 	def script_TCAocu(self, gesture):
 		tsu.T_h(self, 8)
 			
-	@script(description='Mostrar carpetas ocultas', category='TCA-SystemUtilities')
+	@script(description=_('Mostrar carpetas ocultas'), category='TCA-SystemUtilities')
 	def script_TCAmos(self, gesture):
 		tsu.T_h(self, 9)
 	
-	@script(description='Limpiar disco', category='TCA-SystemUtilities', gesture='kb:nvda+shift+f6')
+	@script(description=_('Limpiar disco'), category='TCA-SystemUtilities')
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
