@@ -24,10 +24,8 @@ addon_info = {
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Apagar y Reiniciar el PC con el sonido clásico de Windows.
-También permite abrir la carpeta Roaming y ejecutar de forma directa algunas herramientas del sistema."""
+También permite abrir la carpeta Roaming y ejecutar de forma directa algunas herramientas del sistema."""),
 
-author = "Peter Reina<peterrc87@gmail.com>"
-url = "https://tecnoconocimientoaccesible.blogspot.com/""")
 
 	# version
 	"addon_version": "01b8",
@@ -55,7 +53,7 @@ url = "https://tecnoconocimientoaccesible.blogspot.com/""")
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = ["addon/globalPlugin/*.py", "addon/globalPlugin/*/*.py"]
+pythonSources = ["addon/globalPlugins/*.py", "addon/globalPlugin/*/*.py"]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]
