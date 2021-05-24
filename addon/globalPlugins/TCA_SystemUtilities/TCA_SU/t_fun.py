@@ -13,6 +13,17 @@ import ui, api, 	keyboardHandler, globalVars, addonHandler
 a_path = os.getcwd()
 addonHandler.initTranslation()
 
+#Función para el obj.
+def t_obj(self):
+	f = api.getForegroundObject()
+	try:
+		obj = f.children[1].children[2].children[0].children[0].children[0]
+	except:
+		obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+	c_obj = obj.name
+	self.v_obj = c_obj.replace('Dirección: ', '')
+	return self.v_obj
+
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -64,15 +75,8 @@ class T_h(Thread):
 		def TCAcopy_sys():
 			subprocess.Popen('Systeminfo | clip', shell=True)
 		def TCAList():
-			f = api.getForegroundObject()
-			try:
-				obj = f.children[1].children[2].children[0].children[0].children[0]
-			except:
-				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-
-			c_obj=obj.name
-			a=c_obj.replace('Dirección: ', '')
-			os.chdir('{}'.format(a))
+			t_obj(self)
+			os.chdir('{}'.format(self.v_obj))
 			subprocess.Popen('dir /b|clip', shell=True)
 			os.chdir(a_path)
 			ui.message(_('Copiada la lista al portapapeles'))
@@ -84,25 +88,17 @@ class T_h(Thread):
 			except:
 				ejecutar('runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)								
 											
-			
 		def TCAcopitar():
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
 			ui.message(_('Copiada la info del sonido al portapapeles'))
 		
 		def ocu():
-			f = api.getForegroundObject()
-			try:
-				obj = f.children[1].children[2].children[0].children[0].children[0]
-			except:
-				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-			c_obj=obj.name
-			a=c_obj.replace('Dirección: ', '')
-			d=os.path.dirname(a)
-			b=os.path.basename(a)
+			t_obj(self)
+			d=os.path.dirname(self.v_obj)
+			b=os.path.basename(self.v_obj)
 			os.chdir(d)
-			#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
-
+			
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():
@@ -125,14 +121,8 @@ class T_h(Thread):
 
 		
 		def mos():
-			f = api.getForegroundObject()
-			try:
-				obj = f.children[1].children[2].children[0].children[0].children[0]
-			except:
-				obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-			c_obj=obj.name
-			a=c_obj.replace('Dirección: ', '')
-			os.chdir(a)
+			t_obj(self)
+			os.chdir(self.v_obj)
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
