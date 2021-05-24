@@ -56,14 +56,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description=_('Copiar al portapapeles la ruta'), category='TCA-SystemUtilities')
 	def script_TCAclip(self,gesture):
-		f = api.getForegroundObject()
-		try:
-			obj = f.children[1].children[2].children[0].children[0].children[0]
-		except:
-			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-		c_obj=obj.name
-		a=c_obj.replace('Dirección: ', '')
-		api.copyToClip('"{}"'.format(a))
+		tsu.t_obj(self)
+		api.copyToClip('"{}"'.format(self.v_obj))
 		ui.message(_('Ruta copiada '))
 		
 	@script(description= _('Abrir el administrador de discos'), category='TCA-SystemUtilities')
