@@ -9,7 +9,7 @@ import ctypes
 from threading import Thread
 import wx
 import winsound
-import ui, api, 	keyboardHandler, globalVars, addonHandler
+import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi
 a_path = os.getcwd()
 addonHandler.initTranslation()
 
@@ -84,9 +84,10 @@ class T_h(Thread):
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():
-					ejecutar('runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)				
+					shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																
+
 			except:
-				ejecutar('runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)								
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																																
 											
 		def TCAcopitar():
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
@@ -154,20 +155,21 @@ class T_h(Thread):
 					try:
 						os.environ['PROGRAMFILES(X86)']
 						with disable_file_system_redirection(): 
-							ejecutar('runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)	
+							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 0)	
 					
 					except:
-						ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sageset:1', None, 10)		
+						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 0)		
 				else:
 					dlg.Destroy()
 			
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
-					ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sagerun:1', None, 10)	
+					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)	
 					
 			except:
-				ejecutar('runas','cmd.exe', '/c' + 'CLEANMGR /sagerun:1', None, 10)				
+				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)		
+
 
 			
 
