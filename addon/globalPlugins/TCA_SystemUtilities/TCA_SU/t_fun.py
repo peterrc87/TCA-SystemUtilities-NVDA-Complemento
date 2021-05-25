@@ -4,7 +4,7 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 
-import os, subprocess, threading
+import os, subprocess
 import ctypes 
 from threading import Thread
 import wx
@@ -37,15 +37,6 @@ class disable_file_system_redirection:
 		if self.success:
 			self._revert(self.old_value)
 
-def ejecutar(modo, aplicacion, parametros, directorio, ventana):
-	p = ctypes.windll.shell32.ShellExecuteW(
-		None,
-		modo,
-		aplicacion,
-		parametros,
-		directorio,
-		ventana)
-	return p
 #Clase para hilos.
 class T_h(Thread):
 	def __init__(self, frame, op):
@@ -103,20 +94,15 @@ class T_h(Thread):
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():
-
-					#subprocess.run('attrib /d /s +h {}'.format(b), shell=True)
-					ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
+					shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
 				winsound.Beep(900,300)
 				os.chdir(a_path)
 			except:
-				ejecutar(None,'cmd.exe', '/c' + 'attrib /d /s +h'.format(b), None, 10)		
-				#keyboardHandler.KeyboardInputGesture.fromName("alt+leftarrow").send()
-				
+				shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h'.format(b), None, 10)		
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
-				#subprocess.run('attrib -h {}'.format(b), shell=True)
 				winsound.Beep(900,300)
 				os.chdir(a_path)
 
@@ -128,7 +114,6 @@ class T_h(Thread):
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
 					subprocess.Popen('attrib /d -h', shell=True)
-					#ejecutar(None,'cmd.exe','/c' + 'attrib /d /s -h', None, 10)		
 					os.chdir(a_path)
 					winsound.Beep(300,300)
 			except:
