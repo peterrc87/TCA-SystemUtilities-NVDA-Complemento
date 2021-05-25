@@ -37,6 +37,23 @@ class disable_file_system_redirection:
 		if self.success:
 			self._revert(self.old_value)
 
+def r_deco(fn):
+	def decorada():
+		#fn()
+		try:
+			os.environ['PROGRAMFILES(X86)']
+			with disable_file_system_redirection():
+				fn()
+				os.chdir(a_path)
+				winsound.Beep(300,300)
+		except:
+			fn()
+			os.chdir(a_path)
+			winsound.Beep(300,300)
+
+		
+	return decorada
+
 #Clase para hilos.
 class T_h(Thread):
 	def __init__(self, frame, op):
@@ -45,6 +62,9 @@ class T_h(Thread):
 		self.op = op
 		self.daemon = True
 		self.start()
+		
+
+	
 	def run(self):
 		def TCAShut():		
 			ui.message(_('Apagando el Pc.'))
@@ -71,62 +91,39 @@ class T_h(Thread):
 			subprocess.Popen('dir /b|clip', shell=True)
 			os.chdir(a_path)
 			ui.message(_('Copiada la lista al portapapeles'))
+		
+		@r_deco
 		def TCAsfc():
-			try:
-				os.environ['PROGRAMFILES(X86)']
-				with disable_file_system_redirection():
-					shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																
-
-			except:
-				shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																																
-											
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																
+			
 		def TCAcopitar():
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
 			ui.message(_('Copiada la info del sonido al portapapeles'))
-		
+		@r_deco
 		def ocu():
 			t_obj(self)
 			d=os.path.dirname(self.v_obj)
 			b=os.path.basename(self.v_obj)
 			os.chdir(d)
-			
-			try:
-				os.environ['PROGRAMFILES(X86)']
-				with disable_file_system_redirection():
-					shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
-				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
-				os.startfile(d)
-				winsound.Beep(900,300)
-				os.chdir(a_path)
-			except:
-				shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h'.format(b), None, 10)		
-				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
-				os.startfile(d)
-				winsound.Beep(900,300)
-				os.chdir(a_path)
+			shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
+			keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
+			os.startfile(d)
+			winsound.Beep(900,300)
 
-		
+		@r_deco
 		def mos():
 			t_obj(self)
 			os.chdir(self.v_obj)
-			try:
-				os.environ['PROGRAMFILES(X86)']
-				with disable_file_system_redirection():  
-					subprocess.Popen('attrib /d -h', shell=True)
-					os.chdir(a_path)
-					winsound.Beep(300,300)
-			except:
-				#ejecutar('runas','cmd.exe','/c' + 'attrib /d -h', None, 10)		
-				subprocess.Popen("attrib /d -h", shell = True)
-				os.chdir(a_path)
-				winsound.Beep(300,300)
+			shellapi.ShellExecute(None, None,'cmd.exe','/c' + 'attrib /d -h', None, 0)
+			#subprocess.Popen('attrib /d -h', shell=True)
+
 
 		def clean():
 			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
 				pass
 			else:
-				dlg=wx.RichMessageDialog(None, _("Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea mmofificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje."), style=wx.CANCEL) 
+				dlg=wx.RichMessageDialog(None, _("Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea modificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje."), style=wx.CANCEL) 
 				dlg.SetOKLabel(_("Crear perfil"))
 				dlg.ShowCheckBox(_("No volver  a mostrar este mensaje"))		
 				rp = dlg.ShowModal()
@@ -157,7 +154,6 @@ class T_h(Thread):
 
 
 			
-
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
