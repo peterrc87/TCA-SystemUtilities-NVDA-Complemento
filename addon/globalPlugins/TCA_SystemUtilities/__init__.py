@@ -8,6 +8,7 @@ import subprocess, os, sys, threading
 import webbrowser
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
+from TCA_SU.t_fun import rdt
 addonHandler.initTranslation()
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	def __init__(self):
