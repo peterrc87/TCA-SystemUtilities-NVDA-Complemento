@@ -36,10 +36,9 @@ class disable_file_system_redirection:
 	def __exit__(self, type, value, traceback):
 		if self.success:
 			self._revert(self.old_value)
-
-def r_deco(fn):
-	def decorada():
-		#fn()
+#Decoradora para redirección.
+def rdt(fn):
+	def d_rdt():
 		try:
 			os.environ['PROGRAMFILES(X86)']
 			with disable_file_system_redirection():
@@ -50,9 +49,7 @@ def r_deco(fn):
 			fn()
 			os.chdir(a_path)
 			winsound.Beep(300,300)
-
-		
-	return decorada
+	return d_rdt
 
 #Clase para hilos.
 class T_h(Thread):
@@ -92,7 +89,7 @@ class T_h(Thread):
 			os.chdir(a_path)
 			ui.message(_('Copiada la lista al portapapeles'))
 		
-		@r_deco
+		@rdt
 		def TCAsfc():
 			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'sfc' + '/scannow' + '&pause', None, 10)																
 			
@@ -100,7 +97,7 @@ class T_h(Thread):
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
 			ui.message(_('Copiada la info del sonido al portapapeles'))
-		@r_deco
+		@rdt
 		def ocu():
 			t_obj(self)
 			d=os.path.dirname(self.v_obj)
@@ -111,13 +108,12 @@ class T_h(Thread):
 			os.startfile(d)
 			winsound.Beep(900,300)
 
-		@r_deco
+		@rdt
 		def mos():
 			t_obj(self)
 			os.chdir(self.v_obj)
 			shellapi.ShellExecute(None, None,'cmd.exe','/c' + 'attrib /d -h', None, 0)
 			#subprocess.Popen('attrib /d -h', shell=True)
-
 
 		def clean():
 			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
@@ -151,9 +147,12 @@ class T_h(Thread):
 					
 			except:
 				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)		
-
-
+				
+		@rdt
+		def r_explo():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /f /im explorer.exe' + '& start explorer', None, 10)	
 			
+
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -174,3 +173,5 @@ class T_h(Thread):
 			wx.CallAfter(mos)
 		elif self.op == 10:
 			wx.CallAfter(clean)
+		elif self.op == 11:
+			wx.CallAfter(r_explo)
