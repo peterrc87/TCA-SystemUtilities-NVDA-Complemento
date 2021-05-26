@@ -60,8 +60,6 @@ class T_h(Thread):
 		self.daemon = True
 		self.start()
 		
-
-	
 	def run(self):
 		def TCAShut():		
 			ui.message(_('Apagando el Pc.'))
@@ -152,6 +150,12 @@ class T_h(Thread):
 		def r_explo():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /f /im explorer.exe' + '& start explorer', None, 10)	
 			
+		@rdt
+		def optim():
+			subprocess.Popen('dfrgui')	
+
+		def iver():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /h', None, 10)		
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -175,3 +179,7 @@ class T_h(Thread):
 			wx.CallAfter(clean)
 		elif self.op == 11:
 			wx.CallAfter(r_explo)
+		elif self.op == 12:
+			wx.CallAfter(optim)
+		elif self.op == 13:
+			wx.CallAfter(iver)
