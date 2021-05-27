@@ -3,18 +3,33 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 from scriptHandler import script
-import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler
+import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
 import subprocess, os, sys, threading
-import webbrowser
+import webbrowser, wx
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
-from TCA_SU.t_fun import rdt
 addonHandler.initTranslation()
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	def __init__(self):
 		if globalVars.appArgs.secure:
 			return
 		super(GlobalPlugin, self).__init__()		
+
+		self._MainWindows = None
+
+		#Barra de herramientas.
+		self.menu = wx.Menu()	
+		t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
+		t_monitor = self.menu.Append(-1, "Monitor de recursos")
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
+		t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")
+
+	def terminate(self):
+		try:
+			if not self._MainWindows:
+				self._MainWindows.Destroy()
+		except (AttributeError, RuntimeError):
+			pass
 
 	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
@@ -106,16 +121,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
-
-	@script(description=_('Abrir Optimizar las unidades'), category='TCA-SystemUtilities')
-	def script_TCAoptim(self, gesture):
-		try:
-			os.environ['PROGRAMFILES(X86)']
-			with tsu.disable_file_system_redirection():
-				subprocess.Popen('dfrgui')	
-		except:
-			subprocess.Popen('dfrgui')
-	
+		
 	@script(description=_('Abrir opciones de voz'), category='TCA-SystemUtilities')
 	def script_TCAopvox(self, gesture):
 		subprocess.Popen(os.path.join(os.environ['systemroot'], 'system32', 'Speech', 'SpeechUX', 'sapi.cpl'), shell=True)
@@ -123,7 +129,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Copiar al portapapeles la información sobre las tarjetas de sonido'), category='TCA-SystemUtilities')
 	def script_TCAcopitar(self, gesture):
 		tsu.T_h(self, 7)
-		
 	
 	@script(description=_('Ocultar carpetas'), category='TCA-SystemUtilities')
 	def script_TCAocu(self, gesture):
@@ -137,3 +142,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
+	
+	#@script(description='Abrir Explorador Windows', category='TCA-SystemUtilities', gesture='kb:nvda+e')
+	#def script_OpenEx(self,gesture):
+		#os.system('explorer')
+	
+	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
+	def script_TCAr_explo(self, gesture):
+		tsu.T_h(self, 11)
+	
+	@script(description=_('Abrir Optimizar las unidades'), category='TCA-SystemUtilities')
+	def script_TCAoptim(self, gesture):
+		tsu.T_h(self, 12)
+	
+	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
+	def script_TCAhiber(self, gesture):
+		tsu.T_h(self, 13)
