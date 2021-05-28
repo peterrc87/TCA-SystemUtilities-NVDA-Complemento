@@ -8,6 +8,7 @@ import subprocess, os, sys, threading
 import webbrowser, wx
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
+from TCA_SU import t_menu as tm 
 addonHandler.initTranslation()
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	def __init__(self):
@@ -18,26 +19,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._MainWindows = None
 
 		#Barra de herramientas.
-		self.menu = wx.Menu()	
-		t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
-		t_passUsu = self.menu.Append(-1, _("Asistente guardar contraseñas de usuarios"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
-		t_blueTooth = self.menu.Append(-1, _("Asistente transferir archivos por Bluetooth"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAblue, t_blueTooth)
-		t_roa = self.menu.Append(-1, _("Carpeta Roaming"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCARoa, t_roa)
-		t_adDisk = self.menu. Append(-1, _("administrador de discos"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdisk, t_adDisk)
-		t_adDev = self.menu.Append(-1, _("administrador de dispositivoss"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdispo, t_adDev)
-		t_savePass = self.menu.Append(-1, _("asistente para guardar la contraseña del sistema"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)
-
-
-
-		t_monitor = self.menu.Append(-1, _("Monitor de recursos"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
-		t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")
+		tm.create_menu(self)
 
 	def terminate(self):
 		try:
