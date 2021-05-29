@@ -42,7 +42,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tsu.T_h(self, 3)
 	
 	@script(description= _('Abrir opciones de sonido'), category='TCA-SystemUtilities')
-	def script_TCARexplo(self,gesture):
+	def script_TCAsndOp(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
 	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
@@ -155,3 +155,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
+
+	
