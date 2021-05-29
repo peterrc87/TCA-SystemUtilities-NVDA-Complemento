@@ -35,6 +35,16 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
 	t_opti = self.menu.Append(-1, _("Optimizar las unidades"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
+	t_sfc = self.menu.Append(-1, _("Análisis del sistema Con SFC    "))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
+	t_clDisk = self.menu.Append(-1, _("Limpiar disco"))
+	
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
+	t_rExplo = self.menu.Append(-1, _("Reiniciar Explorador"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
+	t_wVer = self.menu.Append(-1, _("Saber la versión de Windows"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+
 
 	t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")
 
