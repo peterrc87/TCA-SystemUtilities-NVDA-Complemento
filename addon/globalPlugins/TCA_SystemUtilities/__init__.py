@@ -155,5 +155,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
-
 	
+	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
+	def script_TCAa_dism(self, gesture):
+		tsu.T_h(self, 14)

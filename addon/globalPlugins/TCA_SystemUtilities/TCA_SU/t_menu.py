@@ -42,6 +42,9 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
 	t_rExplo = self.menu.Append(-1, _("Reiniciar Explorador"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
+	t_dism = self.menu.Append(-1, _("Reparar sistema con Dism"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_dism, t_dism)
+
 	t_wVer = self.menu.Append(-1, _("Saber la versión de Windows"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
 

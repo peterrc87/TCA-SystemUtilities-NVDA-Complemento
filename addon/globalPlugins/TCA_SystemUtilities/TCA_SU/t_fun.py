@@ -156,6 +156,13 @@ class T_h(Thread):
 
 		def iver():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /h', None, 10)		
+		
+		@rdt
+		def a_dism():
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'DISM /online /cleanup-image /RestoreHealth' + '&pause', None, 10)																
+																			
+			
+		
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -183,3 +190,5 @@ class T_h(Thread):
 			wx.CallAfter(optim)
 		elif self.op == 13:
 			wx.CallAfter(iver)
+		elif self.op == 14:
+			wx.CallAfter(a_dism)
