@@ -140,9 +140,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tsu.T_h(self, 10)
 		
 	
-	#@script(description='Abrir Explorador Windows', category='TCA-SystemUtilities', gesture='kb:nvda+e')
-	#def script_OpenEx(self,gesture):
-		#os.system('explorer')
+	
 	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
@@ -156,6 +154,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
 	
+	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
 	def script_TCAa_dism(self, gesture):
 		tsu.T_h(self, 14)
+
+	
+	@script(description=_('Reiniciar el sistema y entrar en la BIOS-UEFI'), category='TCA-SystemUtilities')
+	def script_TCA_sh_b(self, gesture):
+		tsu.T_h(self, 15)

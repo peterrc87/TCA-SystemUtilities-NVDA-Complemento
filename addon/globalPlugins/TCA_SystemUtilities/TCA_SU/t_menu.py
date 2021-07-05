@@ -2,19 +2,27 @@
 #TCASystemUtilities, Shut down and restart the PC with Windows classic sound, an Open system Options.
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
-from scriptHandler import script
-import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
-#import subprocess, os, sys, threading
-import webbrowser, wx
+import gui,addonHandler
+import wx
 addonHandler.initTranslation()
 def create_menu(self):
 	#Barra de herramientas.
 	self.menu = wx.Menu()	
+	a_sys = wx.Menu()
 	e_sys = wx.Menu()
 	u_sys = wx.Menu()
 	r_sys = wx.Menu()
 	s_sys = wx.Menu()
 	t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
+	
+	t_sh_s = a_sys.Append(-1, _("Apagar"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShut, t_sh_s)
+	t_sh_h = a_sys.Append(-1, _("Hibernar"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAhiber, t_sh_h)
+	t_sh_r = a_sys.Append(-1, _("Reiniciar"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShutR, t_sh_r)
+	t_sh_b = a_sys.Append(-1, _("Reiniciar y entrar en BIOS/UEFI"))
+
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
 	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
@@ -51,6 +59,8 @@ def create_menu(self):
 
 	t_wVer = u_sys.Append(-1, _("Saber la versión de Windows"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+	
+	self.menu.AppendSubMenu(a_sys, _("Apagado del sistema"))
 	self.menu.AppendSubMenu(e_sys, _("Explorador y Procesos"))
 	self.menu.AppendSubMenu(s_sys, _("Sonido y voz"))
 	self.menu.AppendSubMenu(r_sys, _("Reparación y optimización"))

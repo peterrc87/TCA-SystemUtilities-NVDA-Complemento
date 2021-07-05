@@ -159,9 +159,12 @@ class T_h(Thread):
 		
 		@rdt
 		def a_dism():
-			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'DISM /online /cleanup-image /RestoreHealth' + '&pause', None, 10)																
-																			
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'DISM /online /cleanup-image /RestoreHealth' + '&pause', None, 10)	
 			
+		def sh_b():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r/fw' + 'pause', None, 10)				
+
+		
 		
 
 		if self.op == 4:
@@ -192,3 +195,5 @@ class T_h(Thread):
 			wx.CallAfter(iver)
 		elif self.op == 14:
 			wx.CallAfter(a_dism)
+		elif self.op == 15:
+			wx.CallAfter(sh_b)
