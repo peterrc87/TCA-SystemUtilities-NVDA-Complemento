@@ -159,13 +159,33 @@ class T_h(Thread):
 		
 		@rdt
 		def a_dism():
-			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'DISM /online /cleanup-image /RestoreHealth' + '&pause', None, 10)	
-			
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'DISM /online /cleanup-image /RestoreHealth' + '&pause', None, 10)
+	
+		@rdt
 		def sh_b():
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r/fw' + 'pause', None, 10)				
+			dlg = wx.MessageDialog(None, _("Está a punto de reiniciar el sistema, y activar el modo Seguro con funciones de red.\n En éste modo los sistemas Windows anteriores al 10, puede que no tengan sonidos, por ende, el lector de pantalla no tendrá soporte de voz.\n Deberá deshabilitar este modo desde las configuraciones del sistema msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del sistema.\n ¿Está seguro que desea continuar?"),_("Atención activación del Modo seguro!"), wx.YES_NO|wx.ICON_QUESTION) 
+			rp = dlg.ShowModal()
+			if rp == wx.ID_YES:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'bcdedit /set {default} safeboot network',None, 10)
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'bcdedit /set {default} safebootalternateshell yes', None, 10)
 
-		
-		
+				ui.message(_("Modo seguro activado, se va a reiniciar el Pc"))
+				winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
+				subprocess.run('shutdown.exe -r -t 3', shell=True)
+			else:
+				dlg.Destroy()
+		@rdt
+		def sh_nor():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'bcdedit /deletevalue {default} safeboot',None, 10)
+			ui.message(_("Modo normal, reiniciando el Pc"))
+			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
+			subprocess.run('shutdown.exe -r -t 3', shell=True)
+
+				
+				
+			
+
+			
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -197,3 +217,5 @@ class T_h(Thread):
 			wx.CallAfter(a_dism)
 		elif self.op == 15:
 			wx.CallAfter(sh_b)
+		elif self.op == 16:
+			wx.CallAfter(sh_nor)

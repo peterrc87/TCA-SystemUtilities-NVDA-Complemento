@@ -139,9 +139,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
-	
-	
-	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -153,13 +150,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
-	
+
 	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
 	def script_TCAa_dism(self, gesture):
 		tsu.T_h(self, 14)
 
 	
-	@script(description=_('Reiniciar el sistema y entrar en la BIOS-UEFI'), category='TCA-SystemUtilities')
-	def script_TCA_sh_b(self, gesture):
+	@script(description=_('Reiniciar el sistema y entrar en Modo seguro con funciones de red'), category='TCA-SystemUtilities')
+	def script_TCA_sh_b(self, gesture):	
 		tsu.T_h(self, 15)
+	
+	@script(description=_('Deshabilitar el Modo seguro y reiniciar el sistema'), category='TCA-SystemUtilities')
+	def script_TCA_sh_nor(self, gesture):	
+		tsu.T_h(self, 16)
+	
+	@script(description=_('Abrir Mezclador de volumen'), category='TCA-SystemUtilities')
+	def script_TCAa_mvol(self, gesture):
+		subprocess.Popen('sndvol.exe', shell = True)

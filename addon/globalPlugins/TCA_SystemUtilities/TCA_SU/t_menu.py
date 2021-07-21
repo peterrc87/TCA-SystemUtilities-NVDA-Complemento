@@ -21,8 +21,11 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAhiber, t_sh_h)
 	t_sh_r = a_sys.Append(-1, _("Reiniciar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShutR, t_sh_r)
-	t_sh_b = a_sys.Append(-1, _("Reiniciar y entrar en BIOS/UEFI"))
-
+	t_sh_b = a_sys.Append(-1, _("Reiniciar y entrar en Modo seguro con funciones de red"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_b, t_sh_b)
+	t_sh_n = a_sys.Append(-1, _("Reiniciar en Modo normal"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_nor, t_sh_n)
+	
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
 	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
@@ -41,6 +44,9 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
 	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
+	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
+
 	t_soundOps = s_sys.Append(-1, _("Opciones de sonido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
 	t_vo =s_sys.Append(-1, _("Opciones de voz"))
