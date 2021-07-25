@@ -28,16 +28,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except (AttributeError, RuntimeError):
 			pass
 
-	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
@@ -45,11 +45,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAsndOp(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
-	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
+	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities')
 	def script_TCARoa(self,gesture):
 		os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
 	
-	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
+	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities')
 	def script_TCAblue(self,gesture):
 		subprocess.Popen('fsquirt')
 			 
@@ -77,7 +77,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAdisk(self,gesture):
 		subprocess.Popen('diskmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities', gesture='kb:nvda+x')
+	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities')
 	def script_TCAtien(self,gesture):
 		webbrowser.open_new_tab('https://addons.nvda-project.org/index.es.html')
 	
@@ -85,7 +85,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAmon(self, gesture):
 		subprocess.Popen('resmon')
 	
-	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
+	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities')
 	def script_TCAList(self, gesture):
 		tsu.T_h(self, 5)
 	
@@ -97,7 +97,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
+	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities')
 	def script_TCAcar(self,gesture):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
@@ -115,7 +115,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAchar(self, gesture):
 		subprocess.Popen('charmap')
 	
-	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
+	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities')
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 		
