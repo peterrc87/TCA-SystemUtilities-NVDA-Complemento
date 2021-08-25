@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Apagar el sistema"
+msgstr "اغلاق النظام"
+
+msgid "Reinicio del sistema"
+msgstr "إعادة تشغيل النظام"
+
+msgid "Anular apagado"
+msgstr "إلغاء إيقاف التشغيل"
+
+msgid "Abrir opciones de sonido"
+msgstr "فتح خيارات الصوت"
+
+msgid "Abrir carpeta Roaming"
+msgstr "فتح مجلد التجوال"
+
+msgid "Abrir Asistente transferir archivos por Bluetooth"
+msgstr "فتح معالج نقل ملفات Bluetooth"
+
+msgid "Saber la arquitectura del sistema"
+msgstr "تعرف على بنية النظام"
+
+msgid "Su sistema operativo es de: {} Bits"
+msgstr "نظام التشغيل الخاص بك هو: {} بت"
+
+msgid "Abrir el asistente para guardar la contraseÃ±a del sistema"
+msgstr "افتح معالج حفظ كلمة مرور النظام"
+
+msgid "Abriendo restablecer   contraseÃ±as de Windows"
+msgstr "فتح نوافذ إعادة تعيين كلمة المرور"
+
+msgid "Copiar al portapapeles la ruta"
+msgstr "نسخ المسار إلى الحافظة"
+
+msgid "Ruta copiada "
+msgstr "نسخ المسار"
+
+msgid "Abrir el administrador de discos"
+msgstr "افتح إدارة الإقراص"
+
+msgid "Abrir la tienda oficial de complementos"
+msgstr "فتح متجر أضافات nvdaالرسمي"
+
+msgid "Abrir monitor de recursos"
+msgstr "فتح مراقب الموارد"
+
+msgid "Copiar al portapapeles la lista de carpetas y archivos"
+msgstr "انسخ قائمة المجلدات والملفات إلى الحافظة"
+
+msgid "Saber la versiÃ³n de Windows"
+msgstr "تعرف على إصدار Windows"
+
+msgid "Abrir el administrador de dispositivoss"
+msgstr "افتح إدارة الأجهزة"
+
+msgid "Abrir Opciones de carpeta"
+msgstr "افتح خيارات المجلد"
+
+msgid "Hacer anÃ¡lisis del sistema Con SFC  "
+msgstr "إجراء تحليل النظام مع CFS  "
+
+msgid "Copiar informaciÃ³n de todo el sistema al portapapeles"
+msgstr "انسخ المعلومات على مستوى النظام إلى الحافظة"
+
+msgid "informaciÃ³n del sistema copiada al portapapeles"
+msgstr "نسخ معلومات النظام إلى الحافظة"
+
+msgid "Abrir mapa de caracteres"
+msgstr "افتح خريطة الأحرف"
+
+msgid "Abrir Asistente guardar contraseÃ±as de usuarios"
+msgstr "فتحمعالج حفظ كلمات مرور المستخدم "
+
+msgid "Abrir opciones de voz"
+msgstr "فتح خيارات الصوت"
+
+msgid "Copiar al portapapeles la informaciÃ³n sobre las tarjetas de sonido"
+msgstr "نسخ المعلومات حول بطاقات الصوت إلى الحافظة"
+
+msgid "Ocultar carpetas"
+msgstr "إخفاء المجلدات"
+
+msgid "Mostrar carpetas ocultas"
+msgstr "إظهار المجلدات المخفية"
+
+msgid "Limpiar disco"
+msgstr "تنظيف القرص"
+
+msgid "Reiniciar Explorador"
+msgstr "إعادة تشغيل المستكشف"
+
+msgid "Abrir Optimizar las unidades"
+msgstr "فتح تحسين محركات الأقراص"
+
+msgid "Hibernar el sistema"
+msgstr "إسبات النظام"
+
+msgid "Reparar sistema con Dism"
+msgstr "نظام الإصلاح مع Dism"
+
+msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
+msgstr "أعد تشغيل النظام وادخل إلى الوضع الآمن مع الاتصال بالشبكة"
+
+msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
+msgstr "قم بتعطيل الوضع الآمن وإعادة تشغيل النظام"
+
+msgid "Abrir Mezclador de volumen"
+msgstr "إفتح خالط الصوت"
+
+msgid ""
+"Si es la primera vez que ejecuta Ã©sta acciÃ³n.\n"
+" es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
+" puede pulsar en Crear perfil tambiÃ©n si desea modificar uno existente, o "
+"puede marcar  la casilla para no volver a mostrar Ã©ste mensaje."
+msgstr ""
+"إذا كانت هذه هي المرة الأولى التي تقوم فيها بهذا الإجراء.\n"
+" تحتاج إلى إنشاء ملف تعريف للتنظيف ، ما عليك سوى القيام بذلك مرة واحدة.\n"
+" يمكنك النقر فوق إنشاء ملف تعريف أيضًا إذا كنت تريد تعديل ملف تعريف موجود ، "
+"أو يمكنك تحديد المربع لعدم إظهار هذه الرسالة مرة أخرى."
+
+msgid "Crear perfil"
+msgstr "إنشاء ملف تعريف"
+
+msgid "No volver  a mostrar este mensaje"
+msgstr "لا تظهر هذه الرسالة مرة أخرى"
+
+msgid ""
+"EstÃ¡ a punto de reiniciar el sistema, y activar el modo Seguro con "
+"funciones de red.\n"
+" En Ã©ste modo los sistemas Windows anteriores al 10, puede que no tengan "
+"sonidos, por ende, el lector de pantalla no tendrÃ¡ soporte de voz.\n"
+" DeberÃ¡ deshabilitar este modo desde las configuraciones del sistema "
+"msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del "
+"sistema.\n"
+" Â¿EstÃ¡ seguro que desea continuar?"
+msgstr ""
+"أنت على وشك إعادة تشغيل النظام وتنشيط الوضع الآمن مع الاتصال بالشبكة.\n"
+" في هذا الوضع ، قد لا تحتوي أنظمة Windows السابقة على 10 أصوات ، وبالتالي "
+"لن يكون لقارئ الشاشة دعم صوتي.\n"
+" يجب عليك تعطيل هذا الوضع من تكوينات نظام msconfig ، أو باستخدام TCA "
+"SystemUtilities في القسم: إيقاف تشغيل النظام.\n"
+" هل أنت متأكد أنك تريد الاستمرار؟"
+
+msgid "AtenciÃ³n activaciÃ³n del Modo seguro!"
+msgstr "تنشيط الانتباه من الوضع الآمن!"
+
+msgid "Modo seguro activado, se va a reiniciar el Pc"
+msgstr "تم تنشيط الوضع الآمن ، وسيُعاد تشغيل الكمبيوتر"
+
+msgid "Modo normal, reiniciando el Pc"
+msgstr "الوضع العادي ، إعادة تشغيل جهاز الكمبيوتر"
+
+msgid "Apagando el Pc."
+msgstr "إيقاف تشغيل الكمبيوتر."
+
+msgid "Reiniciando el PC."
+msgstr "إعادة تشغيل جهاز الكمبيوتر."
+
+msgid "anulando el apagado o reinicio del pc."
+msgstr "إلغاء إيقاف تشغيل أو إعادة تشغيل جهاز الكمبيوتر."
+
+msgid "Copiada la lista al portapapeles"
+msgstr "نسخ قائمة إلى الحافظة"
+
+msgid "Copiada la info del sonido al portapapeles"
+msgstr "نسخ معلومات الصوت إلى الحافظة"
+
+msgid "Apagar"
+msgstr "حذف"
+
+msgid "Hibernar"
+msgstr "السكون"
+
+msgid "Reiniciar"
+msgstr "إعادة تشغيل"
+
+msgid "Reiniciar y entrar en Modo seguro con funciones de red"
+msgstr "أعد التشغيل وادخل إلى الوضع الآمن مع الاتصال بالشبكة"
+
+msgid "Reiniciar en Modo normal"
+msgstr "أعد التشغيل في الوضع العادي"
+
+msgid "Asistente guardar contraseÃ±as de usuarios"
+msgstr "معالج حفظ كلمات مرور المستخدم"
+
+msgid "Asistente transferir archivos por Bluetooth"
+msgstr "معالج نقل ملفات البلوتوث"
+
+msgid "Carpeta Roaming"
+msgstr "إعدادات البرامج"
+
+msgid "administrador de discos"
+msgstr "مدير القرص"
+
+msgid "administrador de dispositivoss"
+msgstr "مدير الجهاز"
+
+msgid "asistente para guardar la contraseÃ±a del sistema"
+msgstr "المعالج لحفظ كلمة مرور النظام"
+
+msgid "mapa de caracteres"
+msgstr "خريطة الأحرف"
+
+msgid "Monitor de recursos"
+msgstr "مراقب المورد"
+
+msgid "Opciones de carpeta"
+msgstr "خيارات المجلد"
+
+msgid "Mezclador de volumen"
+msgstr "مستوى الصوت"
+
+msgid "Opciones de sonido"
+msgstr "خيارات الصوت"
+
+msgid "Opciones de voz"
+msgstr "خيارات النطق"
+
+msgid "Optimizar las unidades"
+msgstr "تحسين محركات الأقراص"
+
+msgid "AnÃ¡lisis del sistema Con SFC    "
+msgstr "تحليل النظام باستخدام SFC"
+
+msgid "Apagado del sistema"
+msgstr "إيقاف تشغيل النظام"
+
+msgid "Explorador y Procesos"
+msgstr "المستكشف والعمليات"
+
+msgid "Sonido y voz"
+msgstr "الأصوات وأجهزة الصو"
+
+msgid "ReparaciÃ³n y optimizaciÃ³n"
+msgstr "التحسينات والإصلاحات"
+
+msgid "Utilidades del sistema"
+msgstr "أدوات النظام"
+
+msgid "Reparación y optimización"
+msgstr "إصلاحات وتحسينات"
+
+msgid "Análisis del sistema Con SFC  "
+msgstr "تحليل النظام باستخدام SFC"
+
+msgid "&TCA_SystemUtilities"
+msgstr "أ&دوات النظام TCA"
+
+msgid "Asistente guardar contraseñas de usuarios"
+msgstr "معالج حفظ كلمات مرور المستخدم"
+
+msgid "Análisis del sistema Con SFC    "
+msgstr "تحليل النظام باستخدام SFC"
+
+msgid "asistente para guardar la contraseña del sistema"
+msgstr "المعالج لحفظ كلمة مرور النظام"
+
+msgid "Saber la versión de Windows"
+msgstr "تعرف على إصدار الويندوز"
+
+msgid "Hacer análisis del sistema Con SFC  "
+msgstr "قم بتحليل النظام باستخدام SFC"
+
+msgid "Copiar información de todo el sistema al portapapeles"
+msgstr "نسخ المعلومات على مستوى النظام إلى الحافظة"
+
+msgid "Copiar al portapapeles la información sobre las tarjetas de sonido"
+msgstr "نسخ المعلومات حول بطاقات الصوت إلى الحافظة"
+
+msgid "Abrir el asistente para guardar la contraseña del sistema"
+msgstr "افتح المعالج لحفظ كلمة مرور النظام"
+
+msgid "TCA-SystemUtilities"
+msgstr "أدوات النظام لTCA"
+
+msgid "Abrir Asistente guardar contraseñas de usuarios"
+msgstr "افتح معالج حفظ كلمات مرور المستخدم"
