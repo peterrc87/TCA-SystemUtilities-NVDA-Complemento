@@ -21,7 +21,7 @@ def t_obj(self):
 	except:
 		obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
 	c_obj = obj.name
-	self.v_obj = c_obj.replace(_('Dirección: '), '')
+	self.v_obj = c_obj.replace('Dirección: ', '')
 	return self.v_obj
 
 class disable_file_system_redirection:
@@ -180,10 +180,14 @@ class T_h(Thread):
 			ui.message(_("Modo normal, reiniciando el Pc"))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
 			subprocess.run('shutdown.exe -r -t 3', shell=True)
+		
+		def susp():
+			ui.message(_("Suspendiendo el sistema"))
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' +'Rundll32.exe powrprof.dll, SetSuspendState', None, 10)				
+
 
 				
-				
-			
+							
 
 			
 
@@ -219,3 +223,5 @@ class T_h(Thread):
 			wx.CallAfter(sh_b)
 		elif self.op == 16:
 			wx.CallAfter(sh_nor)
+		elif self.op == 17:
+			wx.CallAfter(susp)

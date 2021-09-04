@@ -14,7 +14,7 @@ def create_menu(self):
 	r_sys = wx.Menu()
 	s_sys = wx.Menu()
 	t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
-	
+	#Menú Apagado del sisstema.
 	t_sh_s = a_sys.Append(-1, _("Apagar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShut, t_sh_s)
 	t_sh_h = a_sys.Append(-1, _("Hibernar"))
@@ -25,7 +25,10 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_b, t_sh_b)
 	t_sh_n = a_sys.Append(-1, _("Reiniciar en Modo normal"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_nor, t_sh_n)
-	
+	t_sh_susp = a_sys.Append(-1, _("Suspender"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_susp, t_sh_susp)
+
+	#Menú utilidades del sistema.
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
 	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
@@ -46,11 +49,12 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
 	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
-
+	#Menú Voz y sonido.
 	t_soundOps = s_sys.Append(-1, _("Opciones de sonido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
 	t_vo =s_sys.Append(-1, _("Opciones de voz"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
+	#Menú Reparación del sistema.
 	t_opti = r_sys.Append(-1, _("Optimizar las unidades"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
 	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
@@ -58,6 +62,7 @@ def create_menu(self):
 	t_clDisk = r_sys.Append(-1, _("Limpiar disco"))
 	
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
+	#Menú Explorador y procesos.
 	t_rExplo = e_sys.Append(-1, _("Reiniciar Explorador"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
 	t_dism = r_sys.Append(-1, _("Reparar sistema con Dism"))

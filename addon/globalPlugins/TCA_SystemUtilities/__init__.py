@@ -168,3 +168,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Abrir Mezclador de volumen'), category='TCA-SystemUtilities')
 	def script_TCAa_mvol(self, gesture):
 		subprocess.Popen('sndvol.exe', shell = True)
+
+	
+	@script(description=_('Suspender el sistema'), category='TCA-SystemUtilities')
+	def script_TCA_susp(self, gesture):	
+		tsu.T_h(self, 17)
