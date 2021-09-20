@@ -173,3 +173,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Suspender el sistema'), category='TCA-SystemUtilities')
 	def script_TCA_susp(self, gesture):	
 		tsu.T_h(self, 17)
+	
+	@script(description=_('Abrir Restablecer éste PC'), category='TCA-SystemUtilities')
+	def script_TCA_resPC(self, gesture):
+		tsu.T_h(self, 18)

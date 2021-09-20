@@ -185,6 +185,11 @@ class T_h(Thread):
 			ui.message(_("Suspendiendo el sistema"))
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' +'Rundll32.exe powrprof.dll, SetSuspendState', None, 10)				
 
+		@rdt
+		def resPC():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' +'powershell start ms-settings:recovery', None, 10)								
+
+
 
 				
 							
@@ -225,3 +230,5 @@ class T_h(Thread):
 			wx.CallAfter(sh_nor)
 		elif self.op == 17:
 			wx.CallAfter(susp)
+		elif self.op == 18:
+			wx.CallAfter(resPC)

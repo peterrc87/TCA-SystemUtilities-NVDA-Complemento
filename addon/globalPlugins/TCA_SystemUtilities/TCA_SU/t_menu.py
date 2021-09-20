@@ -60,8 +60,9 @@ def create_menu(self):
 	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
 	t_clDisk = r_sys.Append(-1, _("Limpiar disco"))
-	
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
+	t_resPC = r_sys.Append(-1, _("Restablecer PC"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_resPC, t_resPC)
 	#Menú Explorador y procesos.
 	t_rExplo = e_sys.Append(-1, _("Reiniciar Explorador"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
