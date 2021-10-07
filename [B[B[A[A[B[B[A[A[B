@@ -1,0 +1,107 @@
+[33mcommit 98947d892e26bb01bdb55a44068c8e926e3843f6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Sep 20 23:48:41 2021 +0200
+
+    Añadida función Restablecer
+
+[33mcommit 16ceeb9e392ae4cfb9be2a67bb593c6fb2a3063e[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Sep 4 19:36:10 2021 +0200
+
+    Añadida función Suspender
+
+[33mcommit 195b70f38fe8752f580cb0772948a227ce360c6b[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Aug 25 19:28:45 2021 +0200
+
+    Añadida traducción al árabe
+
+[33mcommit b46fbe7f1a2922f2113b7824b9821169c3c58f6f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Aug 11 12:45:48 2021 +0200
+
+    Añadidas traducciones: portugués Brasil y Portugál, y Rumano
+
+[33mcommit 51d6a97327ce170cd3b2ac89c96c19d415b1eb7f[m[33m ([m[1;33mtag: v02b3[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Jul 25 17:46:21 2021 +0200
+
+    Actualizada versión 02b3
+
+[33mcommit 25c75cc5820129306b0490d52385ca808ebd6c98[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jul 21 23:18:07 2021 +0200
+
+    Agregada función sndvol
+
+[33mcommit 52b0d66142a9010c454eb93895df3f08d0be1f00[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jul 5 21:51:22 2021 +0200
+
+    Menú apagar
+
+[33mcommit 09cab95854745f8c531514f16440cca36b335b72[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jun 21 13:48:23 2021 +0200
+
+    Creación de submenús
+
+[33mcommit b64c8d23abfdf7cdd8f3ec981c8997cb710ea4c6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Jun 10 21:17:33 2021 +0200
+
+    Builvars version 02b1
+
+[33mcommit 9826180ce52f1f5406fe14e8735f76cea9cdc1b4[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Jun 10 21:12:58 2021 +0200
+
+    Añadida función dism
+
+[33mcommit 4c56fb888be468c60e67dc94c32ec5124d4b199c[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 29 22:26:34 2021 +0200
+
+    terminado menú
+
+[33mcommit a8df50757eef9fad33e06f3b8c5a481eb1723b2b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 29 13:13:49 2021 +0200
+
+    Agregados mas ítems al menú ,  momodificada función sndOps
+
+[33mcommit f0d330fce83c859a949137badde20ea31c993295[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 28 11:11:50 2021 +0200
+
+    Creado módulo t_menu
+
+[33mcommit 8a72f9166124012c72a2f3db38075e1e6f95ec5d[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu May 27 23:44:42 2021 +0200
+
+    Avance toolbar métodos abrir
+
+[33mcommit fc0c96d3d33b5c2eab6d5b792992a79d130ade25[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu May 27 19:39:36 2021 +0200
+
+    Barra de herramientas iniciada
+
+[33mcommit 63676d57a5576d7bfd19682cb691b83c24456541[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 21:05:16 2021 +0200
+
+    decoradora en optimizar unidades
+
+[33mcommit 7f39ab6e575d7a4921b835cf8ab52c02de815df5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 12:00:40 2021 +0200
+
+    Coregida decoradora, insertada reinicio explorador
+
+[33mcommit a5352a7d65a26be7f2a4b3fc82e7223f72ce1184[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 11:56:35 2021 +0200
+
+    Mofificada decoradora, agregada función reiniciar explorador

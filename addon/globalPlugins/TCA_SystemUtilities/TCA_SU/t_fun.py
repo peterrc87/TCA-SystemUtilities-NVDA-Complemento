@@ -19,7 +19,11 @@ def t_obj(self):
 	try:
 		obj = f.children[1].children[2].children[0].children[0].children[0]
 	except:
-		obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+		try:
+			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+		except:
+			obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
+
 	c_obj = obj.name
 	self.v_obj = c_obj.replace('Dirección: ', '')
 	return self.v_obj
@@ -189,12 +193,15 @@ class T_h(Thread):
 		def resPC():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' +'powershell start ms-settings:recovery', None, 10)								
 
-
+		#@rdt
+		def qclip():
+			pt = os.path.join(os.environ['programfiles'], 'Windows Defender') 
+			os.chdir("C:/Program Files/Windows Defender")
+			#os.chdir(pt)
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'MpCmdRun.exe -Restore -ListAll' + '|clip', None, 10)																
 
 				
 							
-
-			
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -232,3 +239,5 @@ class T_h(Thread):
 			wx.CallAfter(susp)
 		elif self.op == 18:
 			wx.CallAfter(resPC)
+		elif self.op == 19:
+			wx.CallAfter(qclip)
