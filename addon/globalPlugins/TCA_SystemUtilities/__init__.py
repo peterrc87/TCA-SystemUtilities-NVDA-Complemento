@@ -177,3 +177,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Abrir Restablecer éste PC'), category='TCA-SystemUtilities')
 	def script_TCA_resPC(self, gesture):
 		tsu.T_h(self, 18)
+
+	
+	@script(description=_('Copiar al portapepeles la lista de archivos en cuarentena'), category='TCA-SystemUtilities')
+	def script_TCA_qclip(self, gesture):
+		tsu.T_h(self, 19)
+
+	
+	@script(description=_('Análisis rápido'), category='TCA-SystemUtilities')
+	def script_TCA_scan_r(self, gesture):
+		tsu.T_h(self, 20)

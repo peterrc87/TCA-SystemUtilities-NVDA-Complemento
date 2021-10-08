@@ -11,6 +11,8 @@ import wx
 import winsound
 import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi
 a_path = os.getcwd()
+w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
+
 addonHandler.initTranslation()
 
 #Función para el obj.
@@ -193,12 +195,16 @@ class T_h(Thread):
 		def resPC():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' +'powershell start ms-settings:recovery', None, 10)								
 
-		#@rdt
+		@rdt
 		def qclip():
-			pt = os.path.join(os.environ['programfiles'], 'Windows Defender') 
-			os.chdir("C:/Program Files/Windows Defender")
-			#os.chdir(pt)
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'MpCmdRun.exe -Restore -ListAll' + '|clip', None, 10)																
+			
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -Restore -ListAll'.format(w_pt) + '|clip', None, 10)																
+		
+		
+		@rdt
+		def scan_r():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 1'.format(w_pt), None, 10)																																
+
 
 				
 							
@@ -241,3 +247,5 @@ class T_h(Thread):
 			wx.CallAfter(resPC)
 		elif self.op == 19:
 			wx.CallAfter(qclip)
+		elif self.op == 20:
+			wx.CallAfter(scan_r)
