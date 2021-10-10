@@ -187,3 +187,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Análisis rápido'), category='TCA-SystemUtilities')
 	def script_TCA_scan_r(self, gesture):
 		tsu.T_h(self, 20)
+
+	
+	@script(description=_('Análisis completo'), category='TCA-SystemUtilities')
+	def script_TCA_scan_f(self, gesture):
+		tsu.T_h(self, 21)
+
+	
+	@script(description=_('Análisis del sector de arranque'), category='TCA-SystemUtilities')
+	def script_TCA_scan_sc_boot(self, gesture):
+		tsu.T_h(self, 22)

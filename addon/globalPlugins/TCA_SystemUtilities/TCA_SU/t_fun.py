@@ -205,10 +205,16 @@ class T_h(Thread):
 		def scan_r():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 1'.format(w_pt), None, 10)																																
 
+		@rdt
+		def scan_f():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 2'.format(w_pt), None, 10)																																																																
 
 				
-							
+		@rdt
+		def sc_boot():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -bootsectorscan'.format(w_pt), None, 10)																																																																
 
+		
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -249,3 +255,7 @@ class T_h(Thread):
 			wx.CallAfter(qclip)
 		elif self.op == 20:
 			wx.CallAfter(scan_r)
+		elif self.op == 21:
+			wx.CallAfter(scan_f)
+		elif self.op == 22:
+			wx.CallAfter(sc_boot)
