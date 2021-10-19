@@ -197,3 +197,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Análisis del sector de arranque'), category='TCA-SystemUtilities')
 	def script_TCA_scan_sc_boot(self, gesture):
 		tsu.T_h(self, 22)
+
+
+	@script(description=_('Activar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
+	def script_TCA_scan_sc_f(self, gesture):
+		tsu.T_h(self, 23)
+
+
+	@script(description=_('Desactivar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
+	def script_TCA_scan_sc_nf(self, gesture):
+		tsu.T_h(self, 24)

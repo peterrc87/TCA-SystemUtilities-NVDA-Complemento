@@ -3,7 +3,7 @@
 #TCASystemUtilities, Shut down and restart the PC with Windows classic sound, an Open system Options.
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
-
+from time import sleep
 import os, subprocess
 import ctypes 
 from threading import Thread
@@ -207,14 +207,26 @@ class T_h(Thread):
 
 		@rdt
 		def scan_f():
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 2'.format(w_pt), None, 10)																																																																
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 2'.format(w_pt), None, 10)																																																							
 
-				
 		@rdt
 		def sc_boot():
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -bootsectorscan'.format(w_pt), None, 10)																																																																
-
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -bootsectorscan'.format(w_pt), None, 10)
 		
+		
+		@rdt
+		def sc_f():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Set-MpPreference -DisableArchiveScanning 0', None, 10)
+			sleep(1)
+			ui.message(_('Se activó el escanéo de archivos comprimidos'))
+		
+		@rdt
+		def sc_nf():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Set-MpPreference -DisableArchiveScanning 1', None, 10)
+			sleep(1)
+			ui.message(_('Se desactivó el escanéo de archivos comprimidos'))
+
+
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -259,3 +271,7 @@ class T_h(Thread):
 			wx.CallAfter(scan_f)
 		elif self.op == 22:
 			wx.CallAfter(sc_boot)
+		elif self.op == 23:
+			wx.CallAfter(sc_f)
+		elif self.op == 24:
+			wx.CallAfter(sc_nf)
