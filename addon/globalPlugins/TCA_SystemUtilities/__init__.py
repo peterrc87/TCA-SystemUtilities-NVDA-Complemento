@@ -200,10 +200,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	@script(description=_('Activar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
-	def script_TCA_scan_sc_f(self, gesture):
+	def script_TCA_sc_f(self, gesture):
 		tsu.T_h(self, 23)
 
 
 	@script(description=_('Desactivar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
-	def script_TCA_scan_sc_nf(self, gesture):
+	def script_TCA_scn_nf(self, gesture):
 		tsu.T_h(self, 24)

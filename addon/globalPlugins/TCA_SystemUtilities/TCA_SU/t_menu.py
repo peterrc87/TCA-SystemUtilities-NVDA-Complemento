@@ -13,6 +13,7 @@ def create_menu(self):
 	u_sys = wx.Menu()
 	r_sys = wx.Menu()
 	s_sys = wx.Menu()
+	ws_sys = wx.Menu()
 	t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
 	#Menú Apagado del sisstema.
 	t_sh_s = a_sys.Append(-1, _("Apagar"))
@@ -68,14 +69,31 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
 	t_dism = r_sys.Append(-1, _("Reparar sistema con Dism"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_dism, t_dism)
-
 	t_wVer = u_sys.Append(-1, _("Saber la versión de Windows"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
-	
+	#Menú: Seguridad de Windows.
+	t_ab = ws_sys.Append(-1, _("Analizar arranque del sistema"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_sc_boot, t_ab)
+	t_af = ws_sys.Append(-1, _("Análisis completo"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_f, t_af)
+
+	t_ar = ws_sys.Append(-1, _("análisis rápido"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_r, t_ar)
+
+	t_ac = ws_sys.Append(-1, _("Escanear archivos comprimidos"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sc_f, t_ac)
+
+	t_dc = ws_sys.Append(-1, _("No escanear archivos comprimidos"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scn_nf, t_dc)
+	t_lq = ws_sys.Append(-1, _("Listado de archivos en cuarentena al portapapeles"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_qclip, t_lq)
+
 	self.menu.AppendSubMenu(a_sys, _("Apagado del sistema"))
 	self.menu.AppendSubMenu(e_sys, _("Explorador y Procesos"))
-	self.menu.AppendSubMenu(s_sys, _("Sonido y voz"))
 	self.menu.AppendSubMenu(r_sys, _("Reparación y optimización"))
+	self.menu.AppendSubMenu(ws_sys, _("Seguridad de Windows"))
+	self.menu.AppendSubMenu(s_sys, _("Sonido y voz"))
+	
 	self.menu.AppendSubMenu(u_sys, _("Utilidades del sistema"))
 	t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")
 
