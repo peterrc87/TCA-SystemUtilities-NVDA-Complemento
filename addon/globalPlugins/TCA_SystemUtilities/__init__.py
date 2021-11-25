@@ -207,3 +207,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Desactivar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
 	def script_TCA_scn_nf(self, gesture):
 		tsu.T_h(self, 24)
+	
+	
+	@script(description=_('Desactivar la Webcam'), category='TCA-SystemUtilities')
+	def script_TCA_webcam_d(self, gesture):
+		tsu.T_h(self, 25)
+
+	
+	@script(description=_('Activar la Webcam'), category='TCA-SystemUtilities')
+	def script_TCA_webcam_ac(self, gesture):
+		tsu.T_h(self, 26)
