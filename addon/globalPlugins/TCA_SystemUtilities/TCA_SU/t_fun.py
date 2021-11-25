@@ -207,12 +207,10 @@ class T_h(Thread):
 
 		@rdt
 		def scan_f():
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 2'.format(w_pt), None, 10)																																																							
-
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -scantype 2'.format(w_pt), None, 10)																																																				
 		@rdt
 		def sc_boot():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'"{}\MpCmdRun.exe" -scan -bootsectorscan'.format(w_pt), None, 10)
-		
 		
 		@rdt
 		def sc_f():
@@ -225,6 +223,24 @@ class T_h(Thread):
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Set-MpPreference -DisableArchiveScanning 1', None, 10)
 			sleep(1)
 			ui.message(_('Se desactivó el escanéo de archivos comprimidos'))
+		
+		def webcam_d():
+			
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Disable-PnpDevice -InstanceId (Get-PnpDevice -FriendlyName *webcam*  -Status OK).InstanceId', None, 10)
+			sleep(0.1)
+			keyboardHandler.KeyboardInputGesture.fromName("enter").send()
+			sleep(1)
+			ui.message(_('Se desactivó la Webcam'))
+				
+		
+		def webcam_ac():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Enable-PnpDevice -InstanceId (Get-PnpDevice -FriendlyName *webcam* -Status Error).InstanceId', None, 10)
+			sleep(0.1)
+			keyboardHandler.KeyboardInputGesture.fromName("enter").send()
+			sleep(1)
+			ui.message(_('Se activó la Webcam'))
+
+
 
 
 		if self.op == 4:
@@ -275,3 +291,7 @@ class T_h(Thread):
 			wx.CallAfter(sc_f)
 		elif self.op == 24:
 			wx.CallAfter(sc_nf)
+		elif self.op == 25:
+			wx.CallAfter(webcam_d)
+		elif self.op == 26:
+			wx.CallAfter(webcam_ac)

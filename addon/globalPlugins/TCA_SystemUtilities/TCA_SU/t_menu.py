@@ -30,6 +30,12 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_susp, t_sh_susp)
 
 	#Menú utilidades del sistema.
+	t_wcam_ac = u_sys.Append(-1, _("Activar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
+
+	t_wcam_d = u_sys.Append(-1, _("Desactivar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
+	
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
 	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
@@ -48,9 +54,11 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
 	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
+	
+	
+	#Menú Voz y sonido.
 	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
-	#Menú Voz y sonido.
 	t_soundOps = s_sys.Append(-1, _("Opciones de sonido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
 	t_vo =s_sys.Append(-1, _("Opciones de voz"))
