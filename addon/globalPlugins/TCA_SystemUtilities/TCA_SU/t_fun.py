@@ -241,6 +241,9 @@ class T_h(Thread):
 			ui.message(_('Se activó la Webcam'))
 
 
+		def bios():
+			ui.message(_("Se va a reiniciar el Pc, y entrar en la Bios UEFI"))
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r /fw', None, 10)				
 
 
 		if self.op == 4:
@@ -295,3 +298,5 @@ class T_h(Thread):
 			wx.CallAfter(webcam_d)
 		elif self.op == 26:
 			wx.CallAfter(webcam_ac)
+		elif self.op == 27:
+			wx.CallAfter(bios)

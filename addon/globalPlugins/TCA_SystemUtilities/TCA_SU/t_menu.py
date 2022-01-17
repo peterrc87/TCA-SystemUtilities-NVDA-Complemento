@@ -18,6 +18,9 @@ def create_menu(self):
 	#Menú Apagado del sisstema.
 	t_sh_s = a_sys.Append(-1, _("Apagar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShut, t_sh_s)
+	t_sh_bios = a_sys.Append(-1, _("Entrar a la BIOS-UEFI"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_bios, t_sh_bios)
+
 	t_sh_h = a_sys.Append(-1, _("Hibernar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAhiber, t_sh_h)
 	t_sh_r = a_sys.Append(-1, _("Reiniciar"))
