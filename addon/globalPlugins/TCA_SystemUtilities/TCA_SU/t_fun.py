@@ -242,8 +242,12 @@ class T_h(Thread):
 
 
 		def bios():
-			ui.message(_("Se va a reiniciar el Pc, y entrar en la Bios UEFI"))
-			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r /fw', None, 10)				
+			dlg = wx.MessageDialog(None, _("Está a punto de activar entrar a la BIOS-UEFI\n El PC se va a reiniciar en unos segundos. \n Recuerda que en la BIOS-UEFI no podrás utilizar un lector de pantalla, tendrás que pedir ayuda visual.\n ¿está seguro que desea continuar?"), _("¿Atención Se intentará activar la entrada a la BIOS-UEFI!"), wx.YES_NO|wx.ICON_QUESTION) 
+			rp = dlg.ShowModal()
+			if rp == wx.ID_YES:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r /fw', None, 10)				
+			else:
+				dlg.Destroy()
 
 
 		if self.op == 4:
