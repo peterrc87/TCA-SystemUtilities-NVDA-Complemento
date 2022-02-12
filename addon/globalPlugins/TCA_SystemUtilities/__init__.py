@@ -217,3 +217,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Activar la Webcam'), category='TCA-SystemUtilities')
 	def script_TCA_webcam_ac(self, gesture):
 		tsu.T_h(self, 26)
+	
+	@script(description=_('Reiniciar el sistema y entrar en la BIOS-UEFI'), category='TCA-SystemUtilities')
+	def script_TCA_bios(self, gesture):
+		tsu.T_h(self, 27)
+
+
+
+	@script(description=_('Limpiar la caché DNS'), category='TCA-SystemUtilities')
+	def script_TCA_cache(self, gesture):
+		tsu.T_h(self, 28)

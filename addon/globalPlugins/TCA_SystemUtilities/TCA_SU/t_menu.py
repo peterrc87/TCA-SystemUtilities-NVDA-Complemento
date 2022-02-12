@@ -58,7 +58,6 @@ def create_menu(self):
 	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
 	
-	
 	#Menú Voz y sonido.
 	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
@@ -67,12 +66,17 @@ def create_menu(self):
 	t_vo =s_sys.Append(-1, _("Opciones de voz"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
 	#Menú Reparación del sistema.
-	t_opti = r_sys.Append(-1, _("Optimizar las unidades"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
+	
 	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
+	t_cache = r_sys.Append(-1, _("Limpiar caché DNS"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_cache, t_cache)
+
 	t_clDisk = r_sys.Append(-1, _("Limpiar disco"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
+	t_opti = r_sys.Append(-1, _("Optimizar las unidades"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
+
 	t_resPC = r_sys.Append(-1, _("Restablecer PC"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_resPC, t_resPC)
 	#Menú Explorador y procesos.

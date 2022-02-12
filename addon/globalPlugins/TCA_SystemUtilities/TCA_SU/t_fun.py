@@ -248,7 +248,12 @@ class T_h(Thread):
 				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /r /fw', None, 10)				
 			else:
 				dlg.Destroy()
+		
 
+		def cache():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'ipconfig / flushDNS', None, 10)
+			sleep(0.5)
+			ui.message(_("Se limpió la Caché DNS "))
 
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -304,3 +309,5 @@ class T_h(Thread):
 			wx.CallAfter(webcam_ac)
 		elif self.op == 27:
 			wx.CallAfter(bios)
+		elif self.op == 28:
+			wx.CallAfter(cache)
