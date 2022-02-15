@@ -2,14 +2,20 @@
 #TCASystemUtilities, Shut down and restart the PC with Windows classic sound, an Open system Options.
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
+
 from scriptHandler import script
 import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
 import subprocess, os, sys, threading
 import webbrowser, wx
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
 from TCA_SU import t_menu as tm 
+sys.path.remove(os.path.dirname(os.path.abspath(__file__)))
+
 addonHandler.initTranslation()
+
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	def __init__(self):
 		if globalVars.appArgs.secure:
