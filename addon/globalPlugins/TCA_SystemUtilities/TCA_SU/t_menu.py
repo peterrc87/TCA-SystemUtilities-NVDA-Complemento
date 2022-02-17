@@ -33,11 +33,7 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_susp, t_sh_susp)
 
 	#Menú utilidades del sistema.
-	t_wcam_ac = u_sys.Append(-1, _("Activar Webcam"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
-
-	t_wcam_d = u_sys.Append(-1, _("Desactivar Webcam"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
+	
 	
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
@@ -58,7 +54,13 @@ def create_menu(self):
 	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
 	
-	#Menú Voz y sonido.
+	#Menú Voz sonido y multimedia.
+	t_wcam_ac = s_sys.Append(-1, _("Activar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
+
+	t_wcam_d = s_sys.Append(-1, _("Desactivar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
+
 	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
 	t_soundOps = s_sys.Append(-1, _("Opciones de sonido"))
@@ -107,7 +109,7 @@ def create_menu(self):
 	self.menu.AppendSubMenu(e_sys, _("Explorador y Procesos"))
 	self.menu.AppendSubMenu(r_sys, _("Reparación y optimización"))
 	self.menu.AppendSubMenu(ws_sys, _("Seguridad de Windows"))
-	self.menu.AppendSubMenu(s_sys, _("Sonido y voz"))
+	self.menu.AppendSubMenu(s_sys, _("Voz y multimedia"))
 	
 	self.menu.AppendSubMenu(u_sys, _("Utilidades del sistema"))
 	t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")

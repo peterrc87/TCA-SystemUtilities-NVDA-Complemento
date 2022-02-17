@@ -229,7 +229,7 @@ class T_h(Thread):
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Disable-PnpDevice -InstanceId (Get-PnpDevice -FriendlyName *webcam*  -Status OK).InstanceId', None, 10)
 			sleep(0.1)
 			keyboardHandler.KeyboardInputGesture.fromName("enter").send()
-			sleep(1)
+			sleep(2)
 			ui.message(_('Se desactivó la Webcam'))
 				
 		
@@ -237,7 +237,7 @@ class T_h(Thread):
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell Enable-PnpDevice -InstanceId (Get-PnpDevice -FriendlyName *webcam* -Status Error).InstanceId', None, 10)
 			sleep(0.1)
 			keyboardHandler.KeyboardInputGesture.fromName("enter").send()
-			sleep(1)
+			sleep(2)
 			ui.message(_('Se activó la Webcam'))
 
 
