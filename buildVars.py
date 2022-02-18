@@ -28,7 +28,7 @@ También permite abrir la carpeta Roaming y ejecutar de forma directa algunas he
 
 
 	# version
-	"addon_version": "04b5",
+	"addon_version": "04b7",
 	# Author(s)
 	"addon_author": "Peter Reina  <peterrc87@gmail.comf>",
 	# URL for the add-on documentation support
