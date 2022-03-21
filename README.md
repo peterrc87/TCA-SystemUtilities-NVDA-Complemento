@@ -140,6 +140,8 @@ Además, todos y cada uno de los atajos de teclado, se pueden asignar gusto pers
 * 2 Nuevas funciones en el apartado: "Voz y multimedia" (Activar/desactivar la webcam).
 * Nueva función: "Limpiar caché DNS" (en el apartado Reparación y optimización").
 * Restructuración de la documentación del complemento.
+* Traducido al italiano.
+* Compatible con NVDA 2022.
 
 * Corrección de seguridad (sys.path.remove())
 
