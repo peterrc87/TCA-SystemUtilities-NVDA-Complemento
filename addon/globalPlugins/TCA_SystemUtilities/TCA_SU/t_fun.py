@@ -22,14 +22,39 @@ def t_obj(self):
 		obj = f.children[1].children[2].children[0].children[0].children[0]
 	except:
 		try:
-			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+			obj = f.children[0].children[0].children[4].children[0].children[0].children[0] #  Esta es para la ruta
 		except:
-			obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
-
-	c_obj = obj.name
-	self.v_obj = c_obj.replace('Dirección: ', '')
-	return self.v_obj
-
+			try:
+				obj = f.children[0].children[2].children[0].children[0].children[0] 
+			except:
+				try:
+					obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
+				except:
+					try:
+						obj = f.children[1].children[2].children[0].children[0].children[0]
+					except:
+						#win10
+						try:
+							obj = f.children[1].children[2].children[0].children[0].children[0]
+						except:
+							try:
+								#win7
+								obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+							except:
+								pass
+	
+	try:
+		c_obj = obj.name
+	except:
+		c_obj = None
+	
+	if c_obj is not None: 
+		self.v_obj = c_obj.replace('Dirección: ', '')
+		return self.v_obj
+	else:
+		self.v_obj = False
+		return self.v_obj
+	
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -42,6 +67,7 @@ class disable_file_system_redirection:
 	def __exit__(self, type, value, traceback):
 		if self.success:
 			self._revert(self.old_value)
+			
 #Decoradora para redirección.
 def rdt(fn):
 	def d_rdt():
@@ -50,7 +76,7 @@ def rdt(fn):
 			with disable_file_system_redirection():
 				fn()
 				os.chdir(a_path)
-				winsound.Beep(300,300)
+				winsound.Beep(900,100)
 		except:
 			fn()
 			os.chdir(a_path)
@@ -88,10 +114,13 @@ class T_h(Thread):
 			subprocess.Popen('Systeminfo | clip', shell=True)
 		def TCAList():
 			t_obj(self)
-			os.chdir('{}'.format(self.v_obj))
-			subprocess.Popen('dir /b|clip', shell=True)
-			os.chdir(a_path)
-			ui.message(_('Copiada la lista al portapapeles'))
+			if self.v_obj is not False:
+				os.chdir('{}'.format(self.v_obj))
+				subprocess.Popen('dir /b|clip', shell=True)
+				os.chdir(a_path)
+				ui.message(_('Copiada la lista al portapapeles'))
+			else:
+				ui.message(_('No se pudo copiar la lista al portapapeles'))
 		
 		@rdt
 		def TCAsfc():
@@ -104,21 +133,33 @@ class T_h(Thread):
 		@rdt
 		def ocu():
 			t_obj(self)
-			d=os.path.dirname(self.v_obj)
-			b=os.path.basename(self.v_obj)
-			os.chdir(d)
-			shellapi.ShellExecute(None, None,'cmd.exe', '/c' + 'attrib /d /s +h {}'.format(b), None, 10)	
-			keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
-			os.startfile(d)
-			winsound.Beep(900,300)
+			if self.v_obj is not False:
+				path = "{}".format(self.v_obj)
+				d=os.path.dirname(path)
+				b=os.path.basename(path)
+				os.chdir(d)
+				shellapi.ShellExecute(None, None, 'cmd.exe', '/c' + r'attrib +s +h "{}"'.format(b), None, 0)	
+				sleep(1)
+				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
+				os.startfile(d)
+				winsound.Beep(900,100)
+				os.chdir(a_path)
+			else:
+				ui.message(_('No fue posible ocultar los elementos'))
 
 		@rdt
 		def mos():
 			t_obj(self)
-			os.chdir(self.v_obj)
-			shellapi.ShellExecute(None, None,'cmd.exe','/c' + 'attrib /d -h', None, 0)
-			#subprocess.Popen('attrib /d -h', shell=True)
-
+			if self.v_obj is not False:
+				path = "{}".format(self.v_obj)
+				d=os.path.dirname(path)
+				os.chdir(path)
+				shellapi.ShellExecute(None, None, 'cmd.exe','/c' + r'attrib /d -s -h', None, 0)
+				sleep(0.5)
+				os.chdir(a_path)
+			else:
+				ui.message(_('no se pudieron mostrar los archivos'))
+			
 		def clean():
 			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
 				pass
@@ -255,6 +296,30 @@ class T_h(Thread):
 			sleep(0.5)
 			ui.message(_("Se limpió la Caché DNS "))
 
+		
+		@rdt
+		def des_space():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'DISM.exe /Online /Set-ReservedStorageState /State:Disabled', None, 10)
+			sleep(0.5)
+			ui.message(_("Se desactivó el espacio reservado"))
+
+		@rdt
+		def ac_space():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'DISM.exe /Online /Set-ReservedStorageState /State:Enabled', None, 10)
+			sleep(0.5)
+			ui.message(_("Se activó el espacio reservado"))
+		
+		@rdt
+		def cmd():
+			t_obj(self)
+			if self.v_obj is not False:
+				path = "{}".format(self.v_obj)
+				os.chdir(path)
+				shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(path)), None, 10)
+			else:
+				ui.message("no se pudo ejecutar el cmd")
+
+
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -311,3 +376,9 @@ class T_h(Thread):
 			wx.CallAfter(bios)
 		elif self.op == 28:
 			wx.CallAfter(cache)
+		elif self.op == 29:
+			wx.CallAfter(des_space)
+		elif self.op == 30:
+			wx.CallAfter(ac_space)
+		elif self.op == 31:
+			wx.CallAfter(cmd)

@@ -7,6 +7,7 @@ from scriptHandler import script
 import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
 import subprocess, os, sys, threading
 import webbrowser, wx
+from time import sleep
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
@@ -34,16 +35,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except (AttributeError, RuntimeError):
 			pass
 
-	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
@@ -51,11 +52,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAsndOp(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
-	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
 	def script_TCARoa(self,gesture):
 		os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
 	
-	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
 	def script_TCAblue(self,gesture):
 		subprocess.Popen('fsquirt')
 			 
@@ -76,14 +77,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Copiar al portapapeles la ruta'), category='TCA-SystemUtilities')
 	def script_TCAclip(self,gesture):
 		tsu.t_obj(self)
-		api.copyToClip('"{}"'.format(self.v_obj))
-		ui.message(_('Ruta copiada '))
-		
+		if self.v_obj is not False:
+			api.copyToClip('"{}"'.format(self.v_obj))
+			ui.message(_('Ruta copiada '))
+		else:
+			ui.message(_("No se pudo copiar la ruta"))
 	@script(description= _('Abrir el administrador de discos'), category='TCA-SystemUtilities')
 	def script_TCAdisk(self,gesture):
 		subprocess.Popen('diskmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities', gesture='kb:nvda+x')
 	def script_TCAtien(self,gesture):
 		webbrowser.open_new_tab('https://addons.nvda-project.org/index.es.html')
 	
@@ -91,7 +94,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAmon(self, gesture):
 		subprocess.Popen('resmon')
 	
-	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities')
+	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
 	def script_TCAList(self, gesture):
 		tsu.T_h(self, 5)
 	
@@ -103,7 +106,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
 	def script_TCAcar(self,gesture):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
@@ -121,7 +124,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAchar(self, gesture):
 		subprocess.Popen('charmap')
 	
-	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 		
@@ -145,6 +148,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
+	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -156,6 +160,28 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
+
+	
+	@script(description=_('Volumen'), category='TCA-SystemUtilities')
+	def script_TCAvolu(self, gesture):
+		fg = api.getForegroundObject()
+		obj = fg.children[5].children[2].children[0].children[7]
+		ui.message("el nombre es: {}".format(obj.name))
+		
+		api.moveMouseToNVDAObject(obj)
+		keyboardHandler.KeyboardInputGesture.fromName("space").send()
+
+		os.chdir(tsu.a_path)
+		focus = api.getFocusObject()
+		focus = focus.parent
+		a = '''Red
+Acceso a Internet'''
+		if focus.name ==a:
+			recButton = focus.parent.next.firstChild
+			api.moveMouseToNVDAObject(recButton)
+			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTDOWN,0,0,None,None)
+			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP,0,0,None,None)
+			#winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
 
 	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
@@ -209,11 +235,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCA_sc_f(self, gesture):
 		tsu.T_h(self, 23)
 
-
 	@script(description=_('Desactivar escanéo de archivos comprimidos'), category='TCA-SystemUtilities')
 	def script_TCA_scn_nf(self, gesture):
 		tsu.T_h(self, 24)
-	
 	
 	@script(description=_('Desactivar la Webcam'), category='TCA-SystemUtilities')
 	def script_TCA_webcam_d(self, gesture):
@@ -227,9 +251,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Reiniciar el sistema y entrar en la BIOS-UEFI'), category='TCA-SystemUtilities')
 	def script_TCA_bios(self, gesture):
 		tsu.T_h(self, 27)
-
-
-
-	@script(description=_('Limpiar la caché DNS'), category='TCA-SystemUtilities')
+	
+	@script(description=_('Limpiar caché DNS'), category='TCA-SystemUtilities')
 	def script_TCA_cache(self, gesture):
 		tsu.T_h(self, 28)
+
+	
+	@script(description=_('Desactivar el espacio reservado'), category='TCA-SystemUtilities')
+	def script_TCA_des_space(self, gesture):
+		tsu.T_h(self, 29)
+
+	
+	@script(description=_('Activar el espacio reservado'), category='TCA-SystemUtilities')
+	def script_TCA_ac_space(self, gesture):
+		tsu.T_h(self, 30)
+	
+	@script(description=_('AbrircConsola CMD'), category='TCA-SystemUtilities')
+	def script_TCA_cmd(self, gesture):
+		tsu.T_h(self, 31)

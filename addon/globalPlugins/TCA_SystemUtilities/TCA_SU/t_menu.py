@@ -69,8 +69,16 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
 	#Menú Reparación del sistema.
 	
+	t_ac_spa = r_sys.Append(-1, _("Activar almacenamiento reservado"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_ac_space, t_ac_spa)
+	t_des_spa = r_sys.Append(-1, _("Desactivar almacenamiento reservado"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_space, t_des_spa)
+
+
+
 	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
+	
 	t_cache = r_sys.Append(-1, _("Limpiar caché DNS"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_cache, t_cache)
 
