@@ -8,7 +8,7 @@ import os, subprocess
 import ctypes 
 from threading import Thread
 import wx
-import winsound
+import winsound, platform
 import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
@@ -49,7 +49,12 @@ def t_obj(self):
 		c_obj = None
 	
 	if c_obj is not None: 
-		self.v_obj = c_obj.replace('Dirección: ', '')
+		self.v_obj =r"{}".format( c_obj.replace('Dirección: ', '').replace('Vídeos', 'Videos'))
+		if int(platform.release()) > 8 and os.path.dirname(self.v_obj) == '':
+			if os.path.isdir(os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)):
+				self.v_obj = os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)
+			elif os.path.isdir(os.path.join(os.environ['userprofile'], self.v_obj)):
+				self.v_obj = os.path.join(os.environ['userprofile'], self.v_obj)
 		return self.v_obj
 	else:
 		self.v_obj = False
@@ -115,7 +120,7 @@ class T_h(Thread):
 		def TCAList():
 			t_obj(self)
 			if self.v_obj is not False:
-				os.chdir('{}'.format(self.v_obj))
+				os.chdir(self.v_obj)
 				subprocess.Popen('dir /b|clip', shell=True)
 				os.chdir(a_path)
 				ui.message(_('Copiada la lista al portapapeles'))
@@ -134,12 +139,11 @@ class T_h(Thread):
 		def ocu():
 			t_obj(self)
 			if self.v_obj is not False:
-				path = "{}".format(self.v_obj)
-				d=os.path.dirname(path)
-				b=os.path.basename(path)
+				d=os.path.dirname(self.v_obj)
+				b=os.path.basename(self.v_obj)
 				os.chdir(d)
 				shellapi.ShellExecute(None, None, 'cmd.exe', '/c' + r'attrib +s +h "{}"'.format(b), None, 0)	
-				sleep(1)
+				sleep(0.5)
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
 				winsound.Beep(900,100)
@@ -151,9 +155,7 @@ class T_h(Thread):
 		def mos():
 			t_obj(self)
 			if self.v_obj is not False:
-				path = "{}".format(self.v_obj)
-				d=os.path.dirname(path)
-				os.chdir(path)
+				os.chdir(self.v_obj)
 				shellapi.ShellExecute(None, None, 'cmd.exe','/c' + r'attrib /d -s -h', None, 0)
 				sleep(0.5)
 				os.chdir(a_path)
@@ -313,9 +315,12 @@ class T_h(Thread):
 		def cmd():
 			t_obj(self)
 			if self.v_obj is not False:
-				path = "{}".format(self.v_obj)
-				os.chdir(path)
-				shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(path)), None, 10)
+				try:
+					os.chdir(self.v_obj)
+				except:
+					ui.message(_('No se pudo obtener la ruta para el CMD'))
+					return
+				shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.v_obj)), None, 10)
 			else:
 				ui.message("no se pudo ejecutar el cmd")
 
