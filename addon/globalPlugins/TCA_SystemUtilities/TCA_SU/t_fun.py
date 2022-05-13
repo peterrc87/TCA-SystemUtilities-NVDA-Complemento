@@ -3,13 +3,13 @@
 #TCASystemUtilities, Shut down and restart the PC with Windows classic sound, an Open system Options.
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
+
+import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi, tones
 from time import sleep
-import os, subprocess
-import ctypes 
+import os, subprocess, platform, ctypes  
 from threading import Thread
 import wx
-import winsound, platform
-import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi, core
+
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
@@ -89,11 +89,11 @@ def rdt(fn):
 			with disable_file_system_redirection():
 				fn()
 				os.chdir(a_path)
-				winsound.Beep(900,100)
+				tones.beep(1000,100)
 		except:
 			fn()
 			os.chdir(a_path)
-			winsound.Beep(300,300)
+			tones.beep(300,300)
 	return d_rdt
 
 #Clase para hilos.
@@ -154,7 +154,7 @@ class T_h(Thread):
 				sleep(0.5)
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
-				winsound.Beep(900,100)
+				tones.beep(1000,100)
 				os.chdir(a_path)
 			else:
 				ui.message(_('No fue posible ocultar los elementos'))
@@ -368,7 +368,7 @@ class T_h(Thread):
 							shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'del /f /a /q "{}\{}"'.format(path,folder), None, 0)
 				
 				os.chdir(a_path)
-				winsound.Beep(1000,100)
+				tones.beep(1000,100)
 				
 				sleep(1)
 				ui.message("Se limpió la configuración en pantallas seguras  ")
