@@ -9,7 +9,7 @@ import ctypes
 from threading import Thread
 import wx
 import winsound, platform
-import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi
+import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi, core
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
@@ -18,30 +18,32 @@ addonHandler.initTranslation()
 #Función para el obj.
 def t_obj(self):
 	f = api.getForegroundObject()
-	try:
-		obj = f.children[1].children[2].children[0].children[0].children[0]
-	except:
+	if int(platform.release()) > 8:
 		try:
-			obj = f.children[0].children[0].children[4].children[0].children[0].children[0] #  Esta es para la ruta
+			obj = f.children[1].children[2].children[0].children[0].children[0]
 		except:
 			try:
-				obj = f.children[0].children[2].children[0].children[0].children[0] 
+				obj = f.children[0].children[0].children[4].children[0].children[0].children[0] #  Esta es para la ruta
 			except:
 				try:
-					obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
+					obj = f.children[0].children[2].children[0].children[0].children[0] 
 				except:
 					try:
-						obj = f.children[1].children[2].children[0].children[0].children[0]
+						obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
 					except:
-						#win10
 						try:
 							obj = f.children[1].children[2].children[0].children[0].children[0]
 						except:
+							#win10
 							try:
-								#win7
-								obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+								obj = f.children[1].children[2].children[0].children[0].children[0]
 							except:
 								pass
+	elif int(platform.release()) <= 8:
+		try:
+			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
+		except:
+			pass
 	
 	try:
 		c_obj = obj.name
@@ -49,13 +51,19 @@ def t_obj(self):
 		c_obj = None
 	
 	if c_obj is not None: 
-		self.v_obj =r"{}".format( c_obj.replace('Dirección: ', '').replace('Vídeos', 'Videos'))
+		self.v_obj =r"{}".format( c_obj.replace('Dirección: ', ''))
+
 		if int(platform.release()) > 8 and os.path.dirname(self.v_obj) == '':
+			self.v_obj =r"{}".format( c_obj.replace('Dirección: ', '').replace('Vídeos', 'Videos'))
+
 			if os.path.isdir(os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)):
 				self.v_obj = os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)
 			elif os.path.isdir(os.path.join(os.environ['userprofile'], self.v_obj)):
 				self.v_obj = os.path.join(os.environ['userprofile'], self.v_obj)
-		return self.v_obj
+			return self.v_obj
+		
+		else:
+			return self.v_obj		
 	else:
 		self.v_obj = False
 		return self.v_obj
@@ -323,6 +331,60 @@ class T_h(Thread):
 				shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.v_obj)), None, 10)
 			else:
 				ui.message("no se pudo ejecutar el cmd")
+		
+		@rdt
+		def cmd_ad():
+			t_obj(self)
+			if self.v_obj is not False:
+				try:
+					os.chdir(self.v_obj)
+				except:
+					ui.message(_('No se pudo obtener la ruta para el CMD'))
+					return
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.v_obj)), self.v_obj, 10)
+			else:
+				ui.message("no se pudo ejecutar el cmd")
+		
+		def delete_config():
+			os.chdir("C:/Program Files (x86)/NVDA/systemConfig")
+			pt_ac = os.getcwd()
+			paths_sc = (pt_ac,os.path.join(pt_ac, 'addons'), os.path.join(pt_ac, 'profiles'))
+			if len(os.listdir('addons')) > 0:
+				for path in paths_sc:
+					os.chdir(path)
+				
+					for folder in os.listdir():
+						if os.path.isdir(folder):
+							if folder == 'addons':
+								continue
+							elif folder == 'profiles':
+								continue
+							elif folder == 'speechDicts':
+								continue
+					
+							shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'rd /s /q "{}\{}"'.format(path, folder), None, 0)
+							
+						elif os.path.isfile(folder):
+							shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'del /f /a /q "{}\{}"'.format(path,folder), None, 0)
+				
+				os.chdir(a_path)
+				winsound.Beep(1000,100)
+				
+				sleep(1)
+				ui.message("Se limpió la configuración en pantallas seguras  ")
+				r_explo()
+
+				#sleep(1)
+				#core.restart()
+				print("fin del programa system utilities")
+				#core.NewNVDAInstance(a_path)
+				
+			else:
+				ui.message(_("No existen configuraciones guardadas en pantallas seguras"))
+
+
+
+
 
 
 		if self.op == 4:
@@ -387,3 +449,7 @@ class T_h(Thread):
 			wx.CallAfter(ac_space)
 		elif self.op == 31:
 			wx.CallAfter(cmd)
+		elif self.op == 32:
+			wx.CallAfter(cmd_ad)
+		elif self.op == 33:
+			wx.CallAfter(delete_config)

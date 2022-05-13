@@ -269,3 +269,11 @@ Acceso a Internet'''
 	@script(description=_('AbrircConsola CMD'), category='TCA-SystemUtilities')
 	def script_TCA_cmd(self, gesture):
 		tsu.T_h(self, 31)
+	
+	@script(description=_('AbrircConsola CMD Administrador'), category='TCA-SystemUtilities')
+	def script_TCA_cmd_ad(self, gesture):
+		tsu.T_h(self, 32)
+	
+	@script(description=_('Limpiar configuración guardada para ejecutarse en pantallas seguras'), category='TCA-SystemUtilities')
+	def script_TCASCClean(self,gesture):
+		tsu.T_h(self, 33)
