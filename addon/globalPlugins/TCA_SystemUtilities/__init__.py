@@ -162,28 +162,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tsu.T_h(self, 13)
 
 	
-	@script(description=_('Volumen'), category='TCA-SystemUtilities')
-	def script_TCAvolu(self, gesture):
-		fg = api.getForegroundObject()
-		obj = fg.children[5].children[2].children[0].children[7]
-		ui.message("el nombre es: {}".format(obj.name))
-		
-		api.moveMouseToNVDAObject(obj)
-		keyboardHandler.KeyboardInputGesture.fromName("space").send()
-
-		os.chdir(tsu.a_path)
-		focus = api.getFocusObject()
-		focus = focus.parent
-		a = '''Red
-Acceso a Internet'''
-		if focus.name ==a:
-			recButton = focus.parent.next.firstChild
-			api.moveMouseToNVDAObject(recButton)
-			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTDOWN,0,0,None,None)
-			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP,0,0,None,None)
-			#winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
-
-	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
 	def script_TCAa_dism(self, gesture):
 		tsu.T_h(self, 14)
