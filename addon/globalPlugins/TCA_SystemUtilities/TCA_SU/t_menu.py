@@ -49,6 +49,10 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)
 	t_char = u_sys.Append(-1, _("mapa de caracteres"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAchar, t_char)
+	
+	t_clean_clip = e_sys.Append(-1, _('Borrar el portapapeles'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_clean_clip, t_clean_clip)
+
 	t_monitor = e_sys.Append(-1, _("Monitor de recursos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
 	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
@@ -82,8 +86,12 @@ def create_menu(self):
 	t_cache = r_sys.Append(-1, _("Limpiar caché DNS"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_cache, t_cache)
 
+	t_clean_sc = r_sys.Append(-1, _('Limpiar configuración guardada en pantallas seguras'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scclean, t_clean_sc)
+
 	t_clDisk = r_sys.Append(-1, _("Limpiar disco"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
+	
 	t_opti = r_sys.Append(-1, _("Optimizar las unidades"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
 

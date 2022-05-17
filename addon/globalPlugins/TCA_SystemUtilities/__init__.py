@@ -148,7 +148,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
-	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -160,6 +159,28 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(description=_('Hibernar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
+
+	
+	@script(description=_('Volumen'), category='TCA-SystemUtilities')
+	def script_TCAvolu(self, gesture):
+		fg = api.getForegroundObject()
+		obj = fg.children[5].children[2].children[0].children[7]
+		ui.message("el nombre es: {}".format(obj.name))
+		
+		api.moveMouseToNVDAObject(obj)
+		keyboardHandler.KeyboardInputGesture.fromName("space").send()
+
+		os.chdir(tsu.a_path)
+		focus = api.getFocusObject()
+		focus = focus.parent
+		a = '''Red
+Acceso a Internet'''
+		if focus.name ==a:
+			recButton = focus.parent.next.firstChild
+			api.moveMouseToNVDAObject(recButton)
+			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTDOWN,0,0,None,None)
+			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP,0,0,None,None)
+			#winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
 
 	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
@@ -253,5 +274,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tsu.T_h(self, 32)
 	
 	@script(description=_('Limpiar configuración guardada para ejecutarse en pantallas seguras'), category='TCA-SystemUtilities')
-	def script_TCASCClean(self,gesture):
+	def script_TCA_scclean(self,gesture):
 		tsu.T_h(self, 33)
+	
+	@script(description=_('Borrar el portapapeles y su historial'), category='TCA-SystemUtilities')
+	def script_TCA_clean_clip(self,gesture):
+		tsu.T_h(self, 34)

@@ -6,7 +6,7 @@
 
 import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi, tones
 from time import sleep
-import os, subprocess, platform, ctypes  
+import os, subprocess, platform, ctypes, winsound  
 from threading import Thread
 import wx
 
@@ -51,10 +51,10 @@ def t_obj(self):
 		c_obj = None
 	
 	if c_obj is not None: 
-		self.v_obj =r"{}".format( c_obj.replace('Dirección: ', ''))
+		self.v_obj =r"{}".format( c_obj.replace(_('Dirección: '), ''))
 
 		if int(platform.release()) > 8 and os.path.dirname(self.v_obj) == '':
-			self.v_obj =r"{}".format( c_obj.replace('Dirección: ', '').replace('Vídeos', 'Videos'))
+			self.v_obj =r"{}".format( c_obj.replace(_('Dirección: '), '').replace(_('Vídeos'), _('Videos')))
 
 			if os.path.isdir(os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)):
 				self.v_obj = os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)
@@ -350,37 +350,49 @@ class T_h(Thread):
 			pt_ac = os.getcwd()
 			paths_sc = (pt_ac,os.path.join(pt_ac, 'addons'), os.path.join(pt_ac, 'profiles'))
 			if len(os.listdir('addons')) > 0:
-				for path in paths_sc:
-					os.chdir(path)
+				dlg = wx.MessageDialog(None, _('Este proceso eliminará todos los complementos y configuraciones que están en pantallas seguras.\n Es necesario que se reinicie el explorador de Windows, con lo que serán cerradas todas las ventanas del explorador.\n Si tiene activado el uac (Control de cuentas de usuario), es probable que deba darle varias veces permisos para continuar.\n ¿Está seguro que desea continuar?'), _('Atención borrando addons y configuraciones de pantallas seguras'), wx.YES_NO|wx.ICON_QUESTION)
+				rp = dlg.ShowModal()
+				if rp == wx.ID_YES:
+					for path in paths_sc:
+						os.chdir(path)
 				
-					for folder in os.listdir():
-						if os.path.isdir(folder):
-							if folder == 'addons':
-								continue
-							elif folder == 'profiles':
-								continue
-							elif folder == 'speechDicts':
-								continue
+						for folder in os.listdir():
+							if os.path.isdir(folder):
+								if folder == 'addons':
+									continue
+								elif folder == 'profiles':
+									continue
+								elif folder == 'speechDicts':
+									continue
 					
-							shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'rd /s /q "{}\{}"'.format(path, folder), None, 0)
+								shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'rd /s /q "{}\{}"'.format(path, folder), None, 0)
 							
-						elif os.path.isfile(folder):
-							shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'del /f /a /q "{}\{}"'.format(path,folder), None, 0)
+							elif os.path.isfile(folder):
+								shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'del /f /a /q "{}\{}"'.format(path,folder), None, 0)
 				
-				os.chdir(a_path)
-				tones.beep(1000,100)
+					os.chdir(a_path)
+					tones.beep(1000,100)
+					sleep(1)
+					ui.message(_("Se limpió la configuración en pantallas seguras  "))
+					r_explo()
 				
-				sleep(1)
-				ui.message("Se limpió la configuración en pantallas seguras  ")
-				r_explo()
-
-				#sleep(1)
-				#core.restart()
-				print("fin del programa system utilities")
-				#core.NewNVDAInstance(a_path)
-				
+				else:
+					dlg.Destroy()
 			else:
 				ui.message(_("No existen configuraciones guardadas en pantallas seguras"))
+
+		@rdt
+		def clean_clip():
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' +r'powershell Restart-Service -Name "cbdhsvc*" -force', None, 0)				
+			except:
+				ui.message(_('no hay nada en el historial del portapapeles'))
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'echo off | clip', None, 0)				
+			except:
+				ui.message(_('No fue posible eliminar el portapapeles'))
+			
+			ui.message(_('Se limpió correctamente el portapapeles'))
 
 
 
@@ -453,3 +465,5 @@ class T_h(Thread):
 			wx.CallAfter(cmd_ad)
 		elif self.op == 33:
 			wx.CallAfter(delete_config)
+		elif self.op == 34:
+			wx.CallAfter(clean_clip)
