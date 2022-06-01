@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2021.3
+* Compatibilidad: NVDA 2018 a 2022.1
 
 ## Funciones del sistema:
 
@@ -35,7 +35,13 @@ Una vez activada esta función deberemos luego deshabilitarla, lo podemos hacer 
 
 * Entrar en la BIOS-UEFI: Podremos cómodamente desde Windows y con NVDA indicarle al PC que ingrese a la BIOS-UEFI en el próximo reinicio. 
 Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla. 
-(¡Nota importante!) en la BIOS-UEFI no hay servicio de audio, por ende, no podremos utilizar un lector de pantalla en su interfaz). Una vez deseemos regresara nuestro sistema, podemos pulsar la combinación de teclas: CTRL+ALT+Supr. 
+(¡Nota importante!) en la BIOS-UEFI no hay servicio de audio, por ende, no podremos utilizar un lector de pantalla en su interfaz). Una vez deseemos regresara nuestro sistema, podemos pulsar la combinación de teclas: CTRL+ALT+Supr.
+
+* Abrir CMD en la ruta actual: Con un simple atajo de teclado podremos abrir el símbolo del sistema en Windows (CMD), y tomará la ruta de cualquier carpeta donde se encuentre el foco.
+
+* Abrir el CMD como administrador: Con un sencillo atajo de teclado abriremos el símbolo del sistema de Windows, con todos los privilegios de administrador (Solo en sistemas anteriores a Windows 10, toma la ruta de la carpeta donde se encuentre el foco, en los demás se abrirá en System32).
+
+* Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado. 
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
 Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA-SystemUtilities.
@@ -51,8 +57,14 @@ Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA-
 
 * Hacer un análisis del sistema con SFC: Nos permite Realizar un análisis / reparación del sistema de archivos de Windows SFC /SCANNOW.
 
+* Desactivar almacenamiento reservado: Devuelve los casi 10 Gb que Windows secuestra de nuestro disco duro para actualizaciones ( no es necesario tener activado esto para que funcionen las actualizaciones).
+
+* Activar almacenamiento reservado: Si aún deseas activar esta función de Windows y forzar a tu disco duro a dejar reservados casi 10Gb, con esta acción lo activarás.
+
 * Limpiar caché DNS: borra de forma rápida y directa toda la caché DNS de Windows (puede mejorar problemas con la navegación por internet). (
- 
+
+* Limpiar configuración guardada en pantallas seguras: Elimina todos los complementos y configuraciones que hayamos copiado para ejecutarse en las pantallas seguras, dejando a NVDA como viene de forma nativa. 
+
 * Limpiar disco: Nos permite lanzar el limpiador de Discos de Windows, pero con opciones mucho más avanzadas. Nos limpiará todos y cada uno de los discos y dispositivos de almacenamiento que tengamos conectados al sistema. 
 La primera vez que lo ejecutemos, nos sacará una ventana de diálogo, para crear un perfil de limpieza, podremos marcar todas las casillas que deseemos para limpiar de forma más exhaustiva. es conveniente que pulsemos el botón: "Crear perfil" esto solo es necesario hacerlo una vez. Disponemos de una casilla de verificación que podemos marcar si no queremos que salga más este diálogo. 
  
@@ -129,8 +141,18 @@ Aparte podremos saber cuánta memoria, disco, red y más consumen.
 
 ## ¿Nota importante!
 
-El complemento aún se encuentra en etapa de pruebas (Beta). 
-Además, todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+
+## Cambios en la versión 05.
+
+* Nueva función para limpiar complementos y configuraciones en pantallas seguras.
+* Nueva función borrar el portapapeles incluyendo el historial en Windows.
+* Nueva función abrir el CMD en la ruta actual.
+* Nueva función abrir el CMD con privilegios de administrador.
+* Nueva función: Desactivar el almacenamiento reservado en Windows.
+* Nueva función: activar el almacenamiento reservado en Windows.
+* Corregida y optimizada función para obtener el objeto, con esto mejoran varias funciones como: copiar la ruta al portapapeles, copiar listado de archivos al portapapeles, ocultar o mostrar archivos y carpetas.
 
 
 ## Cambios en la versión: 04.

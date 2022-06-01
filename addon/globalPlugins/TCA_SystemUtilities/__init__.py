@@ -265,7 +265,7 @@ Acceso a Internet'''
 	def script_TCA_ac_space(self, gesture):
 		tsu.T_h(self, 30)
 	
-	@script(description=_('AbrircConsola CMD'), category='TCA-SystemUtilities')
+	@script(description=_('AbrircConsola CMD en la ruta actual'), category='TCA-SystemUtilities')
 	def script_TCA_cmd(self, gesture):
 		tsu.T_h(self, 31)
 	
