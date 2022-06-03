@@ -32,7 +32,7 @@ def t_obj(self):
 						obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
 					except:
 						try:
-							obj = f.children[1].children[2].children[0].children[0].children[0]
+							obj = f.children[4].children[0].children[4].children[0].children[0].children[0]
 						except:
 							#win10
 							try:
@@ -350,7 +350,7 @@ class T_h(Thread):
 			pt_ac = os.getcwd()
 			paths_sc = (pt_ac,os.path.join(pt_ac, 'addons'), os.path.join(pt_ac, 'profiles'))
 			if len(os.listdir('addons')) > 0:
-				dlg = wx.MessageDialog(None, _('Este proceso eliminará todos los complementos y configuraciones que están en pantallas seguras.\n Es necesario que se reinicie el explorador de Windows, con lo que serán cerradas todas las ventanas del explorador.\n Si tiene activado el uac (Control de cuentas de usuario), es probable que deba darle varias veces permisos para continuar.\n ¿Está seguro que desea continuar?'), _('Atención borrando addons y configuraciones de pantallas seguras'), wx.YES_NO|wx.ICON_QUESTION)
+				dlg = wx.MessageDialog(None, _('Este proceso eliminará todos los complementos y configuraciones que están en pantallas seguras.\n Es necesario que se reinicie el explorador de Windows, se deben cerrar todas las ventanas del explorador.\n Si tiene activado el uac (Control de cuentas de usuario), es probable que deba darle varias veces permisos para continuar.\n ¿Está seguro que desea continuar?'), _('Atención borrando addons y configuraciones de pantallas seguras'), wx.YES_NO|wx.ICON_QUESTION)
 				rp = dlg.ShowModal()
 				if rp == wx.ID_YES:
 					for path in paths_sc:
