@@ -89,11 +89,11 @@ def rdt(fn):
 			with disable_file_system_redirection():
 				fn()
 				os.chdir(a_path)
-				tones.beep(1000,100)
+				tones.beep(950, 50)
 		except:
 			fn()
 			os.chdir(a_path)
-			tones.beep(300,300)
+			tones.beep(950,50)
 	return d_rdt
 
 #Clase para hilos.
@@ -154,7 +154,7 @@ class T_h(Thread):
 				sleep(0.5)
 				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
 				os.startfile(d)
-				tones.beep(1000,100)
+				tones.beep(900,50)
 				os.chdir(a_path)
 			else:
 				ui.message(_('No fue posible ocultar los elementos'))
@@ -371,7 +371,7 @@ class T_h(Thread):
 								shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'del /f /a /q "{}\{}"'.format(path,folder), None, 0)
 				
 					os.chdir(a_path)
-					tones.beep(1000,100)
+					tones.beep(950,50)
 					sleep(1)
 					ui.message(_("Se limpió la configuración en pantallas seguras  "))
 					r_explo()

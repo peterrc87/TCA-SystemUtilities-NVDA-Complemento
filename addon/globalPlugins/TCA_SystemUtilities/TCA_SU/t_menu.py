@@ -34,7 +34,6 @@ def create_menu(self):
 
 	#Menú utilidades del sistema.
 	
-	
 	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
 	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
@@ -50,14 +49,24 @@ def create_menu(self):
 	t_char = u_sys.Append(-1, _("mapa de caracteres"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAchar, t_char)
 	
+	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
+	
+	t_wVer = u_sys.Append(-1, _("Saber la versión de Windows"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+
+	
+	#menú explorador y procesos.
 	t_clean_clip = e_sys.Append(-1, _('Borrar el portapapeles'))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_clean_clip, t_clean_clip)
 
 	t_monitor = e_sys.Append(-1, _("Monitor de recursos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
-	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
 	
+	t_rExplo = e_sys.Append(-1, _("Reiniciar Explorador"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
+
+		
 	#Menú Voz sonido y multimedia.
 	t_wcam_ac = s_sys.Append(-1, _("Activar Webcam"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
@@ -71,15 +80,13 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
 	t_vo =s_sys.Append(-1, _("Opciones de voz"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
-	#Menú Reparación del sistema.
 	
+	#Menú Reparación del sistema.
 	t_ac_spa = r_sys.Append(-1, _("Activar almacenamiento reservado"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_ac_space, t_ac_spa)
 	t_des_spa = r_sys.Append(-1, _("Desactivar almacenamiento reservado"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_space, t_des_spa)
-
-
-
+	
 	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
 	
@@ -97,25 +104,19 @@ def create_menu(self):
 
 	t_resPC = r_sys.Append(-1, _("Restablecer PC"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_resPC, t_resPC)
-	#Menú Explorador y procesos.
-	t_rExplo = e_sys.Append(-1, _("Reiniciar Explorador"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
+	
 	t_dism = r_sys.Append(-1, _("Reparar sistema con Dism"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_dism, t_dism)
-	t_wVer = u_sys.Append(-1, _("Saber la versión de Windows"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+		
 	#Menú: Seguridad de Windows.
 	t_ab = ws_sys.Append(-1, _("Analizar arranque del sistema"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_sc_boot, t_ab)
 	t_af = ws_sys.Append(-1, _("Análisis completo"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_f, t_af)
-
 	t_ar = ws_sys.Append(-1, _("análisis rápido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_r, t_ar)
-
 	t_ac = ws_sys.Append(-1, _("Escanear archivos comprimidos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sc_f, t_ac)
-
 	t_dc = ws_sys.Append(-1, _("No escanear archivos comprimidos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scn_nf, t_dc)
 	t_lq = ws_sys.Append(-1, _("Listado de archivos en cuarentena al portapapeles"))
