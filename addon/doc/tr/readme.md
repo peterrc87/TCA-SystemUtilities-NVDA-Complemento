@@ -1,16 +1,3 @@
----
-autonumber-headings: false
-extratags: true
-extratags-back: true
-filename: readme
-lang: tr_TR
-mathjax: false
-path: 'C:\Users\ITU\AppData\Roaming\nvda\addons\TCA_SystemUtilities\doc\tr\'
-template: default
-title: TCA Sistem Araçları
-toc: false
-...
-
 ## TCA Sistem Araçları
 
 Bir klavye kısayolu aracılığıyla bazı Windows eylemlerini hızlı bir şekilde yürütmemizi sağlayan küçük Eklenti.  
@@ -18,7 +5,7 @@ SFC ile sistem onarımı yapabilir. Sistem bilgilerini panoya kopyalayabilir, BI
 Eklenti indirmek için, nvda resmi eklenti sayfası da açılabilir.  
 
 * Yazar: Peter Reina <peterrc87@gmail.com>
-* Uyumlu sürümler: NVDA 2018 - 2021.3
+* Uyumluluk: NVDA 2018 - 2022.1
 
 ## Sistem işlevleri:
 
@@ -42,6 +29,9 @@ Bu fonksiyon etkinleştirildikten sonra, onu devre dışı bırakmalıyız, bunu
 * BIOS-UEFI'ye gir: Windows'tan rahatça ve NVDA ile bilgisayara bir sonraki yeniden başlatmada BIOS-UEFI'ye girmesini söyleyebiliriz.
 Doğrudan ve kolayca basmanıza veya tuşu bilmenize gerek yok.
 (Önemli not!) BIOS-UEFI'de ses hizmeti yoktur, bu nedenle arayüzünde ekran okuyucu kullanamayacağız). Sistemimize dönmek istediğimizde CTRL+ALT+Delete tuş kombinasyonuna basabiliriz.
+* CMD'yi geçerli yolda açın: Basit bir klavye kısayolu ile Windows'ta (CMD) komut istemini açabiliriz ve bu, odağın olduğu herhangi bir klasörün yolunu alacaktır.
+* CMD'yi yönetici olarak açın: Basit bir klavye kısayolu ile tüm yönetici ayrıcalıklarıyla Windows komut istemini açacağız (Yalnızca Windows 10'dan önceki sistemlerde, odağın olduğu klasörün yolunu alır, diğerlerinde açılacaktır. Sistem32).
+* Panoyu ve geçmişini temizle: Windows 10 ve 11'de panoda sahip olduğumuz her şeyi boşaltan kullanışlı işlevsellik, etkinleştirmişsek geçmişte sahip olduğumuz her şeyi de temizler.
 * Explorer'ı yeniden başlat: Windows Gezgini'ni NVDA'dan rahatça yeniden başlatır.
 Bunu atadığımız bir kısayol aracılığıyla veya TCA-Sistem Araçları menüsünden yapabiliriz.
 * Sistem Mimarisini öğren: Bize Windows mimarisini ne olduğunu söyleyecektir (32 veya 64 Bit).
@@ -51,7 +41,10 @@ Bunu atadığımız bir kısayol aracılığıyla veya TCA-Sistem Araçları men
 ## Sistem onarım işlevleri:
 
 * SFC ile sistem Analizi: Windows dosya sistemi SFC /SCANNOW için tarama/onarım yapmamızı sağlar.
+* Ayrılmış depolamayı devre dışı bırak: Windows'un güncellemeler için sabit diskimizden sakladığı neredeyse 10 Gb'yi bulan (güncellemelerin çalışması için bunun etkinleştirilmesi gerekmez).
+* Ayrılmış depolamayı etkinleştirin: Yine de bu Windows işlevini etkinleştirmek ve sabit sürücünüzü neredeyse 10Gb ayırmaya zorlamak istiyorsanız, bu eylemle onu etkinleştireceksiniz.
 * DNS Önbelleğini Temizle: Tüm Windows DNS önbelleğini hızlı ve doğrudan temizleyin (internet tarama sorunlarını iyileştirebilir). (
+* Güvenli Ekranlarda Kaydedilmiş Ayarları Temizle: Güvenli ekranlarda çalışması için kopyaladığımız tüm eklentileri ve ayarları kaldırır ve NVDA'yı doğal olarak geldiği gibi bırakır.
 * Diski Temizle: Windows Disk temizlemeyi başlatmamıza izin verir, ancak çok daha gelişmiş seçeneklerle. Sisteme bağladığımız disklerin ve depolama aygıtlarının her birini tek tek temizleyecektir.
 İlk çalıştırdığımızda, bir temizleme profili oluşturmak için bir iletişim penceresi açacak, daha ayrıntılı olarak temizlemek istediğimiz tüm kutuları işaretleyebiliriz. Düğmeye basmamız uygundur: "Profil oluştur", bunu yalnızca bir kez yapmak gerekir. Bu iletişim kutusunun artık görünmesini istemiyorsak işaretleyebileceğimiz bir onay kutumuz var.
 * Dism ile sistemi onar: Derin bir tarama gerçekleştirir ve Windows'taki sorunları onarmaya çalışır.
@@ -106,6 +99,16 @@ Bu, sistemde sahip olduğumuz kullanıcı hesaplarının kimlik bilgilerini (adl
 
 Eklenti hala test aşamasındadır (Beta).  
 Ayrıca, klavye kısayollarının her biri, NVDA Tercihler > Girdi Hareketleri iletişim kutusundan kişisel zevkinize göre atanabilir.  
+
+## 05 sürümündeki değişiklikler:
+
+* Güvenli ekranlarda eklentileri ve ayarları temizlemek için yeni özellik.
+* Windows'ta geçmiş dahil olmak üzere yeni işlev açık pano.
+* Yeni işlev, geçerli yolda CMD'yi açar.
+* Yeni işlev, CMD'yi yönetici ayrıcalıklarıyla açar.
+* Yeni Özellik: Windows'ta Ayrılmış Depolamayı Devre Dışı Bırakın.
+* Yeni Özellik: Windows'ta Ayrılmış Depolamayı Etkinleştirin.
+* Nesneyi elde etmek için düzeltilmiş ve optimize edilmiş işlev, bununla birlikte birkaç işlev iyileştirilir, örneğin: panoya giden yolu kopyalama, dosya listesini panoya kopyalama, dosya ve klasörleri gizleme veya gösterme.
 
 ## 04 Sürümündeki değişiklikler:
 
