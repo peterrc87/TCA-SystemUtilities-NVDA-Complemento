@@ -1,0 +1,631 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TCA_SystemUtilities, version 05b8\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2022-06-22 09:26+0200\n"
+"PO-Revision-Date: 2022-06-22 11:30+0200\n"
+"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Language-Team: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:38
+msgid "Apagar el sistema"
+msgstr "Arrêter le système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:42
+msgid "Reinicio del sistema"
+msgstr "Redémarrage du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:47
+msgid "Anular apagado"
+msgstr "Annuler l'arrêt"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:51
+msgid "Abrir opciones de sonido"
+msgstr "Ouvrir Options du Son"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:55
+msgid "Abrir carpeta Roaming"
+msgstr "Ouvrir Dossier Roaming"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:59
+msgid "Abrir Asistente transferir archivos por Bluetooth"
+msgstr "Ouvrir Assistant Transfert de fichiers par Bluetooth"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:63
+msgid "Saber la arquitectura del sistema"
+msgstr "Connaître l'architecture du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:70
+msgid "Su sistema operativo es de: {} Bits"
+msgstr "Votre système d'exploitation est de: {} Bits"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:72
+msgid "Abrir el asistente para guardar la contraseña del sistema"
+msgstr "Ouvrir l'Assistant pour enregistrer le mot de passe du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:74
+msgid "Abriendo restablecer   contraseñas de Windows"
+msgstr "Ouverture Restaurer mots de passe de Windows"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:77
+msgid "Copiar al portapapeles la ruta"
+msgstr "Copier dans le presse-papiers le chemin"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:82
+msgid "Ruta copiada "
+msgstr "Chemin copié"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:84
+msgid "No se pudo copiar la ruta"
+msgstr "Impossible de copier le chemin"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:85
+msgid "Abrir el administrador de discos"
+msgstr "Ouvrir Gestion des disques"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:89
+msgid "Abrir la tienda oficial de complementos"
+msgstr "Ouvrir la boutique officielle d'extensions"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:93
+msgid "Abrir monitor de recursos"
+msgstr "Ouvrir Moniteur de ressources"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:97
+msgid "Copiar al portapapeles la lista de carpetas y archivos"
+msgstr "Copier dans le presse-papiers la liste des dossiers et des fichiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:101
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:55
+msgid "Saber la versión de Windows"
+msgstr "Connaître la version de Windows"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:105
+msgid "Abrir el administrador de dispositivoss"
+msgstr "Ouvrir Gestionnaire de périphériques"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:109
+msgid "Abrir Opciones de carpeta"
+msgstr "Ouvrir Options de dossier"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:114
+msgid "Hacer análisis del sistema Con SFC  "
+msgstr "Faire une analyse du système avec SFC"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:118
+msgid "Copiar información de todo el sistema al portapapeles"
+msgstr ""
+"Copier les informations de l'ensemble du système dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:121
+msgid "información del sistema copiada al portapapeles"
+msgstr "Informations système copiées dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:123
+msgid "Abrir mapa de caracteres"
+msgstr "Ouvrir Table des caractères"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:127
+msgid "Abrir Asistente guardar contraseñas de usuarios"
+msgstr "Ouvrir Assistant Enregistrer les mots de passe utilisateurs"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:131
+msgid "Abrir opciones de voz"
+msgstr "Ouvrir Options de la voix"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:135
+msgid "Copiar al portapapeles la información sobre las tarjetas de sonido"
+msgstr "Copier dans le presse-papiers les informations sur les cartes son"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:139
+msgid "Ocultar carpetas"
+msgstr "Masquer les dossiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:143
+msgid "Mostrar carpetas ocultas"
+msgstr "Afficher les dossiers masqués"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:147
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:99
+msgid "Limpiar disco"
+msgstr "Nettoyage de disque"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:151
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:66
+msgid "Reiniciar Explorador"
+msgstr "Redémarrer l'Explorateur"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:155
+msgid "Abrir Optimizar las unidades"
+msgstr "Ouvrir Optimiser les lecteurs"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:159
+msgid "Hibernar el sistema"
+msgstr "Mettre en veille le système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:164
+msgid "Volumen"
+msgstr "Volume"
+
+#. winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:186
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:108
+msgid "Reparar sistema con Dism"
+msgstr "Réparer le système avec Dism"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:191
+msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
+msgstr ""
+"Redémarrer le système et entrer en Mode Sans échec avec les fonctions réseau"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:195
+msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
+msgstr "Désactiver le Mode Sans échec et redémarrer le système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:199
+msgid "Abrir Mezclador de volumen"
+msgstr "Ouvrir Mélangeur de volume"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:204
+msgid "Suspender el sistema"
+msgstr "Mettre en veille prolongée le système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:208
+msgid "Abrir Restablecer éste PC"
+msgstr "Ouvrir Restaurer le PC"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:213
+msgid "Copiar al portapepeles la lista de archivos en cuarentena"
+msgstr "Copier dans le presse-papiers la liste des fichiers en quarantaine"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:218
+msgid "Análisis rápido"
+msgstr "Analyse rapide"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:223
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:114
+msgid "Análisis completo"
+msgstr "Analyse complète"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:228
+msgid "Análisis del sector de arranque"
+msgstr "Analyse du secteur de boot"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:233
+msgid "Activar escanéo de archivos comprimidos"
+msgstr "Activer la numérisation des fichiers compressés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:237
+msgid "Desactivar escanéo de archivos comprimidos"
+msgstr "Désactiver la numérisation des fichiers compressés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:241
+msgid "Desactivar la Webcam"
+msgstr "Désactiver la webcam"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:246
+msgid "Activar la Webcam"
+msgstr "Activer la webcam"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:250
+msgid "Reiniciar el sistema y entrar en la BIOS-UEFI"
+msgstr "Redémarrer le système et entrer dans le BIOS-UEFI"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:254
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:93
+msgid "Limpiar caché DNS"
+msgstr "Nettoyer le cache DNS"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:259
+msgid "Desactivar el espacio reservado"
+msgstr "Désactiver l'espace réservé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:264
+msgid "Activar el espacio reservado"
+msgstr "Activer l'espace réservé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:268
+msgid "AbrircConsola CMD en la ruta actual"
+msgstr "Ouvrir la console CMD dans le chemin actuel"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:272
+msgid "AbrircConsola CMD Administrador"
+msgstr "Ouvrir la console CMD en tant qu'administrateur"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:276
+msgid "Limpiar configuración guardada para ejecutarse en pantallas seguras"
+msgstr ""
+"Nettoyer la configuration sauvegardée pour s'exécuter sur les écrans "
+"sécurisés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:280
+msgid "Borrar el portapapeles y su historial"
+msgstr "Supprimer le presse-papiers et son historique"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:54
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:57
+msgid "Dirección: "
+msgstr "Adresse:"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:57
+msgid "Vídeos"
+msgstr "Vidéos"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:57
+msgid "Videos"
+msgstr "Vidéos"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:110
+msgid "Apagando el Pc."
+msgstr "Arrêt du PC en cours..."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:116
+msgid "Reiniciando el PC."
+msgstr "Redémarrage du PC en cours..."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:123
+msgid "anulando el apagado o reinicio del pc."
+msgstr "Annuler l'arrêt ou le redémarrage du PC en cours..."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:134
+msgid "Copiada la lista al portapapeles"
+msgstr "Copié la liste dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:136
+msgid "No se pudo copiar la lista al portapapeles"
+msgstr "Impossible de copier la liste dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:145
+msgid "Copiada la info del sonido al portapapeles"
+msgstr "Les informations du son  ont été copiées dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:160
+msgid "No fue posible ocultar los elementos"
+msgstr "Impossible de masquer les éléments"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:171
+msgid "no se pudieron mostrar los archivos"
+msgstr "Il n'était pas possible d'afficher les fichiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:177
+msgid ""
+"Si es la primera vez que ejecuta ésta acción.\n"
+" es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
+" puede pulsar en Crear perfil también si desea modificar uno existente, o "
+"puede marcar  la casilla para no volver a mostrar éste mensaje."
+msgstr ""
+"Si c'est la première fois que vous exécutez cette action.\n"
+" Il est nécessaire de créer un profil de nettoyage, vous ne devez le faire "
+"qu'une seule fois.\n"
+" Vous pouvez appuyer sur Créer un profil si vous souhaitez modifier un "
+"existant, ou vous pouvez cocher la case afin de ne plus afficher ce message."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:178
+msgid "Crear perfil"
+msgstr "Créer un profil"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:179
+msgid "No volver  a mostrar este mensaje"
+msgstr "Ne plus afficher ce message"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:223
+msgid ""
+"Está a punto de reiniciar el sistema, y activar el modo Seguro con funciones "
+"de red.\n"
+" En éste modo los sistemas Windows anteriores al 10, puede que no tengan "
+"sonidos, por ende, el lector de pantalla no tendrá soporte de voz.\n"
+" Deberá deshabilitar este modo desde las configuraciones del sistema "
+"msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del "
+"sistema.\n"
+" ¿Está seguro que desea continuar?"
+msgstr ""
+"Vous êtes sur le point de redémarrer le système, et d'activer le Mode Sans "
+"échec avec les fonctions de réseau.\n"
+" Dans ce mode, les systèmes Windows avant la 10, ils peuvent ne pas avoir de "
+"sons, par conséquent, le lecteur d'écran n'aura pas de support vocal.\n"
+" Vous devez désactiver ce mode à partir des Paramètres système msconfig, ou "
+"utilisant TCA SystemUtilities dans la section Arrêt du systèm.\n"
+" Voulez-vous continuer?"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:223
+msgid "Atención activación del Modo seguro!"
+msgstr "Attention activation du Mode Sans échec!"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:229
+msgid "Modo seguro activado, se va a reiniciar el Pc"
+msgstr "Mode Sans échec activé, le PC sera redémarré"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:237
+msgid "Modo normal, reiniciando el Pc"
+msgstr "Mode normal, redémarrage du PC"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:242
+msgid "Suspendiendo el sistema"
+msgstr "Mise en veille prolongée du système en cours..."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:270
+msgid "Se activó el escanéo de archivos comprimidos"
+msgstr "La numérisation des fichiers compressés a été activée"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:276
+msgid "Se desactivó el escanéo de archivos comprimidos"
+msgstr "La numérisation des fichiers compressés a été désactivée"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:284
+msgid "Se desactivó la Webcam"
+msgstr "La webcam a été désactivée"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:292
+msgid "Se activó la Webcam"
+msgstr "La webcam a été activée"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:296
+msgid ""
+"Está a punto de activar entrar a la BIOS-UEFI\n"
+" El PC se va a reiniciar en unos segundos. \n"
+" Recuerda que en la BIOS-UEFI no podrás utilizar un lector de pantalla, "
+"tendrás que pedir ayuda visual.\n"
+" ¿está seguro que desea continuar?"
+msgstr ""
+"Vous êtes sur le point d'activer l'entrer dans le BIOS-UEFI\n"
+" Le PC sera redémarré en quelques secondes\n"
+" N'oubliez pas  que dans le BIOS-UEFI, vous ne pourrez pas utiliser un "
+"lecteur d'écran, vous devrez demander de l'aide visuelle.\n"
+" Voulez-vous continuer?"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:296
+msgid "¿Atención Se intentará activar la entrada a la BIOS-UEFI!"
+msgstr ""
+"Attention Une tentative sera faite pour activer l'entrer dans le BIOS-UEFI!"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:307
+msgid "Se limpió la Caché DNS "
+msgstr "Le cache DNS a été nettoyé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:314
+msgid "Se desactivó el espacio reservado"
+msgstr "L'espace réservé a été désactivé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:320
+msgid "Se activó el espacio reservado"
+msgstr "L'espace réservé a été activé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:329
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:342
+msgid "No se pudo obtener la ruta para el CMD"
+msgstr "Impossible d'ouvrir le CMD dans ce chemin"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:353
+msgid ""
+"Este proceso eliminará todos los complementos y configuraciones que están en "
+"pantallas seguras.\n"
+" Es necesario que se reinicie el explorador de Windows, se deben cerrar "
+"todas las ventanas del explorador.\n"
+" Si tiene activado el uac (Control de cuentas de usuario), es probable que "
+"deba darle varias veces permisos para continuar.\n"
+" ¿Está seguro que desea continuar?"
+msgstr ""
+"Ce processus supprimera toutes les extensions et les configurations qu'elles "
+"se trouvent sur les écrans sécurisés.\n"
+" Il est nécessaire de redémarrer l'explorateur Windows, toutes les fenêtres "
+"de l'explorateur doivent être fermées.\n"
+" Si vous avez  l'UAC (Contrôle  de Comptes d'utilisateurs) activé, il est "
+"probable que vous vous donner plusieurs fois des autorisations pour "
+"continuer.\n"
+" Voulez-vous continuer?"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:353
+msgid "Atención borrando addons y configuraciones de pantallas seguras"
+msgstr ""
+"Attention suppression des extensions  et des configurations sur les écrans "
+"sécurisés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:376
+msgid "Se limpió la configuración en pantallas seguras  "
+msgstr "La configuration a été nettoyée sur les écrans sécurisés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:382
+msgid "No existen configuraciones guardadas en pantallas seguras"
+msgstr "Il n'y a pas de configurations sauvegardés sur les écrans sécurisés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:389
+msgid "no hay nada en el historial del portapapeles"
+msgstr "L'historique du presse-papiers ne contient pas d'éléments"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:393
+msgid "No fue posible eliminar el portapapeles"
+msgstr "Impossible de supprimer le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:395
+msgid "Se limpió correctamente el portapapeles"
+msgstr "Le presse-papiers a été nettoyée avec succès"
+
+#. Menú Apagado del sisstema.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:19
+msgid "Apagar"
+msgstr "Arrêter"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:21
+msgid "Entrar a la BIOS-UEFI"
+msgstr "Entrer dans le BIOS-UEFI"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:24
+msgid "Hibernar"
+msgstr "Mettre en veille"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:26
+msgid "Reiniciar"
+msgstr "Redémarrer"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:28
+msgid "Reiniciar y entrar en Modo seguro con funciones de red"
+msgstr "Redémarrer et entrer en Mode Sans échec avec les fonctions réseau"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:30
+msgid "Reiniciar en Modo normal"
+msgstr "Redémarrer en Mode normal"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:32
+msgid "Suspender"
+msgstr "Mettre en veille prolongée"
+
+#. Menú utilidades del sistema.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:37
+msgid "Asistente guardar contraseñas de usuarios"
+msgstr "Assistant Enregistrer les mots de passe utilisateurs"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:39
+msgid "Asistente transferir archivos por Bluetooth"
+msgstr "Assistant Transfert de fichiers par Bluetooth"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:41
+msgid "Carpeta Roaming"
+msgstr "Dossier Roaming"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:43
+msgid "administrador de discos"
+msgstr "Gestion des disques"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:45
+msgid "administrador de dispositivoss"
+msgstr "Gestionnaire de périphériques"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:47
+msgid "asistente para guardar la contraseña del sistema"
+msgstr "Assistant pour enregistrer le mot de passe du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:49
+msgid "mapa de caracteres"
+msgstr "Table des caractères"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:52
+msgid "Opciones de carpeta"
+msgstr "Options de dossier"
+
+#. menú explorador y procesos.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:60
+msgid "Borrar el portapapeles"
+msgstr "Supprimer le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:63
+msgid "Monitor de recursos"
+msgstr "Moniteur de ressources"
+
+#. Menú Voz sonido y multimedia.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:71
+msgid "Activar Webcam"
+msgstr "Activer la webcam"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:74
+msgid "Desactivar Webcam"
+msgstr "Désactiver la webcam"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:77
+msgid "Mezclador de volumen"
+msgstr "Mélangeur de volume"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:79
+msgid "Opciones de sonido"
+msgstr "Options du Son"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:81
+msgid "Opciones de voz"
+msgstr "Options de la voix"
+
+#. Menú Reparación del sistema.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:85
+msgid "Activar almacenamiento reservado"
+msgstr "Activer l'espace de stockage réservé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:87
+msgid "Desactivar almacenamiento reservado"
+msgstr "Désactiver l'espace de stockage réservé"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:90
+msgid "Análisis del sistema Con SFC    "
+msgstr "Analyse du système avec SFC"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:96
+msgid "Limpiar configuración guardada en pantallas seguras"
+msgstr "Nettoyer configuration sauvegardé sur les écrans sécurisés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:102
+msgid "Optimizar las unidades"
+msgstr "Optimiser les lecteurs"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:105
+msgid "Restablecer PC"
+msgstr "Restaurer le PC"
+
+#. Menú: Seguridad de Windows.
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:112
+msgid "Analizar arranque del sistema"
+msgstr "Analyser le démarrage du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:116
+msgid "análisis rápido"
+msgstr "Analyse rapide"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:118
+msgid "Escanear archivos comprimidos"
+msgstr "Numériser des fichiers compressés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:120
+msgid "No escanear archivos comprimidos"
+msgstr "Ne pas numériser des fichiers compressés"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:122
+msgid "Listado de archivos en cuarentena al portapapeles"
+msgstr "Liste des fichiers en quarantaine dans le presse-papiers"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:125
+msgid "Apagado del sistema"
+msgstr "Arrêt du système"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:126
+msgid "Explorador y Procesos"
+msgstr "Explorateur et Processus"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:127
+msgid "Reparación y optimización"
+msgstr "Réparation et optimisation"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:128
+msgid "Seguridad de Windows"
+msgstr "Sécurité Windows"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:129
+msgid "Voz y multimedia"
+msgstr "Voix et multimédia"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:131
+msgid "Utilidades del sistema"
+msgstr "Utilitaires du système"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "TCA SystemUtilities"
+msgstr "TCA SystemUtilities"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Apagar y Reiniciar el PC con el sonido clásico de Windows.\n"
+"También permite abrir la carpeta Roaming y ejecutar de forma directa algunas "
+"herramientas del sistema."
+msgstr ""
+"Arrêter et redémarrer le PC avec le son classique de Windows.\n"
+"Il permet également d'ouvrir le dossier Roaming et d'exécuter directement "
+"certains outils système."

@@ -42,7 +42,7 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCARoa, t_roa)
 	t_adDisk = u_sys. Append(-1, _("administrador de discos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdisk, t_adDisk)
-	t_adDev = u_sys.Append(-1, _("administrador de dispositivoss"))
+	t_adDev = u_sys.Append(-1, _("administrador de dispositivos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdispo, t_adDev)
 	t_savePass = u_sys.Append(-1, _("asistente para guardar la contraseña del sistema"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)

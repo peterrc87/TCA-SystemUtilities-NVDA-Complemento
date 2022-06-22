@@ -102,7 +102,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAver(self, gesture):
 		subprocess.Popen('winver')
 	
-	@script(description=_('Abrir el administrador de dispositivoss'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir el administrador de dispositivos'), category='TCA-SystemUtilities')
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	

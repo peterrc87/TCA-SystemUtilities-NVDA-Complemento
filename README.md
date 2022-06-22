@@ -2,7 +2,7 @@
 
 Pequeño complemento que nos permite ejecutar rápidamente algunas acciones de Windows mediante atajo de teclado. 
 Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portapapeles información del sistema, entrar a la BIOS y mucho más. 
-También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar cconfigureaciones y complementos en pantallas seguras.
+También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
 * Compatibilidad: NVDA 2018 a 2022.1
@@ -27,7 +27,7 @@ Además, nos avisa con un mensaje que se está anulando el apagado/reinicio.
 Muy fácilmente nos permite ingresar a Windows con funciones limitadas sin cargar servicios o programas innecesarios, desde allí podemos hacer limpiezas más exhaustivas, eliminar programas no deseados, malware y mucho más. 
 ! ¡Nota importante! 
 En este modo, en sistemas anteriores a Windows 10, es posible que no esté activado el servicio de audio, por ende, no podemos disponer de la síntesis de voz del lector de pantalla. 
-Una vez activada esta función deberemos luego deshabilitarla, lo podemos hacer desde el mismo menú de TCA-SystemUtilities, en el apartado: "Apagado del sistema".
+Una vez activada esta función deberemos luego deshabilitarla, lo podemos hacer desde el mismo menú de TCA SystemUtilities, en el apartado: "Apagado del sistema".
 
 * Reiniciar en Modo normal: nos permite deshabilitar El modo seguro si lo hemos activado, devuelve el inicio de Windows a sus valores normales (cargan todos los servicios y programas que tengamos en el inicio). 
 
@@ -44,7 +44,7 @@ Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla.
 * Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado. 
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
-Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA-SystemUtilities.
+Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA SystemUtilities.
 
 * Saber arquitectura del sistema: Nos dirá cuál es la arquitectura de Windows (32 o 64 Bits). 
  
@@ -121,14 +121,14 @@ Lo podemos hacer desde el menú TCA SystemUtilities, en el apartado: "Voz y mult
 * Abrir mapa de caracteres: Abre de forma directa ésta interesante funcionalidad de Windows. Que nos permite elegir y conocer cualquiera de los signos, números y letras existentes en el sistema. 
 Muy útil para saber signos raros o difíciles de sacar con el teclado.
  
-* nivel 1 Abrir Asistente guardar contraseñas de usuarios: Abre el asistente de esta muy útil pero poco conocida utilidad de Windows.
+* Abrir Asistente guardar contraseñas de usuarios: Abre el asistente de esta muy útil pero poco conocida utilidad de Windows.
 Que nos permite guardar las credenciales (nombres, contraseñas y más), de las cuentas de usuario que tengamos en el sistema. 
 * Abrir Asistente transferir archivos por BlueTooth: Nos permite lanzar directamente este asistente para recibir o enviar archivos mediante nuestros dispositivos BlueTooth. 
 * Abrir Opciones de carpeta: Abre directamente esta funcionalidad muy utilizada, para gestionar el explorador de Windows, las vistas de las carpetas, la visualización de las extensiones de archivos y más. 
 * Abrir Carpeta Roaming: Abre de forma directa la carpeta Appdata>Roaming (Aquí encontramos la carpeta de configuración del NVDA, y de muchos otros programas).).
 * Abrir Administrador de discos: Nos permite abrir directamente ésta interesante funcionalidad para gestionar los discos, particiones y otros dispositivos de almacenamiento, instalados en nuestro PC.
  
-* Abrir Respaldar contraseña: 
+* Abrir el asistente para guardar la contraseña del sistema: 
 Nos abrirá este útil Asistente poco conocido que nos permite hacer un respaldo de la contraseña de Windows, para poder recuperarla desde un dispositivo externo.
  
 * abrir Monitor de Recursos: podremos abrir de forma directa esta potente herramienta de Windows, poco conocida. Es como un administrador de tareas mejorado, podemos gestionar todos los servicios, aplicaciones y procesos que estén corriendo en nuestro sistema.
