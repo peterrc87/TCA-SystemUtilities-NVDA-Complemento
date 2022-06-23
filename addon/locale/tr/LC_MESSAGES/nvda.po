@@ -96,7 +96,7 @@ msgid "Saber la versión de Windows"
 msgstr "Windows sürümünü Göster"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:105
-msgid "Abrir el administrador de dispositivoss"
+msgid "Abrir el administrador de dispositivos"
 msgstr "Aygıt yöneticisini aç"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:109
@@ -496,7 +496,7 @@ msgid "administrador de discos"
 msgstr "disk yöneticisi"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:45
-msgid "administrador de dispositivoss"
+msgid "administrador de dispositivos"
 msgstr "aygıt Yöneticisi"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:47
