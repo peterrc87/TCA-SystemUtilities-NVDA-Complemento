@@ -35,16 +35,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except (AttributeError, RuntimeError):
 			pass
 
-	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
