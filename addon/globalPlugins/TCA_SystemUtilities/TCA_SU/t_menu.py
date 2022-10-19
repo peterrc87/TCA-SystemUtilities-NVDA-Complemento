@@ -5,130 +5,114 @@
 import gui,addonHandler
 import wx
 addonHandler.initTranslation()
+
 def create_menu(self):
-	#Barra de herramientas.
-	self.menu = wx.Menu()	
-	a_sys = wx.Menu()
-	e_sys = wx.Menu()
-	u_sys = wx.Menu()
-	r_sys = wx.Menu()
-	s_sys = wx.Menu()
-	ws_sys = wx.Menu()
-	t_menu = gui.mainFrame.sysTrayIcon.toolsMenu
-	#Menú Apagado del sisstema.
-	t_sh_s = a_sys.Append(-1, _("Apagar"))
+	# Definimos el menu general de wx y el de NVDA.
+	self.menuGeneral = wx.Menu()
+	self.tools_menu = gui.mainFrame.sysTrayIcon.toolsMenu
+
+	# Submenú Apagado del sistema
+	self.menuApagar = wx.Menu()
+	t_sh_s = self.menuApagar.Append(-1, _("Apagar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShut, t_sh_s)
-	t_sh_bios = a_sys.Append(-1, _("Entrar a la BIOS-UEFI"))
+	t_sh_bios = self.menuApagar.Append(-1, _("Entrar a la BIOS-UEFI"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_bios, t_sh_bios)
-
-	t_sh_h = a_sys.Append(-1, _("Hibernar"))
+	t_sh_h = self.menuApagar.Append(-1, _("Hibernar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAhiber, t_sh_h)
-	t_sh_r = a_sys.Append(-1, _("Reiniciar"))
+	t_sh_r = self.menuApagar.Append(-1, _("Reiniciar"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAShutR, t_sh_r)
-	t_sh_b = a_sys.Append(-1, _("Reiniciar y entrar en Modo seguro con funciones de red"))
+	t_sh_b = self.menuApagar.Append(-1, _("Reiniciar y entrar en Modo seguro con funciones de red"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_b, t_sh_b)
-	t_sh_n = a_sys.Append(-1, _("Reiniciar en Modo normal"))
+	t_sh_n = self.menuApagar.Append(-1, _("Reiniciar en Modo normal"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sh_nor, t_sh_n)
-	t_sh_susp = a_sys.Append(-1, _("Suspender"))
+	t_sh_susp = self.menuApagar.Append(-1, _("Suspender"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_susp, t_sh_susp)
+	self.subApagado = self.menuGeneral.AppendSubMenu(self.menuApagar, _("Apagado del sistema"))
 
-	#Menú utilidades del sistema.
-	
-	t_passUsu = u_sys.Append(-1, _("Asistente guardar contraseñas de usuarios"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
-	t_blueTooth = u_sys.Append(-1, _("Asistente transferir archivos por Bluetooth"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAblue, t_blueTooth)
-	t_roa = u_sys.Append(-1, _("Carpeta Roaming"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCARoa, t_roa)
-	t_adDisk = u_sys. Append(-1, _("administrador de discos"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdisk, t_adDisk)
-	t_adDev = u_sys.Append(-1, _("administrador de dispositivos"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdispo, t_adDev)
-	t_savePass = u_sys.Append(-1, _("asistente para guardar la contraseña del sistema"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)
-	t_char = u_sys.Append(-1, _("mapa de caracteres"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAchar, t_char)
-	
-	t_foldOps = u_sys.Append(-1, _("Opciones de carpeta"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
-	
-	t_wVer = u_sys.Append(-1, _("Saber la versión de Windows"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
-
-	
-	#menú explorador y procesos.
-	t_clean_clip = e_sys.Append(-1, _('Borrar el portapapeles'))
+	# Submenú Explorador y Procesos
+	self.menuExplorador = wx.Menu()
+	t_clean_clip = self.menuExplorador.Append(-1, _('Borrar el portapapeles'))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_clean_clip, t_clean_clip)
+	t_close =self.menuExplorador.Append(-1, _("Cerar todas las aplicaciones")) 
+	t_des_explo = self.menuExplorador.Append(-1, _("Desbloquear explorador de Windows"))  
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_explo, t_des_explo)
 
-	t_monitor = e_sys.Append(-1, _("Monitor de recursos"))
+	t_monitor = self.menuExplorador.Append(-1, _("Monitor de recursos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)
 	
-	t_rExplo = e_sys.Append(-1, _("Reiniciar Explorador"))
+	t_rExplo = self.menuExplorador.Append(-1, _("Reiniciar Explorador"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAr_explo, t_rExplo)
+	self.subExplorador = self.menuGeneral.AppendSubMenu(self.menuExplorador, _("Explorador y Procesos"))
 
-		
-	#Menú Voz sonido y multimedia.
-	t_wcam_ac = s_sys.Append(-1, _("Activar Webcam"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
-
-	t_wcam_d = s_sys.Append(-1, _("Desactivar Webcam"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
-
-	t_mvol = s_sys.Append(-1, _("Mezclador de volumen"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
-	t_soundOps = s_sys.Append(-1, _("Opciones de sonido"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
-	t_vo =s_sys.Append(-1, _("Opciones de voz"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
-	
-	#Menú Reparación del sistema.
-	t_ac_spa = r_sys.Append(-1, _("Activar almacenamiento reservado"))
+	# Submenú Reparación y optimización
+	self.menuReparacion = wx.Menu()
+	t_ac_spa = self.menuReparacion.Append(-1, _("Activar almacenamiento reservado"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_ac_space, t_ac_spa)
-	t_des_spa = r_sys.Append(-1, _("Desactivar almacenamiento reservado"))
+	t_des_spa = self.menuReparacion.Append(-1, _("Desactivar almacenamiento reservado"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_space, t_des_spa)
-	
-	t_sfc = r_sys.Append(-1, _("Análisis del sistema Con SFC    "))
+	t_sfc = self.menuReparacion.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
-	
-	t_cache = r_sys.Append(-1, _("Limpiar caché DNS"))
+	t_cache = self.menuReparacion.Append(-1, _("Limpiar caché DNS"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_cache, t_cache)
-
-	t_clean_sc = r_sys.Append(-1, _('Limpiar configuración guardada en pantallas seguras'))
+	t_clean_sc = self.menuReparacion.Append(-1, _('Limpiar configuración guardada en pantallas seguras'))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scclean, t_clean_sc)
-
-	t_clDisk = r_sys.Append(-1, _("Limpiar disco"))
+	t_clDisk = self.menuReparacion.Append(-1, _("Limpiar disco"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAclean, t_clDisk)
-	
-	t_opti = r_sys.Append(-1, _("Optimizar las unidades"))
+	t_opti = self.menuReparacion.Append(-1, _("Optimizar las unidades"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAoptim, t_opti)
-
-	t_resPC = r_sys.Append(-1, _("Restablecer PC"))
+	t_resPC = self.menuReparacion.Append(-1, _("Restablecer PC"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_resPC, t_resPC)
-	
-	t_dism = r_sys.Append(-1, _("Reparar sistema con Dism"))
+	t_dism = self.menuReparacion.Append(-1, _("Reparar sistema con Dism"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_dism, t_dism)
-		
-	#Menú: Seguridad de Windows.
-	t_ab = ws_sys.Append(-1, _("Analizar arranque del sistema"))
+	self.subReparacion = self.menuGeneral.AppendSubMenu(self.menuReparacion, _("Reparación y optimización"))
+	# Submenú Seguridad de Windows
+	self.menuSeguridad = wx.Menu()
+	t_ab = self.menuSeguridad.Append(-1, _("Analizar arranque del sistema"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_sc_boot, t_ab)
-	t_af = ws_sys.Append(-1, _("Análisis completo"))
+	t_af = self.menuSeguridad.Append(-1, _("Análisis completo"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_f, t_af)
-	t_ar = ws_sys.Append(-1, _("análisis rápido"))
+	t_ar = self.menuSeguridad.Append(-1, _("análisis rápido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_r, t_ar)
-	t_ac = ws_sys.Append(-1, _("Escanear archivos comprimidos"))
+	t_ac = self.menuSeguridad.Append(-1, _("Escanear archivos comprimidos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sc_f, t_ac)
-	t_dc = ws_sys.Append(-1, _("No escanear archivos comprimidos"))
+	t_dc = self.menuSeguridad.Append(-1, _("No escanear archivos comprimidos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scn_nf, t_dc)
-	t_lq = ws_sys.Append(-1, _("Listado de archivos en cuarentena al portapapeles"))
+	t_lq = self.menuSeguridad.Append(-1, _("Listado de archivos en cuarentena al portapapeles"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_qclip, t_lq)
-
-	self.menu.AppendSubMenu(a_sys, _("Apagado del sistema"))
-	self.menu.AppendSubMenu(e_sys, _("Explorador y Procesos"))
-	self.menu.AppendSubMenu(r_sys, _("Reparación y optimización"))
-	self.menu.AppendSubMenu(ws_sys, _("Seguridad de Windows"))
-	self.menu.AppendSubMenu(s_sys, _("Voz y multimedia"))
-	
-	self.menu.AppendSubMenu(u_sys, _("Utilidades del sistema"))
-	t_menu.AppendSubMenu(self.menu, "&TCA_SystemUtilities")
-
-	
+	self.subSeguridad = self.menuGeneral.AppendSubMenu(self.menuSeguridad, _("Seguridad de Windows"))
+	# Submenú Voz y multimedia
+	self.menuMultimedia = wx.Menu()
+	t_wcam_ac = self.menuMultimedia.Append(-1, _("Activar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
+	t_wcam_d = self.menuMultimedia.Append(-1, _("Desactivar Webcam"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
+	t_mvol = self.menuMultimedia.Append(-1, _("Mezclador de volumen"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
+	t_soundOps = self.menuMultimedia.Append(-1, _("Opciones de sonido"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
+	t_vo =self.menuMultimedia.Append(-1, _("Opciones de voz"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAopvox, t_vo)
+	self.subMultimedia = self.menuGeneral.AppendSubMenu(self.menuMultimedia, _("Voz y multimedia"))
+	# Submenú Utilidades del sistema
+	self.menuUtilidades = wx.Menu()
+	t_passUsu = self.menuUtilidades.Append(-1, _("Asistente guardar contraseñas de usuarios"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_usu, t_passUsu)
+	t_blueTooth = self.menuUtilidades.Append(-1, _("Asistente transferir archivos por Bluetooth"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAblue, t_blueTooth)
+	t_roa = self.menuUtilidades.Append(-1, _("Carpeta Roaming"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCARoa, t_roa)
+	t_adDisk = self.menuUtilidades. Append(-1, _("administrador de discos"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdisk, t_adDisk)
+	t_adDev = self.menuUtilidades.Append(-1, _("administrador de dispositivoss"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdispo, t_adDev)
+	t_savePass = self.menuUtilidades.Append(-1, _("asistente para guardar la contraseña del sistema"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)
+	t_char = self.menuUtilidades.Append(-1, _("mapa de caracteres"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAchar, t_char)
+	t_foldOps = self.menuUtilidades.Append(-1, _("Opciones de carpeta"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
+	t_wVer = self.menuUtilidades.Append(-1, _("Saber la versión de Windows"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+	self.subUtilidades = self.menuGeneral.AppendSubMenu(self.menuUtilidades, _("Utilidades del sistema"))
+	self.menuPrincipal = self.tools_menu.AppendSubMenu(self.menuGeneral, "&TCA_SystemUtilities")
+	return self.tools_menu, self.menuPrincipal

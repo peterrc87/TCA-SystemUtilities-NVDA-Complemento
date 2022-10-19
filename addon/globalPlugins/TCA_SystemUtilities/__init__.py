@@ -19,14 +19,12 @@ addonHandler.initTranslation()
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):	
 	def __init__(self):
-		if globalVars.appArgs.secure:
-			return
 		super(GlobalPlugin, self).__init__()		
 
 		self._MainWindows = None
 
 		#Barra de herramientas.
-		tm.create_menu(self)
+		self.menu, self.items = tm.create_menu(self)
 
 	def terminate(self):
 		try:
@@ -34,17 +32,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._MainWindows.Destroy()
 		except (AttributeError, RuntimeError):
 			pass
+		try:
+			self.menu.Remove(self.items)
+		except:
+			pass
 
-	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
@@ -76,9 +78,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description=_('Copiar al portapapeles la ruta'), category='TCA-SystemUtilities')
 	def script_TCAclip(self,gesture):
-		tsu.t_obj(self)
-		if self.v_obj is not False:
-			api.copyToClip('"{}"'.format(self.v_obj))
+		tsu.fs_path(self)
+		if self.path is not False:
+			api.copyToClip('"{}"'.format(self.path))
 			ui.message(_('Ruta copiada '))
 		else:
 			ui.message(_("No se pudo copiar la ruta"))
@@ -102,7 +104,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAver(self, gesture):
 		subprocess.Popen('winver')
 	
-	@script(description=_('Abrir el administrador de dispositivos'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir el administrador de dispositivoss'), category='TCA-SystemUtilities')
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
@@ -280,3 +282,20 @@ Acceso a Internet'''
 	@script(description=_('Borrar el portapapeles y su historial'), category='TCA-SystemUtilities')
 	def script_TCA_clean_clip(self,gesture):
 		tsu.T_h(self, 34)
+	
+	@script(description=_('Tomar la ruta con z_path'), category='TCA-SystemUtilities')
+	def script_TCA_z_paht(self,gesture):
+		tsu.T_h(self, 35)
+
+
+	
+	@script(description=_('Desbloquear explorador de Windows'), category='TCA-SystemUtilities')
+	def script_TCA_des_explo(self,gesture):
+		tsu.T_h(self, 36)
+
+	
+	@script(description=_('Cerrar todas las aplicaciones'), category='TCA-SystemUtilities')
+	def script_TCA_close_all(self,gesture):
+		tsu.T_h(self, 37)
+
+	

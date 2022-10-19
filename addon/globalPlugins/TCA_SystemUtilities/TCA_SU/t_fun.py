@@ -4,70 +4,18 @@
 #Autor: Peter Reina<peterrc87@gmail.com><Tecnoconocimiento Accesible  2020>
 # This file is covered by the GNU General Public License.
 
-import ui, api, 	keyboardHandler, globalVars, addonHandler, shellapi, tones
+import ui, api, keyboardHandler, globalVars, addonHandler, shellapi, tones
 from time import sleep
-import os, subprocess, platform, ctypes, winsound  
+import os, subprocess, platform, ctypes, winsound, sys  
 from threading import Thread
 import wx
+from .path_func import z_path, t_obj, fs_path
 
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
 addonHandler.initTranslation()
 
-#Función para el obj.
-def t_obj(self):
-	f = api.getForegroundObject()
-	if int(platform.release()) > 8:
-		try:
-			obj = f.children[1].children[2].children[0].children[0].children[0]
-		except:
-			try:
-				obj = f.children[0].children[0].children[4].children[0].children[0].children[0] #  Esta es para la ruta
-			except:
-				try:
-					obj = f.children[0].children[2].children[0].children[0].children[0] 
-				except:
-					try:
-						obj = f.children[1].children[0].children[4].children[0].children[0].children[0]
-					except:
-						try:
-							obj = f.children[4].children[0].children[4].children[0].children[0].children[0]
-						except:
-							#win10
-							try:
-								obj = f.children[1].children[2].children[0].children[0].children[0]
-							except:
-								pass
-	elif int(platform.release()) <= 8:
-		try:
-			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]
-		except:
-			pass
-	
-	try:
-		c_obj = obj.name
-	except:
-		c_obj = None
-	
-	if c_obj is not None: 
-		self.v_obj =r"{}".format( c_obj.replace(_('Dirección: '), ''))
-
-		if int(platform.release()) > 8 and os.path.dirname(self.v_obj) == '':
-			self.v_obj =r"{}".format( c_obj.replace(_('Dirección: '), '').replace(_('Vídeos'), _('Videos')))
-
-			if os.path.isdir(os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)):
-				self.v_obj = os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)
-			elif os.path.isdir(os.path.join(os.environ['userprofile'], self.v_obj)):
-				self.v_obj = os.path.join(os.environ['userprofile'], self.v_obj)
-			return self.v_obj
-		
-		else:
-			return self.v_obj		
-	else:
-		self.v_obj = False
-		return self.v_obj
-	
 class disable_file_system_redirection:
 
 	_disable = ctypes.windll.kernel32.Wow64DisableWow64FsRedirection
@@ -89,7 +37,7 @@ def rdt(fn):
 			with disable_file_system_redirection():
 				fn()
 				os.chdir(a_path)
-				tones.beep(950, 50)
+				tones.beep(950,50)
 		except:
 			fn()
 			os.chdir(a_path)
@@ -112,6 +60,7 @@ class T_h(Thread):
 			si = subprocess.STARTUPINFO()
 			si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 			subprocess.run('shutdown.exe -s -t 3', shell=True, startupinfo=si)
+			
 		def TCAShutR():
 			ui.message(_('Reiniciando el PC.'))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
@@ -125,6 +74,7 @@ class T_h(Thread):
 
 		def TCAcopy_sys():
 			subprocess.Popen('Systeminfo | clip', shell=True)
+			
 		def TCAList():
 			t_obj(self)
 			if self.v_obj is not False:
@@ -143,6 +93,7 @@ class T_h(Thread):
 			lt=['powershell', 'Get-WmiObject Win32_SoundDevice |clip']
 			subprocess.run(lt, shell=True)
 			ui.message(_('Copiada la info del sonido al portapapeles'))
+			
 		@rdt
 		def ocu():
 			t_obj(self)
@@ -321,27 +272,27 @@ class T_h(Thread):
 		
 		@rdt
 		def cmd():
-			t_obj(self)
-			if self.v_obj is not False:
+			fs_path(self)
+			if self.path is not False:
 				try:
-					os.chdir(self.v_obj)
+					os.chdir(self.path)
+					shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
 				except:
 					ui.message(_('No se pudo obtener la ruta para el CMD'))
 					return
-				shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.v_obj)), None, 10)
-			else:
-				ui.message("no se pudo ejecutar el cmd")
+				else:
+					ui.message("no se pudo ejecutar el cmd")
 		
 		@rdt
 		def cmd_ad():
-			t_obj(self)
-			if self.v_obj is not False:
+			fs_path(self)
+			if self.path is not False:
 				try:
-					os.chdir(self.v_obj)
+					os.chdir('{}'.format(self.path))
 				except:
 					ui.message(_('No se pudo obtener la ruta para el CMD'))
 					return
-				shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.v_obj)), self.v_obj, 10)
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
 			else:
 				ui.message("no se pudo ejecutar el cmd")
 		
@@ -374,8 +325,7 @@ class T_h(Thread):
 					tones.beep(950,50)
 					sleep(1)
 					ui.message(_("Se limpió la configuración en pantallas seguras  "))
-					r_explo()
-				
+					r_explo()	
 				else:
 					dlg.Destroy()
 			else:
@@ -394,8 +344,20 @@ class T_h(Thread):
 			
 			ui.message(_('Se limpió correctamente el portapapeles'))
 
+		def z_path2():
+			z_path(self)
+			
+		@rdt
+		def des_explo():
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill.exe /f /fi "status eq Not Responding"', None, 10)		
 
+		@rdt
+		def close_all():
+			u_path = os.environ['userprofile']
+			u_name = u_path.split('\\')
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /fi "USERNAME eq {}" /f'.format(u_name[-1]), None, 10)				
 
+		
 
 
 
@@ -467,3 +429,9 @@ class T_h(Thread):
 			wx.CallAfter(delete_config)
 		elif self.op == 34:
 			wx.CallAfter(clean_clip)
+		elif self.op == 35:
+			wx.CallAfter(z_path2)
+		elif self.op == 36:
+			wx.CallAfter(des_explo)
+		elif self.op == 37:
+			wx.CallAfter(close_all)
