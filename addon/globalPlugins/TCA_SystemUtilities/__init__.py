@@ -289,7 +289,7 @@ Acceso a Internet'''
 
 
 	
-	@script(description=_('Desbloquear explorador de Windows'), category='TCA-SystemUtilities')
+	@script(description=_('Cerrar taréas que no responden'), category='TCA-SystemUtilities')
 	def script_TCA_des_explo(self,gesture):
 		tsu.T_h(self, 36)
 

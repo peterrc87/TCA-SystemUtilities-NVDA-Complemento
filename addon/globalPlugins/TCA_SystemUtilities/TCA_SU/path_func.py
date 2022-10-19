@@ -78,7 +78,10 @@ def t_obj(self):
 							try:
 								obj = f.children[1].children[2].children[0].children[0].children[0]
 							except:
-								pass
+								try:
+									obj = f.children[3].children[0].children[4].children[0].children[0].children[0]	
+								except:
+									pass
 	elif int(platform.release()) <= 8:
 		try:
 			obj = f.children[1].children[0].children[2].children[0].children[0].children[0]

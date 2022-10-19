@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2022.1
+* Compatibilidad: NVDA 2018 a 2022.3
 
 ## Funciones del sistema:
 
@@ -31,8 +31,7 @@ Una vez activada esta función deberemos luego deshabilitarla, lo podemos hacer 
 
 * Reiniciar en Modo normal: nos permite deshabilitar El modo seguro si lo hemos activado, devuelve el inicio de Windows a sus valores normales (cargan todos los servicios y programas que tengamos en el inicio). 
 
-* Suspender: Permite suspender El sistema, cómodamente desde NVDA.
-
+* Suspender: Permite suspender El sistema, cómodamente desde NVDA. 
 * Entrar en la BIOS-UEFI: Podremos cómodamente desde Windows y con NVDA indicarle al PC que ingrese a la BIOS-UEFI en el próximo reinicio. 
 Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla. 
 (¡Nota importante!) en la BIOS-UEFI no hay servicio de audio, por ende, no podremos utilizar un lector de pantalla en su interfaz). Una vez deseemos regresara nuestro sistema, podemos pulsar la combinación de teclas: CTRL+ALT+Supr.
@@ -45,6 +44,10 @@ Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla.
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
 Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA SystemUtilities.
+
+* Cerrar todas las aplicaciones: Fuerza a cerrarse todos los procesos activos que no sean parte de Windows (¡Nota! todos los procesos serán forzados a cerrarse, así que no se podrán guardar ni documentos, ni proyectos, e incluso el NVDA será cerrado ).
+
+* Cerrar tareas que no responden: TCA SystemUtilities intentará cerrar los procesos que no responden. 
 
 * Saber arquitectura del sistema: Nos dirá cuál es la arquitectura de Windows (32 o 64 Bits). 
  
@@ -142,6 +145,15 @@ Aparte podremos saber cuánta memoria, disco, red y más consumen.
 ## ¿Nota importante!
 
 Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+## Cambios en la versión 06:
+* Nueva función interna para tomar la ruta del sistema (path), ahora son 2, en caso que falle una, TCA SystemUtilities intentará usar la otra.
+(Una de las funciones ha sido desarrollada por: Héctor Benítez).
+* Nueva función: Cerrar todos los procesos activos.
+* Cerrar tareas que no están respondiendo en Windows.
+* Corregido, el menú de TCA SystemUtilities ya no se repetirá si se recargan los complementos.
+(Cortesía de Héctor Benítez).
+* Corregido: ya no existen atajos de teclados predefinidos.
 
 
 ## Cambios en la versión 05.
