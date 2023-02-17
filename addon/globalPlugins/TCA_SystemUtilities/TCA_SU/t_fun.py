@@ -357,7 +357,10 @@ class T_h(Thread):
 			u_name = u_path.split('\\')
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /fi "USERNAME eq {}" /f'.format(u_name[-1]), None, 10)				
 
-		
+		def roaming():		
+			path = os.path.join(os.environ['userprofile'], 'appdata', 'Roaming')
+			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'start %windir%\explorer.exe {}'.format(path), None, 10)								
+
 
 
 
@@ -435,3 +438,5 @@ class T_h(Thread):
 			wx.CallAfter(des_explo)
 		elif self.op == 37:
 			wx.CallAfter(close_all)
+		elif self.op == 38:
+			wx.CallAfter(roaming)

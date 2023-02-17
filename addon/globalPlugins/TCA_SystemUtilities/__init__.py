@@ -54,9 +54,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAsndOp(self,gesture):
 		subprocess.Popen('mmsys.cpl', shell=True)
 	
-	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
-	def script_TCARoa(self,gesture):
-		os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
+	
 	
 	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
 	def script_TCAblue(self,gesture):
@@ -150,6 +148,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
+	
+	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -299,3 +299,9 @@ Acceso a Internet'''
 		tsu.T_h(self, 37)
 
 	
+	
+	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
+	def script_TCARoa(self,gesture):
+		#os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
+		tsu.T_h(self, 38)
+
