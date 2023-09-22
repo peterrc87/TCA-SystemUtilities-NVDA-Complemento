@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2022.3
+* Compatibilidad: NVDA 2018 a 2023.3
 
 ## Funciones del sistema:
 
@@ -90,7 +90,8 @@ así podremos pegarla en cualquier sitio editable.
  así podremos pegarla en cualquier sitio editable. 
  
 
-## Opciones de Seguridad de Windows (Windows Defender).
+## Opciones de Seguridad de Windows .
+* Activar el control de cuentas de usuario (uac):Establece el nivel del control de cuentas de usuario en 34 (activado).
 * Analizar arranque del sistema: Realiza de forma directa un análisis de virus y malware de los archivos pertenecientes al sector de arranque de Windows (Boot sector).
  
 * Análisis completo: Lanza de forma directa, un análisis de virus de todo el sistema. 
@@ -100,8 +101,8 @@ así podremos pegarla en cualquier sitio editable.
 * Escanear archivos comprimidos: Activa de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.).
  
 * No escanear archivos comprimidos: Desactiva de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.).
-* Listado de archivos en cuarentena al portapapeles: Copia al portapapeles, un listado y la información de todos los archivos que el antivirus de Windows haya puesto encuarentena 
-
+* Listado de archivos en cuarentena al portapapeles: Copia al portapapeles, un listado y la información de todos los archivos que el antivirus de Windows haya puesto encuarentena.
+* Desactivar el control de cuentas de usuario (uac):Establece el nivel del control de cuentas de usuario en 0 (desactivado).
 
 ## Opciones multimedia.
 
@@ -145,6 +146,14 @@ Aparte podremos saber cuánta memoria, disco, red y más consumen.
 ## ¿Nota importante!
 
 Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+## Cambios en la versión 0.8
+* Desde esta versión TCA SystemUtilities cambia su nomenclatura de versiones (para ser compatible con NVDA 2023.3)
+Ahora las versiones tendrán 3 dígitos esta será 0.8.2.
+* Nueva función desactivar el control de cuentas de usuario (uac).
+* Nueva función Activar el control de cuentas de usuario (uac).
+* Tanto la función activar, como la función desactivar el control de cuentas de usuario estarán en el menú de TCA SystemUtilities en la categoría: Seguridad de Windows;
+Así mismo se les podrá establecer atajos de teclado si lo deseamos desde Gestos de entrada.
 
 ## Cambios en la versión 06:
 * Nueva función interna para tomar la ruta del sistema (path), ahora son 2, en caso que falle una, TCA SystemUtilities intentará usar la otra.

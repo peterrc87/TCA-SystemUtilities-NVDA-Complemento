@@ -67,6 +67,9 @@ def create_menu(self):
 	self.subReparacion = self.menuGeneral.AppendSubMenu(self.menuReparacion, _("Reparación y optimización"))
 	# Submenú Seguridad de Windows
 	self.menuSeguridad = wx.Menu()
+	t_uac_on =self.menuSeguridad.Append(-1, _('Activar el control de cuentas de usuario (uac)'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAuac_on, t_uac_on)
+	
 	t_ab = self.menuSeguridad.Append(-1, _("Analizar arranque del sistema"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scan_sc_boot, t_ab)
 	t_af = self.menuSeguridad.Append(-1, _("Análisis completo"))
@@ -77,9 +80,13 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_sc_f, t_ac)
 	t_dc = self.menuSeguridad.Append(-1, _("No escanear archivos comprimidos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_scn_nf, t_dc)
+	t_uac_off =self.menuSeguridad.Append(-1, _('Desactivar el control de cuentas de usuario (uac)'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAuac_off, t_uac_off)
+
 	t_lq = self.menuSeguridad.Append(-1, _("Listado de archivos en cuarentena al portapapeles"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_qclip, t_lq)
 	self.subSeguridad = self.menuGeneral.AppendSubMenu(self.menuSeguridad, _("Seguridad de Windows"))
+	
 	# Submenú Voz y multimedia
 	self.menuMultimedia = wx.Menu()
 	t_wcam_ac = self.menuMultimedia.Append(-1, _("Activar Webcam"))

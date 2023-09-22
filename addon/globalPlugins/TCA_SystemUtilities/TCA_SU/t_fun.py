@@ -182,6 +182,7 @@ class T_h(Thread):
 				subprocess.run('shutdown.exe -r -t 3', shell=True)
 			else:
 				dlg.Destroy()
+
 		@rdt
 		def sh_nor():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'bcdedit /deletevalue {default} safeboot',None, 10)
@@ -360,10 +361,39 @@ class T_h(Thread):
 		def roaming():		
 			path = os.path.join(os.environ['userprofile'], 'appdata', 'Roaming')
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'start %windir%\explorer.exe {}'.format(path), None, 10)								
-
-
-
-
+		
+		@rdt
+		def uac_off():
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 0 /f', None, 10)
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f', None, 10)
+			except Exception as e:
+				ui.message(_('No fue posible desactivar el control de cuentas de usuario\n Error: {}').format(e))
+			else:
+				dlg = wx.MessageDialog(None, _('Se ha desactivado el control de cuentas de usuario (uac).\n Es necesario reiniciar el sistema para que surtan los cambios. \n ¿Desea hacerlo ahora?'),_('Atención !Reinicio necesario'), wx.YES_NO|wx.ICON_QUESTION) 
+				rp = dlg.ShowModal()
+				if rp == wx.ID_YES:
+					winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
+					subprocess.run('shutdown.exe -r -t 3', shell=True)
+				else:
+					dlg.Destroy()
+						
+		@rdt
+		def uac_on():
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 2 /f', None, 10)
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'powershell reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f', None, 10)
+			except Exception as e:
+				ui.message(_('No fue posible activar el control de cuentas de usuario\n Error: {}').format(e))
+			else:
+				dlg = wx.MessageDialog(None, _('Se ha activado el control de cuentas de usuario (uac).\n Es necesario reiniciar el sistema para que surtan los cambios. \n ¿Desea hacerlo ahora?'),_('Atención !Reinicio necesario'), wx.YES_NO|wx.ICON_QUESTION) 
+				rp = dlg.ShowModal()
+				if rp == wx.ID_YES:
+					winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
+					subprocess.run('shutdown.exe -r -t 3', shell=True)
+				else:
+					dlg.Destroy()
+				
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -440,3 +470,7 @@ class T_h(Thread):
 			wx.CallAfter(close_all)
 		elif self.op == 38:
 			wx.CallAfter(roaming)
+		elif self.op == 39:
+			wx.CallAfter(uac_off)
+		elif self.op == 40:
+			wx.CallAfter(uac_on)

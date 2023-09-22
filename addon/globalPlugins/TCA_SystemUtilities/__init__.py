@@ -102,7 +102,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAver(self, gesture):
 		subprocess.Popen('winver')
 	
-	@script(description=_('Abrir el administrador de dispositivoss'), category='TCA-SystemUtilities')
+	@script(description=_('Abrir el administrador de dispositivos'), category='TCA-SystemUtilities')
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
@@ -148,8 +148,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
-	
-	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -302,6 +300,13 @@ Acceso a Internet'''
 	
 	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
 	def script_TCARoa(self,gesture):
-		#os.startfile(os.path.join(os.environ['userprofile'], 'appdata', 'Roaming'))
 		tsu.T_h(self, 38)
+	
+	@script(description=_('Desactivar el Control de cuentas de usuario (uac)'), category='TCA-SystemUtilities')
+	def script_TCAuac_off(self,gesture):
+		tsu.T_h(self, 39)
 
+	
+	@script(description=_('Activar el Control de cuentas de usuario (uac)'), category='TCA-SystemUtilities')
+	def script_TCAuac_on(self,gesture):
+		tsu.T_h(self, 40)
