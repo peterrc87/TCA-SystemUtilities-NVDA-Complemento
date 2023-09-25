@@ -91,19 +91,25 @@ así podremos pegarla en cualquier sitio editable.
  
 
 ## Opciones de Seguridad de Windows .
-* Activar el control de cuentas de usuario (uac):Establece el nivel del control de cuentas de usuario en 34 (activado).
-* Analizar arranque del sistema: Realiza de forma directa un análisis de virus y malware de los archivos pertenecientes al sector de arranque de Windows (Boot sector).
- 
+Control de cuentas de usuario (uac). 
+
+* Activar el control de cuentas de usuario (uac): Establece el nivel del control de cuentas de usuario en 34 (activado). 
+
+* Desactivar el control de cuentas de usuario (uac): Establece el nivel del control de cuentas de usuario en 0 (desactivado). 
+
+Windows Defender. 
+
+* Analizar arranque del sistema: Realiza de forma directa un análisis de virus y malware de los archivos pertenecientes al sector de arranque de Windows (Boot sector). 
+
 * Análisis completo: Lanza de forma directa, un análisis de virus de todo el sistema. 
 
 * análisis rápido: Lanza de forma directa, un análisis de virus y malware rápido (de las partes esenciales del sistema). 
- 
-* Escanear archivos comprimidos: Activa de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.).
- 
-* No escanear archivos comprimidos: Desactiva de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.).
-* Listado de archivos en cuarentena al portapapeles: Copia al portapapeles, un listado y la información de todos los archivos que el antivirus de Windows haya puesto encuarentena.
-* Desactivar el control de cuentas de usuario (uac):Establece el nivel del control de cuentas de usuario en 0 (desactivado).
 
+* Escanear archivos comprimidos: Activa de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.). 
+
+* No escanear archivos comprimidos: Desactiva de forma directa, que el antivirus de Windows pueda escanear archivos comprimidos (rar, zip, ace, tar, etc.). 
+* Listado de archivos en cuarentena al portapapeles: Copia al portapapeles, un listado y la información de todos los archivos que el antivirus de Windows haya puesto encuarentena.
+ 
 ## Opciones multimedia.
 
 * Activar Webcam: Nos permite cómodamente desde NVDA activar la webcam si la tenemos (dejarla lista para usarse).

@@ -30,7 +30,7 @@ También permite abrir la carpeta Roaming y ejecutar de forma directa algunas he
 	# version
 	"addon_version": "0.8.2",
 	# Author(s)
-	"addon_author": "Peter Reina  <peterrc87@gmail.comf>",
+	"addon_author": "Peter Reina  <peterrc87@gmail.com>",
 	# URL for the add-on documentation support
 	"addon_url": "https://github.com/peterrc87/TCA-SystemUtilities-NVDA-Complemento",
 	# Documentation file name
