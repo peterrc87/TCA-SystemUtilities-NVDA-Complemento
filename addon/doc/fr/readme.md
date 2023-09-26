@@ -5,7 +5,7 @@ Il est capable d'effectuer une réparation du système avec SFC. Il peut copier 
 Nous pouvons également ouvrir le site officiel pour obtenir des extensions pour NVDA de manière directe, éliminer les configurations et les extensions sur les écrans sécurisés.
 
 * Auteur: Peter Reina <peterrc87@gmail.com>
-* Compatibilité: NVDA 2018 à 2022.3
+* Compatibilité: NVDA 2018 à 2023.3
 
 ## Fonctions du système:
 
@@ -91,7 +91,16 @@ Nous pouvons donc le coller dans n'importe quel endroit éditable.
  Nous pouvons donc le coller dans n'importe quel endroit éditable. 
  
 
-## Options de Sécurité Windows (Windows Defender).
+## Options de Sécurité Windows:
+
+Contrôle de compte d'utilisateur (uac).
+
+* Activer le Contrôle de compte d'utilisateur (uac): Établit le niveau du contrôle de compte d'utilisateur en 34 (activé).
+
+* Désactiver le Contrôle de compte d'utilisateur (uac): Établit le niveau du contrôle de compte d'utilisateur en 0 (désactivé).
+
+Windows Defender.
+
 * Analyser le démarrage du système: Il effectue directement une analyse de virus et de logiciels malveillants (malware) des fichiers appartenant au secteur de démarrage de Windows (Boot sector).
  
 * Analyse complète: Il lance directement une analyse de virus de l'ensemble du système. 
@@ -146,6 +155,15 @@ En outre, nous pouvons savoir combien de mémoire, de disque, de réseau et plus
 ## Remarque importante!
 
 Tous et chacun des raccourcis clavier, peuvent être attribués, selon le goût personnel à partir du dialogue: Préférences > Gestes de commandes de NVDA.
+
+## Changements pour la version 0.8.
+
+* À partir de cette version TCA SystemUtilities change sa nomenclature de version (pour être compatible avec NVDA 2023.3)
+Maintenant, les versions auront 3 chiffres ce sera 0.8.2.
+* Nouvelle fonction: désactiver le Contrôle de compte d'utilisateur (uac).
+* Nouvelle fonction: activer le Contrôle de compte d'utilisateur (uac).
+* À la fois la fonction activer, ainsi que la fonction désactiver le Contrôle de compte d'utilisateur seront dans le menu  de TCA SystemUtilities dans la catégorie: Sécurité Windows;
+De même, nous pouvons établir des raccourcis clavier si nous le souhaitons à partir  du dialogue Gestes de commandes.
 
 ## Changements pour la version 06.
 
