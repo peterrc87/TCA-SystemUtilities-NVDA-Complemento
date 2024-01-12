@@ -34,8 +34,12 @@ def create_menu(self):
 	t_clean_clip = self.menuExplorador.Append(-1, _('Borrar el portapapeles'))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_clean_clip, t_clean_clip)
 	t_close =self.menuExplorador.Append(-1, _("Cerrar todas las aplicaciones")) 
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_close_all, t_close)
+
 	t_des_explo = self.menuExplorador.Append(-1, _("Desbloquear explorador de Windows"))  
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_explo, t_des_explo)
+	t_process = self.menuExplorador.Append(-1, _('Matar procesos'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_close_app2, t_process) 
 
 	t_monitor = self.menuExplorador.Append(-1, _("Monitor de recursos"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAmon, t_monitor)

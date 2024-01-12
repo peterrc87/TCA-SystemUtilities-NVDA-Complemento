@@ -52,7 +52,7 @@ class T_h(Thread):
 		self.op = op
 		self.daemon = True
 		self.start()
-		
+	
 	def run(self):
 		def TCAShut():		
 			ui.message(_('Apagando el Pc.'))
@@ -139,20 +139,20 @@ class T_h(Thread):
 					try:
 						os.environ['PROGRAMFILES(X86)']
 						with disable_file_system_redirection(): 
-							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 0)	
-					
+							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)	
+							
 					except:
-						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 0)		
+						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)		
 				else:
 					dlg.Destroy()
 			
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
-					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)	
+					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 10)	
 					
 			except:
-				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)		
+				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 10)	
 				
 		@rdt
 		def r_explo():
@@ -394,6 +394,58 @@ class T_h(Thread):
 				else:
 					dlg.Destroy()
 				
+		@rdt
+		def close_app():
+			dlg = wx.TextEntryDialog(None, _('Escriba aquí el nombre de la aplicación'), _('Ingrese el nombre:'))
+			dlg.SetWindowStyle(dlg.GetWindowStyle() | wx.STAY_ON_TOP)
+			rp = dlg.ShowModal()
+			if rp == wx.ID_OK:
+				app_name  = dlg.GetValue()					
+				if app_name != '':
+					try:
+						shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /f /im {}*'.format(app_name), None, 10)		
+					except Exception as e:
+						ui.message(_('No fue posible termninar el proceso {}\n Ocurrió el error: {}').format(app_name, e))
+						sleep(2)
+					else:
+						ui.message(_('Se terminaron todos los procesos de: {} de forma correcta').format(app_name))
+						sleep(2)
+				else:
+					ui.message(_('Debe escribir el nombre de una aplicación'))
+					sleep(2)
+
+				dlg.Destroy()
+			else:
+				dlg.Destroy()
+		
+		@rdt
+		def enable_bluetooth():
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powershell Get-WmiObject -Query "SELECT * FROM Win32_PNPEntity WHERE Name LIKE '%Bluetooth%'" | ForEach-Object { $_.Enable() } ', None, 10)				
+			except Exception as e:
+				ui.message(_('No fue posible habilitar el Bluetooth\n Ocurrió el error: {}').format(e))
+			else:
+				ui.message(_('Bluetooth habilitado'))
+				sleep(2)
+		
+		@rdt
+		def disable_bluetooth():
+			command = r'Get-WmiObject -Query "SELECT * FROM Win32_PNPEntity WHERE Name LIKE \'%Bluetooth%\'" | ForEach-Object { $_.Disable()}'
+			try:
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powershell {}'.format(command), None, 10)				
+				#ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", "Get-WmiObject -Query \"SELECT * FROM Win32_PNPEntity WHERE Name LIKE '%Bluetooth%'\" | ForEach-Object { $_.Disable() }", None, 1)
+				#subprocess.Popen(['powershell', command], shell=True)
+
+			except Exception as e:
+				ui.message(_('No fue posible deshabilitar el Bluetooth\n Ocurrió el error: {}').format(e))
+				sleep(2)
+			else:
+				ui.message(_('Bluetooth deshabilitado'))
+				sleep(2)
+
+
+				
+		
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -474,3 +526,9 @@ class T_h(Thread):
 			wx.CallAfter(uac_off)
 		elif self.op == 40:
 			wx.CallAfter(uac_on)
+		elif self.op == 41:
+			wx.CallAfter(close_app)
+		elif self.op == 42:
+			wx.CallAfter(enable_bluetooth)
+		elif self.op == 43:
+			wx.CallAfter(disable_bluetooth)

@@ -8,7 +8,10 @@ import ui, api, keyboardHandler, globalVars, addonHandler, shellapi, tones
 from time import sleep
 import os, ctypes, sys, platform  
 import wx
-from .win32 import win32clipboard as cb
+if sys.version.startswith("3.11"):
+	from ._311 import win32clipboard as cb
+else:
+	from ._37 import win32clipboard as cb
 
 addonHandler.initTranslation()
 
@@ -17,30 +20,37 @@ addonHandler.initTranslation()
 Héctor Benítez Corredera<xebolax@gmail.com>'''
 
 def GetPath(self):
-	sleep(0.5)
-	keyboardHandler.KeyboardInputGesture.fromName("Control+c").send()
-	try:
-		cb.OpenClipboard()
-	except:
-		cb.CloseClipboard()
-		cb.OpenClipboard()
-	if cb.IsClipboardFormatAvailable(cb.CF_HDROP):
-		clipboard_file_path = cb.GetClipboardData(cb.CF_HDROP)
-		cb.CloseClipboard()
-		numList = len(clipboard_file_path)
-		if numList == 0: # Si no hay nada informamos
-			ui.message(_("No se pudo tomar el foco, seleccione algún elemento"))
-			return False
-		else: 
-			if numList == 1: 
-				return clipboard_file_path[0]
-			else: 
-				ui.message(_("Ha seleccionado %s ficheros. Seleccione solo un fichero.") % numList)
-				return False
-	else: 
-		ui.message(_("No se tomó el foco, mueva la flecha o seleccione algún elemento"))
-		return False
+	count_attempts = 0	
 
+	try:
+		sleep(0.5)
+		keyboardHandler.KeyboardInputGesture.fromName("Control+c").send()
+		sleep(0.5)
+
+		while count_attempts < 3:
+			cb.OpenClipboard()
+			if cb.IsClipboardFormatAvailable(cb.CF_HDROP):
+				clipboard_file_path = cb.GetClipboardData(cb.CF_HDROP)
+				cb.CloseClipboard()
+				numList = len(clipboard_file_path)
+				if numList == 0: # Si no hay nada informamos
+					ui.message(_("No se pudo tomar el foco, seleccione algún elemento"))
+					return False
+				elif numList == 1: 
+					return clipboard_file_path[0]
+				else: 
+					ui.message(_("Ha seleccionado %s ficheros. Seleccione solo un fichero.") % numList)
+					return False
+		
+			count_attempts+=1
+			sleep(0.5)
+		else: 
+			ui.message(_("No se tomó el foco, mueva la flecha o seleccione algún elemento"))
+			return False
+
+	except:
+		cb.CloseClipboard()			
+	
 #función para crear el path.
 def z_path(self):
 	p = GetPath(self) 

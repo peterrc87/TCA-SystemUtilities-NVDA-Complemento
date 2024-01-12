@@ -4,6 +4,8 @@
 # This file is covered by the GNU General Public License.
 
 from scriptHandler import script
+from NVDAObjects.IAccessible import IAccessible
+
 import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
 import subprocess, os, sys, threading
 import webbrowser, wx
@@ -146,8 +148,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description=_('Limpiar disco'), category='TCA-SystemUtilities')
 	def script_TCAclean(self, gesture):
-		tsu.T_h(self, 10)
-		
+		tsu.T_h(self, 10)	
+	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -310,3 +312,10 @@ Acceso a Internet'''
 	@script(description=_('Activar el Control de cuentas de usuario (uac)'), category='TCA-SystemUtilities')
 	def script_TCAuac_on(self,gesture):
 		tsu.T_h(self, 40)
+
+	@script(description=_('Terminar los procesos de cualquier aplicación activa'), category='TCA-SystemUtilities')
+	def script_TCA_close_app2(self, gesture):
+		tsu.T_h(self, 41)
+
+	
+	
