@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2023.3
+* Compatibilidad: NVDA 2018 a 2024.1
 
 ## Funciones del sistema:
 
@@ -40,7 +40,9 @@ Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla.
 
 * Abrir el CMD como administrador: Con un sencillo atajo de teclado abriremos el símbolo del sistema de Windows, con todos los privilegios de administrador (Solo en sistemas anteriores a Windows 10, toma la ruta de la carpeta donde se encuentre el foco, en los demás se abrirá en System32).
 
-* Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado. 
+* Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado.
+
+* Matar los procesos de cualquier aplicación activa: Intenta terminar cualquier proceso activo que no sea de  Windows, incluso si están en segundo plano. 
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
 Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA SystemUtilities.
@@ -152,6 +154,13 @@ Aparte podremos saber cuánta memoria, disco, red y más consumen.
 ## ¿Nota importante!
 
 Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+## Cambios en la versión 0.9:
+* Compatibilidad con NVDA 2024.1.
+* Nueva función Matar los procesos de cualquier aplicación activa.
+* Optimizada la función: GetPath, necesaria en Windows 11 23H2.
+* Incluída dll: pywintypes311.dll compatible con Python 3.11.
+* Se retiraron los atajos por defecto: apagar, reiniciar y anular apagado del sistema.
 
 ## Cambios en la versión 0.8
 * Desde esta versión TCA SystemUtilities cambia su nomenclatura de versiones (para ser compatible con NVDA 2023.3)

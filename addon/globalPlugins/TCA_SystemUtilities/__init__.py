@@ -39,16 +39,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except:
 			pass
 
-	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+a')
+	@script(description=_('Apagar el sistema'), category='TCA-SystemUtilities')
 	def script_TCAShut(self,gesture):		
 		tsu.T_h(self,1)
 	
-	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+r')
+	@script(description=_('Reinicio del sistema'), category='TCA-SystemUtilities')
 	def script_TCAShutR(self,gesture):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities', gesture='kb:nvda+0')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
@@ -148,7 +148,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	
 	@script(description=_('Limpiar disco'), category='TCA-SystemUtilities')
 	def script_TCAclean(self, gesture):
-		tsu.T_h(self, 10)	
+		tsu.T_h(self, 10)
+		
 	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
@@ -312,10 +313,9 @@ Acceso a Internet'''
 	@script(description=_('Activar el Control de cuentas de usuario (uac)'), category='TCA-SystemUtilities')
 	def script_TCAuac_on(self,gesture):
 		tsu.T_h(self, 40)
-
-	@script(description=_('Terminar los procesos de cualquier aplicación activa'), category='TCA-SystemUtilities')
+		
+	@script(description=_('Matar los procesos de cualquier aplicación activa'), category='TCA-SystemUtilities')
 	def script_TCA_close_app2(self, gesture):
 		tsu.T_h(self, 41)
 
-	
-	
+		
