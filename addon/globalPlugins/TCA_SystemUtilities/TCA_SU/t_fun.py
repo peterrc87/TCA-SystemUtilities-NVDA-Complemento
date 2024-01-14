@@ -273,16 +273,18 @@ class T_h(Thread):
 		
 		@rdt
 		def cmd():
-			fs_path(self)
+			self.path = fs_path(self)
+			
 			if self.path is not False:
 				try:
 					os.chdir(self.path)
+					sleep(0.5)
 					shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
 				except:
 					ui.message(_('No se pudo obtener la ruta para el CMD'))
 					return
-				else:
-					ui.message("no se pudo ejecutar el cmd")
+			else:
+				ui.message("no se pudo ejecutar el cmd")
 		
 		@rdt
 		def cmd_ad():
