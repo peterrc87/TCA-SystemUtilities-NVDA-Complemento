@@ -159,7 +159,7 @@ Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, des
 * Compatibilidad con NVDA 2024.1.
 * Nueva función Matar los procesos de cualquier aplicación activa.
 * Optimizada la función: GetPath, necesaria en Windows 11 23H2.
-* Incluída dll: pywintypes311.dll compatible con Python 3.11.
+* Incluida dll: pywintypes311.dll compatible con Python 3.11.
 * Se retiraron los atajos por defecto: apagar, reiniciar y anular apagado del sistema.
 
 ## Cambios en la versión 0.8
