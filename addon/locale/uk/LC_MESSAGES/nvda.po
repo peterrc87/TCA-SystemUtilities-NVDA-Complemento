@@ -273,7 +273,7 @@ msgstr "Увімкнути Контроль облікових записів к
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:317
 msgid "Matar los procesos de cualquier aplicación activa"
-msgstr "Припенити процес будь-якої активної програми"
+msgstr "Припинити процес будь-якої активної програми"
 
 #. Si no hay nada informamos
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:37
