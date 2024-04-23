@@ -1,292 +1,786 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2024-04-16 01:15+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: MesterPerfect <AhmedBakr593@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Apagar el sistema"
-msgstr "اغلاق النظام"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:37
+msgid "No se pudo tomar el foco, seleccione algún elemento"
+msgstr "لا يمكن التركيز، حدد بعض العناصر"
 
-msgid "Reinicio del sistema"
-msgstr "إعادة تشغيل النظام"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:42
+#, python-format
+msgid "Ha seleccionado %s ficheros. Seleccione solo un fichero."
+msgstr "لقد قمت بتحديد ملفات %s. حدد ملفًا واحدًا فقط."
 
-msgid "Anular apagado"
-msgstr "إلغاء إيقاف التشغيل"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:48
+msgid "No se tomó el foco, mueva la flecha o seleccione algún elemento"
+msgstr "لم يتم التركيز على العنصر، قم بتحريك السهم أو تحديد عنصر"
 
-msgid "Abrir opciones de sonido"
-msgstr "فتح خيارات الصوت"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:107
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:110
+msgid "Dirección: "
+msgstr "عنوان:"
 
-msgid "Abrir carpeta Roaming"
-msgstr "فتح مجلد التجوال"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:110
+msgid "Vídeos"
+msgstr "فيديو"
 
-msgid "Abrir Asistente transferir archivos por Bluetooth"
-msgstr "فتح معالج نقل ملفات Bluetooth"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/path_func.py:110
+msgid "Videos"
+msgstr "فيديو"
 
-msgid "Saber la arquitectura del sistema"
-msgstr "تعرف على بنية النظام"
-
-msgid "Su sistema operativo es de: {} Bits"
-msgstr "نظام التشغيل الخاص بك هو: {} بت"
-
-msgid "Abrir el asistente para guardar la contraseÃ±a del sistema"
-msgstr "افتح معالج حفظ كلمة مرور النظام"
-
-msgid "Abriendo restablecer   contraseÃ±as de Windows"
-msgstr "فتح نوافذ إعادة تعيين كلمة المرور"
-
-msgid "Copiar al portapapeles la ruta"
-msgstr "نسخ المسار إلى الحافظة"
-
-msgid "Ruta copiada "
-msgstr "نسخ المسار"
-
-msgid "Abrir el administrador de discos"
-msgstr "افتح إدارة الإقراص"
-
-msgid "Abrir la tienda oficial de complementos"
-msgstr "فتح متجر أضافات nvdaالرسمي"
-
-msgid "Abrir monitor de recursos"
-msgstr "فتح مراقب الموارد"
-
-msgid "Copiar al portapapeles la lista de carpetas y archivos"
-msgstr "انسخ قائمة المجلدات والملفات إلى الحافظة"
-
-msgid "Saber la versiÃ³n de Windows"
-msgstr "تعرف على إصدار Windows"
-
-msgid "Abrir el administrador de dispositivos"
-msgstr "افتح إدارة الأجهزة"
-
-msgid "Abrir Opciones de carpeta"
-msgstr "افتح خيارات المجلد"
-
-msgid "Hacer anÃ¡lisis del sistema Con SFC  "
-msgstr "إجراء تحليل النظام مع CFS  "
-
-msgid "Copiar informaciÃ³n de todo el sistema al portapapeles"
-msgstr "انسخ المعلومات على مستوى النظام إلى الحافظة"
-
-msgid "informaciÃ³n del sistema copiada al portapapeles"
-msgstr "نسخ معلومات النظام إلى الحافظة"
-
-msgid "Abrir mapa de caracteres"
-msgstr "افتح خريطة الأحرف"
-
-msgid "Abrir Asistente guardar contraseÃ±as de usuarios"
-msgstr "فتحمعالج حفظ كلمات مرور المستخدم "
-
-msgid "Abrir opciones de voz"
-msgstr "فتح خيارات الصوت"
-
-msgid "Copiar al portapapeles la informaciÃ³n sobre las tarjetas de sonido"
-msgstr "نسخ المعلومات حول بطاقات الصوت إلى الحافظة"
-
-msgid "Ocultar carpetas"
-msgstr "إخفاء المجلدات"
-
-msgid "Mostrar carpetas ocultas"
-msgstr "إظهار المجلدات المخفية"
-
-msgid "Limpiar disco"
-msgstr "تنظيف القرص"
-
-msgid "Reiniciar Explorador"
-msgstr "إعادة تشغيل المستكشف"
-
-msgid "Abrir Optimizar las unidades"
-msgstr "فتح تحسين محركات الأقراص"
-
-msgid "Hibernar el sistema"
-msgstr "إسبات النظام"
-
-msgid "Reparar sistema con Dism"
-msgstr "نظام الإصلاح مع Dism"
-
-msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
-msgstr "أعد تشغيل النظام وادخل إلى الوضع الآمن مع الاتصال بالشبكة"
-
-msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
-msgstr "قم بتعطيل الوضع الآمن وإعادة تشغيل النظام"
-
-msgid "Abrir Mezclador de volumen"
-msgstr "إفتح خالط الصوت"
-
-msgid ""
-"Si es la primera vez que ejecuta Ã©sta acciÃ³n.\n"
-" es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
-" puede pulsar en Crear perfil tambiÃ©n si desea modificar uno existente, o "
-"puede marcar  la casilla para no volver a mostrar Ã©ste mensaje."
-msgstr ""
-"إذا كانت هذه هي المرة الأولى التي تقوم فيها بهذا الإجراء.\n"
-" تحتاج إلى إنشاء ملف تعريف للتنظيف ، ما عليك سوى القيام بذلك مرة واحدة.\n"
-" يمكنك النقر فوق إنشاء ملف تعريف أيضًا إذا كنت تريد تعديل ملف تعريف موجود ، "
-"أو يمكنك تحديد المربع لعدم إظهار هذه الرسالة مرة أخرى."
-
-msgid "Crear perfil"
-msgstr "إنشاء ملف تعريف"
-
-msgid "No volver  a mostrar este mensaje"
-msgstr "لا تظهر هذه الرسالة مرة أخرى"
-
-msgid ""
-"EstÃ¡ a punto de reiniciar el sistema, y activar el modo Seguro con "
-"funciones de red.\n"
-" En Ã©ste modo los sistemas Windows anteriores al 10, puede que no tengan "
-"sonidos, por ende, el lector de pantalla no tendrÃ¡ soporte de voz.\n"
-" DeberÃ¡ deshabilitar este modo desde las configuraciones del sistema "
-"msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del "
-"sistema.\n"
-" Â¿EstÃ¡ seguro que desea continuar?"
-msgstr ""
-"أنت على وشك إعادة تشغيل النظام وتنشيط الوضع الآمن مع الاتصال بالشبكة.\n"
-" في هذا الوضع ، قد لا تحتوي أنظمة Windows السابقة على 10 أصوات ، وبالتالي "
-"لن يكون لقارئ الشاشة دعم صوتي.\n"
-" يجب عليك تعطيل هذا الوضع من تكوينات نظام msconfig ، أو باستخدام TCA "
-"SystemUtilities في القسم: إيقاف تشغيل النظام.\n"
-" هل أنت متأكد أنك تريد الاستمرار؟"
-
-msgid "AtenciÃ³n activaciÃ³n del Modo seguro!"
-msgstr "تنشيط الانتباه من الوضع الآمن!"
-
-msgid "Modo seguro activado, se va a reiniciar el Pc"
-msgstr "تم تنشيط الوضع الآمن ، وسيُعاد تشغيل الكمبيوتر"
-
-msgid "Modo normal, reiniciando el Pc"
-msgstr "الوضع العادي ، إعادة تشغيل جهاز الكمبيوتر"
-
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:58
 msgid "Apagando el Pc."
 msgstr "إيقاف تشغيل الكمبيوتر."
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:65
 msgid "Reiniciando el PC."
 msgstr "إعادة تشغيل جهاز الكمبيوتر."
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:72
 msgid "anulando el apagado o reinicio del pc."
 msgstr "إلغاء إيقاف تشغيل أو إعادة تشغيل جهاز الكمبيوتر."
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:84
 msgid "Copiada la lista al portapapeles"
 msgstr "نسخ قائمة إلى الحافظة"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:86
+msgid "No se pudo copiar la lista al portapapeles"
+msgstr "تعذر نسخ القائمة إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:95
 msgid "Copiada la info del sonido al portapapeles"
 msgstr "نسخ معلومات الصوت إلى الحافظة"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:111
+msgid "No fue posible ocultar los elementos"
+msgstr "غير قادر على  إخفاء العناصر"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:122
+msgid "no se pudieron mostrar los archivos"
+msgstr "تعذر عرض الملفات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:128
+msgid ""
+"Si es la primera vez que ejecuta ésta acción.\n"
+" es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
+" puede pulsar en Crear perfil también si desea modificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje."
+msgstr ""
+"إذا كانت هذه هي المرة الأولى التي تقوم فيها بتشغيل هذا الإجراء.\n"
+"تحتاج إلى إنشاء ملف تعريف تنظيف، تحتاج إلى القيام بذلك مرة واحدة فقط.\n"
+"يمكنك أيضًا النقر فوق \"إنشاء ملف تعريف\" إذا كنت تريد تعديل ملف تعريف موجود، يمكنك تحديد المربع لعدم إظهار هذه الرسالة مجددا."
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:129
+msgid "Crear perfil"
+msgstr "إنشاء ملف تعريف"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:130
+msgid "No volver  a mostrar este mensaje"
+msgstr "لا تظهر هذه الرسالة مرة أخرى"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:174
+msgid ""
+"Está a punto de reiniciar el sistema, y activar el modo Seguro con funciones de red.\n"
+" En éste modo los sistemas Windows anteriores al 10, puede que no tengan sonidos, por ende, el lector de pantalla no tendrá soporte de voz.\n"
+" Deberá deshabilitar este modo desde las configuraciones del sistema msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del sistema.\n"
+" ¿Está seguro que desea continuar?"
+msgstr ""
+"أنت على وشك إعادة تشغيل النظام، والدخول إلى الوضع الآمن مع الأنترنت.\n"
+" في هذا الوضع، قد لا تحتوي أنظمة Windows قبل الإصدار 10 على أصوات، وبالتالي، لن يتوفر لقارئ الشاشة دعم صوتي .\n"
+" يجب عليك تعطيل هذا الوضع من msconfig لإعدادات النظام، أو باستخدام TCA SystemUtilities في القسم: إيقاف تشغيل النظام.\n"
+" هل أنت متأكد من رغبتك في المتابعة؟"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:174
+msgid "Atención activación del Modo seguro!"
+msgstr "تحذير سيؤدي هذا إلى تفعيل الوضع الآمن!"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:180
+msgid "Modo seguro activado, se va a reiniciar el Pc"
+msgstr "تم تنشيط الوضع الآمن ، وسيُعاد تشغيل الكمبيوتر"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:189
+msgid "Modo normal, reiniciando el Pc"
+msgstr "الوضع العادي ، إعادة تشغيل جهاز الكمبيوتر"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:194
+msgid "Suspendiendo el sistema"
+msgstr "تعليق النظام"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:222
+msgid "Se activó el escanéo de archivos comprimidos"
+msgstr "تم تشغيل فحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:228
+msgid "Se desactivó el escanéo de archivos comprimidos"
+msgstr "تم تعطيل فحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:236
+msgid "Se desactivó la Webcam"
+msgstr "تم تعطيل كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:244
+msgid "Se activó la Webcam"
+msgstr "تم تفعيل كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:248
+msgid ""
+"Está a punto de activar entrar a la BIOS-UEFI\n"
+" El PC se va a reiniciar en unos segundos. \n"
+" Recuerda que en la BIOS-UEFI no podrás utilizar un lector de pantalla, tendrás que pedir ayuda visual.\n"
+" ¿está seguro que desea continuar?"
+msgstr ""
+"أنت على وشك تنشيط الدخول إلى BIOS-UEFI\n"
+"ستتم إعادة تشغيل جهاز الكمبيوتر خلال بضع ثوانٍ. "
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:248
+msgid "¿Atención Se intentará activar la entrada a la BIOS-UEFI!"
+msgstr "تحذير: هل تريد محاولة تنشيط الدخول إلى BIOS-UEFI!"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:259
+msgid "Se limpió la Caché DNS "
+msgstr "تم مسح ذاكرة التخزين المؤقت لـ DNS"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:266
+msgid "Se desactivó el espacio reservado"
+msgstr "المساحة المحجوزة للتحديثات معطلة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:272
+msgid "Se activó el espacio reservado"
+msgstr "تم تفعيل المساحة المحجوزة للتحديثات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:284
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:296
+msgid "No se pudo obtener la ruta para el CMD"
+msgstr "تعذر الحصول على المسار لـ CMD"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:307
+msgid ""
+"Este proceso eliminará todos los complementos y configuraciones que están en pantallas seguras.\n"
+" Es necesario que se reinicie el explorador de Windows, se deben cerrar todas las ventanas del explorador.\n"
+" Si tiene activado el uac (Control de cuentas de usuario), es probable que deba darle varias veces permisos para continuar.\n"
+" ¿Está seguro que desea continuar?"
+msgstr ""
+"ستؤدي هذه العملية إلى إزالة كافة الإضافات والإعدادات الموجودة في الشاشات الآمنة.\n"
+" يجب إعادة تشغيل مستكشف Windows، ويجب إغلاق كافة نوافذ المستكشف.\n"
+" إذا قمت بتمكين uac (التحكم في حساب المستخدم)، فربما ستحتاج إلى منح الإذن عدة مرات للمتابعة.\n"
+"هل أنت متأكد من رغبتك في المتابعة؟"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:307
+msgid "Atención borrando addons y configuraciones de pantallas seguras"
+msgstr "تحذير: سيؤدي هذا  إلى حذف الإضافات وإعدادات الشاشة الآمنة الخاصة ببرنامج NVDA أو غيره"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:330
+msgid "Se limpió la configuración en pantallas seguras  "
+msgstr "تم مسح إعدادات الشاشات الآمنة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:335
+msgid "No existen configuraciones guardadas en pantallas seguras"
+msgstr "لا توجد إعدادات محفوظة في الشاشات الآمنة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:342
+msgid "no hay nada en el historial del portapapeles"
+msgstr "لا يوجد شيء في سجل الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:346
+msgid "No fue posible eliminar el portapapeles"
+msgstr "تعذر تفريغ الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:348
+msgid "Se limpió correctamente el portapapeles"
+msgstr "تم تفريغ الحافظة بنجاح"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:373
+msgid ""
+"No fue posible desactivar el control de cuentas de usuario\n"
+" Error: {}"
+msgstr ""
+"غير قادر على تعطيل التحكم في حساب المستخدم\n"
+"الخطأ: {}"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:375
+msgid ""
+"Se ha desactivado el control de cuentas de usuario (uac).\n"
+" Es necesario reiniciar el sistema para que surtan los cambios. \n"
+" ¿Desea hacerlo ahora?"
+msgstr ""
+"تم تعطيل التحكم في حساب المستخدم (uac).\n"
+"يجب إعادة تشغيل النظام ليتم تطبيق الإعدادات. "
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:375
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:391
+msgid "Atención !Reinicio necesario"
+msgstr "تحذير! إعادة التشغيل مطلوبة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:389
+msgid ""
+"No fue posible activar el control de cuentas de usuario\n"
+" Error: {}"
+msgstr ""
+"غير قادر على تنشيط التحكم بحساب المستخدم\n"
+"الخطأ: {}"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:391
+msgid ""
+"Se ha activado el control de cuentas de usuario (uac).\n"
+" Es necesario reiniciar el sistema para que surtan los cambios. \n"
+" ¿Desea hacerlo ahora?"
+msgstr ""
+"تم تمكين التحكم في حساب المستخدم (uac).\n"
+"يجب إعادة تشغيل النظام ليتم تطبيق الإعدادات. "
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:401
+msgid "Escriba aquí el nombre de la aplicación"
+msgstr "أدخل إسم البرنامج الذي تريد إغلاقه إجبارية"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:401
+msgid "Ingrese el nombre:"
+msgstr "أدخل الاسم:"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:410
+msgid ""
+"No fue posible termninar el proceso {}\n"
+" Ocurrió el error: {}"
+msgstr ""
+"غير قادر على إنهاء العملية {}\n"
+" حدث الخطأ: {}"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:413
+msgid "Se terminaron todos los procesos de: {} de forma correcta"
+msgstr "تم إنهاء كافة عمليات: {} بنجاح"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:416
+msgid "Debe escribir el nombre de una aplicación"
+msgstr "يجب عليك إدخال اسم التطبيق"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:428
+msgid ""
+"No fue posible habilitar el Bluetooth\n"
+" Ocurrió el error: {}"
+msgstr ""
+"غير قادر على تمكين Bluetooth\n"
+"حدث خطأ: {}"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:430
+msgid "Bluetooth habilitado"
+msgstr "تفعيل البلوتوث"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:442
+msgid ""
+"No fue posible deshabilitar el Bluetooth\n"
+" Ocurrió el error: {}"
+msgstr ""
+"تعذر تعطيل Bluetooth\n"
+"حدث خطأ: {}"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_fun.py:445
+msgid "Bluetooth deshabilitado"
+msgstr "تم تعطيل البلوتوث"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:16
 msgid "Apagar"
 msgstr "حذف"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:18
+msgid "Entrar a la BIOS-UEFI"
+msgstr "الدخول إلى BIOS-UEFI"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:20
 msgid "Hibernar"
 msgstr "السكون"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:22
 msgid "Reiniciar"
-msgstr "إعادة تشغيل"
+msgstr "إعادة التشغيل"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:24
 msgid "Reiniciar y entrar en Modo seguro con funciones de red"
-msgstr "أعد التشغيل وادخل إلى الوضع الآمن مع الاتصال بالشبكة"
+msgstr "إعادة التشغيل مع الدخول إلى الوضع الآمن والاتصال بالأنترنت"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:26
 msgid "Reiniciar en Modo normal"
-msgstr "أعد التشغيل في الوضع العادي"
+msgstr "إعادة التشغيل في الوضع العادي"
 
-msgid "Asistente guardar contraseÃ±as de usuarios"
-msgstr "معالج حفظ كلمات مرور المستخدم"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:28
+msgid "Suspender"
+msgstr "تعليق"
 
-msgid "Asistente transferir archivos por Bluetooth"
-msgstr "معالج نقل ملفات البلوتوث"
-
-msgid "Carpeta Roaming"
-msgstr "إعدادات البرامج"
-
-msgid "administrador de discos"
-msgstr "مدير القرص"
-
-msgid "administrador de dispositivos"
-msgstr "مدير الجهاز"
-
-msgid "asistente para guardar la contraseÃ±a del sistema"
-msgstr "المعالج لحفظ كلمة مرور النظام"
-
-msgid "mapa de caracteres"
-msgstr "خريطة الأحرف"
-
-msgid "Monitor de recursos"
-msgstr "مراقب المورد"
-
-msgid "Opciones de carpeta"
-msgstr "خيارات المجلد"
-
-msgid "Mezclador de volumen"
-msgstr "مستوى الصوت"
-
-msgid "Opciones de sonido"
-msgstr "خيارات الصوت"
-
-msgid "Opciones de voz"
-msgstr "خيارات النطق"
-
-msgid "Optimizar las unidades"
-msgstr "تحسين محركات الأقراص"
-
-msgid "AnÃ¡lisis del sistema Con SFC    "
-msgstr "تحليل النظام باستخدام SFC"
-
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:30
 msgid "Apagado del sistema"
 msgstr "إيقاف تشغيل النظام"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:34
+msgid "Borrar el portapapeles"
+msgstr "تفريغ الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:36
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:298
+msgid "Cerrar todas las aplicaciones"
+msgstr "إغلاق كافة البرامج"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:39
+msgid "Desbloquear explorador de Windows"
+msgstr "فتح مستكشف الملفات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:41
+msgid "Matar procesos"
+msgstr "إغلاق البرامج إجباريا"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:44
+msgid "Monitor de recursos"
+msgstr "مدير الموارد"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:47
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:154
+msgid "Reiniciar Explorador"
+msgstr "إعادة تشغيل مستكشف الملفات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:49
 msgid "Explorador y Procesos"
 msgstr "المستكشف والعمليات"
 
-msgid "Sonido y voz"
-msgstr "الأصوات وأجهزة الصو"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:53
+msgid "Activar almacenamiento reservado"
+msgstr "تفعيل المساحة المحجوزة للتحديثات"
 
-msgid "ReparaciÃ³n y optimizaciÃ³n"
-msgstr "التحسينات والإصلاحات"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:55
+msgid "Desactivar almacenamiento reservado"
+msgstr "تعطيل المساحة المحجوزة للتحديثات"
 
-msgid "Utilidades del sistema"
-msgstr "أدوات النظام"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:57
+msgid "Análisis del sistema Con SFC    "
+msgstr "فحص النظام باستخدام SFC"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:59
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:257
+msgid "Limpiar caché DNS"
+msgstr "مسح ذاكرة التخزين المؤقت لDNS"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:61
+msgid "Limpiar configuración guardada en pantallas seguras"
+msgstr "مسح الإعدادات المحفوظة في الشاشات الآمنة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:63
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:149
+msgid "Limpiar disco"
+msgstr "تنظيف القرص"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:65
+msgid "Optimizar las unidades"
+msgstr "تحسين محركات الأقراص"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:67
+msgid "Restablecer PC"
+msgstr "إعادة ضبط جهاز الكمبيوتر"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:69
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:189
+msgid "Reparar sistema con Dism"
+msgstr "إصلاح النظام بستخدام Dism"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:71
 msgid "Reparación y optimización"
 msgstr "إصلاحات وتحسينات"
 
-msgid "Análisis del sistema Con SFC  "
-msgstr "تحليل النظام باستخدام SFC"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:74
+msgid "Activar el control de cuentas de usuario (uac)"
+msgstr "تمكين التحكم في حساب المستخدم (UAC)"
 
-msgid "&TCA_SystemUtilities"
-msgstr "أ&دوات النظام TCA"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:77
+msgid "Analizar arranque del sistema"
+msgstr "فحص إقلاع النظام"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:79
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:226
+msgid "Análisis completo"
+msgstr "فحص كامل"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:81
+msgid "análisis rápido"
+msgstr "الفحص السريع"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:83
+msgid "Escanear archivos comprimidos"
+msgstr "فحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:85
+msgid "No escanear archivos comprimidos"
+msgstr "لا تقم بفحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:87
+msgid "Desactivar el control de cuentas de usuario (uac)"
+msgstr "تعطيل التحكم في حساب المستخدم (UAC)"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:90
+msgid "Listado de archivos en cuarentena al portapapeles"
+msgstr "نسخ الملفات المعزولة إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:92
+msgid "Seguridad de Windows"
+msgstr "حماية الويندوز"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:96
+msgid "Activar Webcam"
+msgstr "تنشيط كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:98
+msgid "Desactivar Webcam"
+msgstr "تعطيل كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:100
+msgid "Mezclador de volumen"
+msgstr "مستوى الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:102
+msgid "Opciones de sonido"
+msgstr "خيارات الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:104
+msgid "Opciones de voz"
+msgstr "خيارات النطق"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:106
+msgid "Voz y multimedia"
+msgstr "الصوت والوسائط المتعددة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:109
 msgid "Asistente guardar contraseñas de usuarios"
 msgstr "معالج حفظ كلمات مرور المستخدم"
 
-msgid "Análisis del sistema Con SFC    "
-msgstr "تحليل النظام باستخدام SFC"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:111
+msgid "Asistente transferir archivos por Bluetooth"
+msgstr "معالج نقل ملفات البلوتوث"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:113
+msgid "Carpeta Roaming"
+msgstr "فتح مجلد إعدادات البرامج"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:115
+msgid "administrador de discos"
+msgstr "إدارة الأقراص"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:117
+msgid "administrador de dispositivos"
+msgstr "إدارة الأجهزة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:119
 msgid "asistente para guardar la contraseña del sistema"
-msgstr "المعالج لحفظ كلمة مرور النظام"
+msgstr "معالج حفظ كلمة مرور النظام"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:121
+msgid "mapa de caracteres"
+msgstr "خريطة الأحرف"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:123
+msgid "Opciones de carpeta"
+msgstr "خيارات عرض الملفات والمجلدات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:125
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:103
 msgid "Saber la versión de Windows"
-msgstr "تعرف على إصدار الويندوز"
+msgstr "عرض إصدار ويندوز"
 
-msgid "Hacer análisis del sistema Con SFC  "
-msgstr "قم بتحليل النظام باستخدام SFC"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/TCA_SU/t_menu.py:127
+msgid "Utilidades del sistema"
+msgstr "أدوات النظام"
 
-msgid "Copiar información de todo el sistema al portapapeles"
-msgstr "نسخ المعلومات على مستوى النظام إلى الحافظة"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:42
+msgid "Apagar el sistema"
+msgstr "اغلاق النظام"
 
-msgid "Copiar al portapapeles la información sobre las tarjetas de sonido"
-msgstr "نسخ المعلومات حول بطاقات الصوت إلى الحافظة"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:46
+msgid "Reinicio del sistema"
+msgstr "إعادة تشغيل النظام"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:51
+msgid "Anular apagado"
+msgstr "إلغاء إيقاف التشغيل"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:55
+msgid "Abrir opciones de sonido"
+msgstr "فتح خيارات الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:61
+msgid "Abrir Asistente transferir archivos por Bluetooth"
+msgstr "فتح معالج نقل ملفات Bluetooth"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:65
+msgid "Saber la arquitectura del sistema"
+msgstr "عرض بنية النظام"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:72
+msgid "Su sistema operativo es de: {} Bits"
+msgstr "نظام التشغيل الخاص بك هو: {} بت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:74
 msgid "Abrir el asistente para guardar la contraseña del sistema"
-msgstr "افتح المعالج لحفظ كلمة مرور النظام"
+msgstr "فتح معالج حفظ كلمة مرور النظام"
 
-msgid "TCA-SystemUtilities"
-msgstr "أدوات النظام لTCA"
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:76
+msgid "Abriendo restablecer   contraseñas de Windows"
+msgstr "فتح إعادة تعيين كلمات مرور Windows"
 
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:79
+msgid "Copiar al portapapeles la ruta"
+msgstr "نسخ المسار إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:84
+msgid "Ruta copiada "
+msgstr "نسخ المسار"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:86
+msgid "No se pudo copiar la ruta"
+msgstr "تعذر نسخ المسار"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:87
+msgid "Abrir el administrador de discos"
+msgstr "فتح مدير الأقراص"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:91
+msgid "Abrir la tienda oficial de complementos"
+msgstr "فتح موقع أضافات nvdaالرسمي"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:95
+msgid "Abrir monitor de recursos"
+msgstr "فتح مدير الموارد"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:99
+msgid "Copiar al portapapeles la lista de carpetas y archivos"
+msgstr "نسخ قائمة المجلدات والملفات إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:107
+msgid "Abrir el administrador de dispositivos"
+msgstr "فتح إدارة الأجهزة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:111
+msgid "Abrir Opciones de carpeta"
+msgstr "فتح خيارات عرض الملفات والمجلدات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:116
+msgid "Hacer análisis del sistema Con SFC  "
+msgstr "فحص النظام باستخدام SFC"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:120
+msgid "Copiar información de todo el sistema al portapapeles"
+msgstr "نسخ معلومات النظام إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:123
+msgid "información del sistema copiada al portapapeles"
+msgstr "تم نسخ معلومات النظام إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:125
+msgid "Abrir mapa de caracteres"
+msgstr "فتح خريطة الأحرف"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:129
 msgid "Abrir Asistente guardar contraseñas de usuarios"
-msgstr "افتح معالج حفظ كلمات مرور المستخدم"
+msgstr "فتح معالج حفظ كلمات مرور المستخدم"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:133
+msgid "Abrir opciones de voz"
+msgstr "فتح خيارات الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:137
+msgid "Copiar al portapapeles la información sobre las tarjetas de sonido"
+msgstr "نسخ معلومات بطاقات الصوت إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:141
+msgid "Ocultar carpetas"
+msgstr "إخفاء المجلدات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:145
+msgid "Mostrar carpetas ocultas"
+msgstr "إظهار المجلدات المخفية"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:158
+msgid "Abrir Optimizar las unidades"
+msgstr "فتح تحسين محركات الأقراص"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:162
+msgid "Hibernar el sistema"
+msgstr "إسبات النظام"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:167
+msgid "Volumen"
+msgstr "الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:194
+msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
+msgstr "إعادة التشغيل مع الدخول إلى الوضع الآمن والاتصال بالأنترنت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:198
+msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
+msgstr "تعطيل الوضع الآمن وإعادة تشغيل النظام"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:202
+msgid "Abrir Mezclador de volumen"
+msgstr "إفتح خلاط الصوت"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:207
+msgid "Suspender el sistema"
+msgstr "تعليق النظام"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:211
+msgid "Abrir Restablecer éste PC"
+msgstr "فتح إعادة ضبط الكمبيوتر"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:216
+msgid "Copiar al portapepeles la lista de archivos en cuarentena"
+msgstr "نسخ قائمة الملفات المعزولة إلى الحافظة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:221
+msgid "Análisis rápido"
+msgstr "فحص سريع"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:231
+msgid "Análisis del sector de arranque"
+msgstr "فحص قطاع التمهيد، الباد سكتور"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:236
+msgid "Activar escanéo de archivos comprimidos"
+msgstr "تفعيل فحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:240
+msgid "Desactivar escanéo de archivos comprimidos"
+msgstr "تعطيل فحص الملفات المضغوطة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:244
+msgid "Desactivar la Webcam"
+msgstr "تعطيل كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:249
+msgid "Activar la Webcam"
+msgstr "تنشيط كاميرا الويب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:253
+msgid "Reiniciar el sistema y entrar en la BIOS-UEFI"
+msgstr "الدخول إلى BIOS-UEFI"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:262
+msgid "Desactivar el espacio reservado"
+msgstr "تعطيل المساحة المحجوزة للتحديثات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:267
+msgid "Activar el espacio reservado"
+msgstr "تفعيل المساحة المحجوزة للتحديثات"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:271
+msgid "AbrircConsola CMD en la ruta actual"
+msgstr "فتح CMD في المسار الحالي"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:275
+msgid "AbrircConsola CMD Administrador"
+msgstr "فتح CMD كمسؤول"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:279
+msgid "Limpiar configuración guardada para ejecutarse en pantallas seguras"
+msgstr "مسح الإعدادات المحفوظة للتشغيل في الشاشات الآمنة"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:283
+msgid "Borrar el portapapeles y su historial"
+msgstr "تفريغ الحافظة وسجلها"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:287
+msgid "Tomar la ruta con z_path"
+msgstr "نسخ المسار مع z_path"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:293
+msgid "Cerrar taréas que no responden"
+msgstr "إغلاق المهام التي لا تستجيب"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:304
+msgid "Abrir carpeta Roaming"
+msgstr "فتح مجلد Roaming"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:308
+msgid "Desactivar el Control de cuentas de usuario (uac)"
+msgstr "تعطيل التحكم في حساب المستخدم (uac)"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:313
+msgid "Activar el Control de cuentas de usuario (uac)"
+msgstr "تمكين التحكم في حساب المستخدم (uac)"
+
+#: Desktop/TCA_SystemUtilities/globalPlugins/TCA_SystemUtilities/__init__.py:317
+msgid "Matar los procesos de cualquier aplicación activa"
+msgstr "إغلاق عمليات أي تطبيق نشط"
+
+#~ msgid "Abrir el asistente para guardar la contraseÃ±a del sistema"
+#~ msgstr "افتح معالج حفظ كلمة مرور النظام"
+
+#~ msgid "Abriendo restablecer   contraseÃ±as de Windows"
+#~ msgstr "فتح نوافذ إعادة تعيين كلمة المرور"
+
+#~ msgid "Saber la versiÃ³n de Windows"
+#~ msgstr "تعرف على إصدار Windows"
+
+#~ msgid "Hacer anÃ¡lisis del sistema Con SFC  "
+#~ msgstr "إجراء تحليل النظام مع CFS  "
+
+#~ msgid "Copiar informaciÃ³n de todo el sistema al portapapeles"
+#~ msgstr "انسخ المعلومات على مستوى النظام إلى الحافظة"
+
+#~ msgid "informaciÃ³n del sistema copiada al portapapeles"
+#~ msgstr "نسخ معلومات النظام إلى الحافظة"
+
+#~ msgid "Abrir Asistente guardar contraseÃ±as de usuarios"
+#~ msgstr "فتحمعالج حفظ كلمات مرور المستخدم "
+
+#~ msgid "Copiar al portapapeles la informaciÃ³n sobre las tarjetas de sonido"
+#~ msgstr "نسخ المعلومات حول بطاقات الصوت إلى الحافظة"
+
+#~ msgid ""
+#~ "Si es la primera vez que ejecuta Ã©sta acciÃ³n.\n"
+#~ " es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
+#~ " puede pulsar en Crear perfil tambiÃ©n si desea modificar uno existente, o puede marcar  la casilla para no volver a mostrar Ã©ste mensaje."
+#~ msgstr ""
+#~ "إذا كانت هذه هي المرة الأولى التي تقوم فيها بهذا الإجراء.\n"
+#~ " تحتاج إلى إنشاء ملف تعريف للتنظيف ، ما عليك سوى القيام بذلك مرة واحدة.\n"
+#~ " يمكنك النقر فوق إنشاء ملف تعريف أيضًا إذا كنت تريد تعديل ملف تعريف موجود ، أو يمكنك تحديد المربع لعدم إظهار هذه الرسالة مرة أخرى."
+
+#~ msgid ""
+#~ "EstÃ¡ a punto de reiniciar el sistema, y activar el modo Seguro con funciones de red.\n"
+#~ " En Ã©ste modo los sistemas Windows anteriores al 10, puede que no tengan sonidos, por ende, el lector de pantalla no tendrÃ¡ soporte de voz.\n"
+#~ " DeberÃ¡ deshabilitar este modo desde las configuraciones del sistema msconfig, o haciendo uso de TCA SystemUtilities en el apartado: apagado del sistema.\n"
+#~ " Â¿EstÃ¡ seguro que desea continuar?"
+#~ msgstr ""
+#~ "أنت على وشك إعادة تشغيل النظام وتنشيط الوضع الآمن مع الاتصال بالشبكة.\n"
+#~ " في هذا الوضع ، قد لا تحتوي أنظمة Windows السابقة على 10 أصوات ، وبالتالي لن يكون لقارئ الشاشة دعم صوتي.\n"
+#~ " يجب عليك تعطيل هذا الوضع من تكوينات نظام msconfig ، أو باستخدام TCA SystemUtilities في القسم: إيقاف تشغيل النظام.\n"
+#~ " هل أنت متأكد أنك تريد الاستمرار؟"
+
+#~ msgid "AtenciÃ³n activaciÃ³n del Modo seguro!"
+#~ msgstr "تنشيط الانتباه من الوضع الآمن!"
+
+#~ msgid "Asistente guardar contraseÃ±as de usuarios"
+#~ msgstr "معالج حفظ كلمات مرور المستخدم"
+
+#~ msgid "asistente para guardar la contraseÃ±a del sistema"
+#~ msgstr "المعالج لحفظ كلمة مرور النظام"
+
+#~ msgid "AnÃ¡lisis del sistema Con SFC    "
+#~ msgstr "تحليل النظام باستخدام SFC"
+
+#~ msgid "Sonido y voz"
+#~ msgstr "الأصوات وأجهزة الصو"
+
+#~ msgid "ReparaciÃ³n y optimizaciÃ³n"
+#~ msgstr "التحسينات والإصلاحات"
+
+#~ msgid "Análisis del sistema Con SFC  "
+#~ msgstr "تحليل النظام باستخدام SFC"
+
+#~ msgid "&TCA_SystemUtilities"
+#~ msgstr "أ&دوات النظام TCA"
+
+#~ msgid "TCA-SystemUtilities"
+#~ msgstr "أدوات النظام لTCA"
