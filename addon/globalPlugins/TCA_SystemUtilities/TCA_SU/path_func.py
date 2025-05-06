@@ -18,29 +18,36 @@ addonHandler.initTranslation()
 	
 '''Función para obtener la ruta del ssistema( Win32), es cortesía de:
 Héctor Benítez Corredera<xebolax@gmail.com>'''
-
 def GetPath(self):
 	count_attempts = 0	
 
 	try:
-		sleep(0.5)
+		sleep(0.7)
 		keyboardHandler.KeyboardInputGesture.fromName("Control+c").send()
 		sleep(0.5)
 
-		while count_attempts < 3:
-			cb.OpenClipboard()
-			if cb.IsClipboardFormatAvailable(cb.CF_HDROP):
-				clipboard_file_path = cb.GetClipboardData(cb.CF_HDROP)
+		max_attempts = 5
+		while count_attempts < max_attempts:
+			sleep(0.3 * (count_attempts + 1))  # Espera progresiva
+			try:
+				cb.OpenClipboard(0)
+				if cb.IsClipboardFormatAvailable(cb.CF_HDROP):
+					clipboard_file_path = cb.GetClipboardData(cb.CF_HDROP)
+					cb.CloseClipboard()
+					
+					if not clipboard_file_path or len(clipboard_file_path) != 1:
+						raise ValueError("Selección inválida")
+					
+					path = clipboard_file_path[0]
+					if not os.path.exists(path):
+						raise FileNotFoundError("Ruta no existe")
+					
+					return path
+			except Exception as e:
+				if count_attempts == max_attempts - 1:
+					ui.message(_("Error: {}. Por favor seleccione el elemento nuevamente").format(str(e)))
 				cb.CloseClipboard()
-				numList = len(clipboard_file_path)
-				if numList == 0: # Si no hay nada informamos
-					ui.message(_("No se pudo tomar el foco, seleccione algún elemento"))
-					return False
-				elif numList == 1: 
-					return clipboard_file_path[0]
-				else: 
-					ui.message(_("Ha seleccionado %s ficheros. Seleccione solo un fichero.") % numList)
-					return False
+				count_attempts += 1
 		
 			count_attempts+=1
 			sleep(0.5)
@@ -50,7 +57,7 @@ def GetPath(self):
 
 	except:
 		cb.CloseClipboard()			
-	
+		
 #función para crear el path.
 def z_path(self):
 	p = GetPath(self) 
@@ -113,25 +120,22 @@ def t_obj(self):
 				self.v_obj = os.path.join(os.environ['userprofile'], "OneDrive", self.v_obj)
 			elif os.path.isdir(os.path.join(os.environ['userprofile'], self.v_obj)):
 				self.v_obj = os.path.join(os.environ['userprofile'], self.v_obj)
-			return self.v_obj
-		
+			return self.v_obj		
 		else:
 			return self.v_obj		
 	else:
 		self.v_obj = False
-		return self.v_obj
 
 
 #Función que comprobará cual de los 2 métodos para obtener el path del sistema es válido.
 def fs_path(self):
-	t_obj(self)
-	
-	if self.v_obj is not False and os.path.dirname('{}'.format(self.v_obj)) != '':
-		self.path = '{}'.format(self.v_obj)
+	# Intentar primero el método del objeto
+	if t_obj(self) and os.path.exists(self.v_obj):
+		self.path = self.v_obj
 	else:
-		z_path(self)
-		if self.v_path is not False:
-			self.path = '{}'.format(self.v_path)
+		# Usar método del portapapeles
+		if z_path(self) and os.path.exists(self.v_path):
+			self.path = self.v_path
 		else:
 			self.path = False
 	return self.path

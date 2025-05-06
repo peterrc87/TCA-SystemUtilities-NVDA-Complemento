@@ -9,8 +9,8 @@ from time import sleep
 import os, subprocess, platform, ctypes, winsound, sys  
 from threading import Thread
 import wx
+from comtypes.client import CreateObject as COMCreate
 from .path_func import z_path, t_obj, fs_path
-
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
@@ -54,31 +54,31 @@ class T_h(Thread):
 		self.start()
 	
 	def run(self):
+		@rdt
 		def TCAShut():		
 			ui.message(_('Apagando el Pc.'))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-			si = subprocess.STARTUPINFO()
-			si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-			subprocess.run('shutdown.exe -s -t 3', shell=True, startupinfo=si)
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -s -t 3', None, 10)
 			
+		@rdt
 		def TCAShutR():
 			ui.message(_('Reiniciando el PC.'))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-			si = subprocess.STARTUPINFO()
-			si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-			subprocess.run('shutdown.exe -r -t 3', shell=True)
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -r -t 3', None, 10)
 	
 		def TCAShutA():
 			ui.message(_('anulando el apagado o reinicio del pc.'))
-			subprocess.run('shutdown.exe -a', shell=True)
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -a', None, 10)
+
 
 		def TCAcopy_sys():
 			subprocess.Popen('Systeminfo | clip', shell=True)
 			
 		def TCAList():
-			t_obj(self)
-			if self.v_obj is not False:
-				os.chdir(self.v_obj)
+			#t_obj(self)
+			fs_path(self)
+			if self.path  is not False:
+				os.chdir(self.path    )
 				subprocess.Popen('dir /b|clip', shell=True)
 				os.chdir(a_path)
 				ui.message(_('Copiada la lista al portapapeles'))
@@ -96,10 +96,11 @@ class T_h(Thread):
 			
 		@rdt
 		def ocu():
-			t_obj(self)
-			if self.v_obj is not False:
-				d=os.path.dirname(self.v_obj)
-				b=os.path.basename(self.v_obj)
+			fs_path(self)
+			if self.path  is not False:
+
+				d=os.path.dirname(self.path)
+				b=os.path.basename(self.v_path)
 				os.chdir(d)
 				shellapi.ShellExecute(None, None, 'cmd.exe', '/c' + r'attrib +s +h "{}"'.format(b), None, 0)	
 				sleep(0.5)
@@ -112,9 +113,10 @@ class T_h(Thread):
 
 		@rdt
 		def mos():
-			t_obj(self)
-			if self.v_obj is not False:
-				os.chdir(self.v_obj)
+			fs_path(self)
+			if self.path  is not False:
+
+				os.chdir(self.v_path)
 				shellapi.ShellExecute(None, None, 'cmd.exe','/c' + r'attrib /d -s -h', None, 0)
 				sleep(0.5)
 				os.chdir(a_path)
@@ -139,20 +141,20 @@ class T_h(Thread):
 					try:
 						os.environ['PROGRAMFILES(X86)']
 						with disable_file_system_redirection(): 
-							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)	
+							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, None)	
 							
 					except:
-						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, 10)		
+						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, None)		
 				else:
 					dlg.Destroy()
 			
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
-					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 10)	
+					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, None)	
 					
 			except:
-				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 10)	
+				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, None)	
 				
 		@rdt
 		def r_explo():
@@ -160,7 +162,7 @@ class T_h(Thread):
 			
 		@rdt
 		def optim():
-			subprocess.Popen('dfrgui')	
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'dfrgui', None, 0)	
 
 		def iver():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'shutdown /h', None, 10)		
@@ -179,7 +181,7 @@ class T_h(Thread):
 
 				ui.message(_("Modo seguro activado, se va a reiniciar el Pc"))
 				winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-				subprocess.run('shutdown.exe -r -t 3', shell=True)
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -r -t 3', None, 10)
 			else:
 				dlg.Destroy()
 
@@ -188,7 +190,7 @@ class T_h(Thread):
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + r'bcdedit /deletevalue {default} safeboot',None, 10)
 			ui.message(_("Modo normal, reiniciando el Pc"))
 			winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-			subprocess.run('shutdown.exe -r -t 3', shell=True)
+			shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -r -t 3', None, 10)
 		
 		def susp():
 			ui.message(_("Suspendiendo el sistema"))
@@ -273,19 +275,50 @@ class T_h(Thread):
 		
 		@rdt
 		def cmd():
-			self.path = fs_path(self)
-			
-			if self.path is not False:
-				try:
-					os.chdir(self.path)
-					sleep(0.5)
-					shellapi.ShellExecute(None, None, 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
-				except:
-					ui.message(_('No se pudo obtener la ruta para el CMD'))
+			obj = api.getForegroundObject()
+			if not obj or not obj.appModule or obj.appModule.appName != 'explorer':
+				ui.message(_('Active una ventana del explorador antes de abrir CMD'))
+				return
+
+			try:
+				if not hasattr(self, '_shell'):
+					self._shell = COMCreate('shell.application')
+				for window in self._shell.Windows():
+					if window.hwnd == obj.windowHandle:
+						target_path = str(window.Document.FocusedItem.path)
+						break
+				else:
+					target_path = None
+
+				if not target_path:
+					windows = self.get_selected_files_explorer_ps()
+					if windows and str(obj.windowHandle) in windows:
+						target_path = windows[str(obj.windowHandle)]
+
+				if not target_path:
+					desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+					target_path = desktop_path + '\\' + api.getDesktopObject().objectWithFocus().name
+
+				if not os.path.exists(target_path):
+					ui.message(_('La ruta seleccionada no existe'))
 					return
-			else:
-				ui.message("no se pudo ejecutar el cmd")
-		
+
+				if os.path.isdir(target_path):
+					target_path = os.path.dirname(target_path)
+				else:
+					target_path = os.path.dirname(os.path.abspath(target_path))    
+
+				shellapi.ShellExecute(
+					None,
+					'open',
+					'cmd.exe',
+					None,
+					os.path.abspath(target_path),
+					1
+				)
+			except Exception as e:
+				ui.message(_('Error al abrir CMD: {}').format(str(e)))
+
 		@rdt
 		def cmd_ad():
 			fs_path(self)
@@ -295,7 +328,8 @@ class T_h(Thread):
 				except:
 					ui.message(_('No se pudo obtener la ruta para el CMD'))
 					return
-				shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
+				else: #anidado al try.
+					shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
 			else:
 				ui.message("no se pudo ejecutar el cmd")
 		
@@ -376,7 +410,7 @@ class T_h(Thread):
 				rp = dlg.ShowModal()
 				if rp == wx.ID_YES:
 					winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-					subprocess.run('shutdown.exe -r -t 3', shell=True)
+					shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -r -t 3', None, 10)
 				else:
 					dlg.Destroy()
 						
@@ -392,7 +426,7 @@ class T_h(Thread):
 				rp = dlg.ShowModal()
 				if rp == wx.ID_YES:
 					winsound.PlaySound('C:\Windows\Media\Windows Shutdown.wav',winsound.SND_FILENAME)
-					subprocess.run('shutdown.exe -r -t 3', shell=True)
+					shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + 'shutdown -r -t 3', None, 10)
 				else:
 					dlg.Destroy()
 				
@@ -420,33 +454,30 @@ class T_h(Thread):
 			else:
 				dlg.Destroy()
 		
+		#versión 0.10
 		@rdt
-		def enable_bluetooth():
+		def hight_pw():
 			try:
-				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powershell Get-WmiObject -Query "SELECT * FROM Win32_PNPEntity WHERE Name LIKE '%Bluetooth%'" | ForEach-Object { $_.Enable() } ', None, 10)				
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powercfg -s SCHEME_MIN', None, 10)				
 			except Exception as e:
-				ui.message(_('No fue posible habilitar el Bluetooth\n Ocurrió el error: {}').format(e))
+				ui.message(_('No fue posible activar el plan alto rendimiento. Ocurrió el error: {}'.format(e)))
+				sleep(3)
 			else:
-				ui.message(_('Bluetooth habilitado'))
-				sleep(2)
+				ui.message(_('Plan alto rendimiento activado'))
+				sleep(3)
 		
 		@rdt
-		def disable_bluetooth():
-			command = r'Get-WmiObject -Query "SELECT * FROM Win32_PNPEntity WHERE Name LIKE \'%Bluetooth%\'" | ForEach-Object { $_.Disable()}'
+		def balanced_pw():
 			try:
-				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powershell {}'.format(command), None, 10)				
-				#ctypes.windll.shell32.ShellExecuteW(None, "runas", "powershell.exe", "Get-WmiObject -Query \"SELECT * FROM Win32_PNPEntity WHERE Name LIKE '%Bluetooth%'\" | ForEach-Object { $_.Disable() }", None, 1)
-				#subprocess.Popen(['powershell', command], shell=True)
-
+				shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'powercfg -s SCHEME_BALANCED', None, 10)				
 			except Exception as e:
-				ui.message(_('No fue posible deshabilitar el Bluetooth\n Ocurrió el error: {}').format(e))
-				sleep(2)
+				ui.message(_('No fue posible activar el plan Equilibrado. Ocurrió el error: {}'.format(e)))
+				sleep(3)
 			else:
-				ui.message(_('Bluetooth deshabilitado'))
-				sleep(2)
+				ui.message(_('Plan Equilibradoactivado'))
+				sleep(3)
 
 
-				
 		
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
@@ -516,8 +547,7 @@ class T_h(Thread):
 			wx.CallAfter(delete_config)
 		elif self.op == 34:
 			wx.CallAfter(clean_clip)
-		elif self.op == 35:
-			wx.CallAfter(z_path2)
+		
 		elif self.op == 36:
 			wx.CallAfter(des_explo)
 		elif self.op == 37:
@@ -531,6 +561,6 @@ class T_h(Thread):
 		elif self.op == 41:
 			wx.CallAfter(close_app)
 		elif self.op == 42:
-			wx.CallAfter(enable_bluetooth)
+			wx.CallAfter(hight_pw)
 		elif self.op == 43:
-			wx.CallAfter(disable_bluetooth)
+			wx.CallAfter(balanced_pw)

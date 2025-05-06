@@ -54,6 +54,12 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_ac_space, t_ac_spa)
 	t_des_spa = self.menuReparacion.Append(-1, _("Desactivar almacenamiento reservado"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_space, t_des_spa)
+	#version 1.0
+	t_hight_pw = self.menuReparacion.Append(-1, _('Activar el plan alto rendimiento'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU,self.script_TCA_hihgt_pw, t_hight_pw)
+	t_balanced_pw = self.menuReparacion.Append(-1, _('Activar el plan equilibrado'))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU,self.script_TCA_balanced_pw, t_balanced_pw)
+	
 	t_sfc = self.menuReparacion.Append(-1, _("Análisis del sistema Con SFC    "))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsfc, t_sfc)
 	t_cache = self.menuReparacion.Append(-1, _("Limpiar caché DNS"))

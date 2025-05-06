@@ -5,7 +5,7 @@ Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portap
 También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2024.1
+* Compatibilidad: NVDA 2018 a 2025.1
 
 ## Funciones del sistema:
 
@@ -40,14 +40,17 @@ Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla.
 
 * Abrir el CMD como administrador: Con un sencillo atajo de teclado abriremos el símbolo del sistema de Windows, con todos los privilegios de administrador (Solo en sistemas anteriores a Windows 10, toma la ruta de la carpeta donde se encuentre el foco, en los demás se abrirá en System32).
 
+•	Lanzador de consolas: Saca un menú donde se encuentran las consolas: CMD, Powershell, Windows terminal, Git Bash. Desde este, podremos abrir cualquiera de estas consolas (incluso con privilegios de administrador) en la ruta que tenga el foco del NVDA.
+•	Este módulo fue desarrollado por: Héctor Benítez Corredera.
+
 * Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado.
 
-* Matar los procesos de cualquier aplicación activa: Intenta terminar cualquier proceso activo que no sea de  Windows, incluso si están en segundo plano. 
+* Matar los procesos de cualquier aplicación activa: Intenta terminar cualquier proceso activo que no sea de Windows, incluso si están en segundo plano. 
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
 Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA SystemUtilities.
 
-* Cerrar todas las aplicaciones: Fuerza a cerrarse todos los procesos activos que no sean parte de Windows (¡Nota! todos los procesos serán forzados a cerrarse, así que no se podrán guardar ni documentos, ni proyectos, e incluso el NVDA será cerrado ).
+* Cerrar todas las aplicaciones: Fuerza a cerrarse todos los procesos activos que no sean parte de Windows (¡Nota! todos los procesos serán forzados a cerrarse, así que no se podrán guardar ni documentos, ni proyectos, e incluso el NVDA será cerrado).
 
 * Cerrar tareas que no responden: TCA SystemUtilities intentará cerrar los procesos que no responden. 
 
@@ -62,10 +65,13 @@ Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA 
 
 * Hacer un análisis del sistema con SFC: Nos permite Realizar un análisis / reparación del sistema de archivos de Windows SFC /SCANNOW.
 
-* Desactivar almacenamiento reservado: Devuelve los casi 10 Gb que Windows secuestra de nuestro disco duro para actualizaciones ( no es necesario tener activado esto para que funcionen las actualizaciones).
+* Desactivar almacenamiento reservado: Devuelve los casi 10 Gb que Windows secuestra de nuestro disco duro para actualizaciones (no es necesario tener activado esto para que funcionen las actualizaciones).
 
 * Activar almacenamiento reservado: Si aún deseas activar esta función de Windows y forzar a tu disco duro a dejar reservados casi 10Gb, con esta acción lo activarás.
 
+•	Activar el plan alto rendimiento: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan alto rendimiento de Windows. No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
+•	Activar plan Equilibrado: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan equilibrado de Windows. No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
+•	 
 * Limpiar caché DNS: borra de forma rápida y directa toda la caché DNS de Windows (puede mejorar problemas con la navegación por internet). (
 
 * Limpiar configuración guardada en pantallas seguras: Elimina todos los complementos y configuraciones que hayamos copiado para ejecutarse en las pantallas seguras, dejando a NVDA como viene de forma nativa. 
@@ -92,7 +98,7 @@ así podremos pegarla en cualquier sitio editable.
  así podremos pegarla en cualquier sitio editable. 
  
 
-## Opciones de Seguridad de Windows .
+## Opciones de Seguridad de Windows.
 Control de cuentas de usuario (uac). 
 
 * Activar el control de cuentas de usuario (uac): Establece el nivel del control de cuentas de usuario en 34 (activado). 
@@ -153,7 +159,17 @@ Aparte podremos saber cuánta memoria, disco, red y más consumen.
 
 ## ¿Nota importante!
 
-Todos y cada uno de los atajos de teclado, se pueden asignar gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+Todos y cada uno de los atajos de teclado, se pueden asignar a gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+## Cambios en la versión 0.10:
+* Compatibilidad con NVDA 2025.1.
+* Nueva función: Activar plan alto rendimiento (energía de Windows).
+* Nueva función: Activar plan equilibrado (energía de Windows).
+* Nueva función: Abrir el lanzador de consolas.
+* Corregida función: Abrir CMD en la ruta actual.
+* Corregida la función: Limpiar disco.
+* Corregida la función: Optimizar unidades.
+* Optimizadas las funciones: apagado, reinicio y anular el apagado del sistema.
 
 ## Cambios en la versión 0.9:
 * Compatibilidad con NVDA 2024.1.
@@ -171,7 +187,7 @@ Ahora las versiones tendrán 3 dígitos esta será 0.8.2.
 Así mismo se les podrá establecer atajos de teclado si lo deseamos desde Gestos de entrada.
 
 ## Cambios en la versión 06:
-* Nueva función interna para tomar la ruta del sistema (path), ahora son 2, en caso que falle una, TCA SystemUtilities intentará usar la otra.
+* Nueva función interna para tomar la ruta del sistema (path), ahora son 2, en caso de que falle una, TCA SystemUtilities intentará usar la otra.
 (Una de las funciones ha sido desarrollada por: Héctor Benítez).
 * Nueva función: Cerrar todos los procesos activos.
 * Cerrar tareas que no están respondiendo en Windows.
@@ -193,7 +209,7 @@ Así mismo se les podrá establecer atajos de teclado si lo deseamos desde Gesto
 
 ## Cambios en la versión: 04.
 
-* Nueva función para entrar en la BIOS-UEFI del sistema (en el apartado : "Apagado del sistema").
+* Nueva función para entrar en la BIOS-UEFI del sistema (en el apartado: "Apagado del sistema").
 * Se cambió el menú: "Sonido y voz", a: "Voz y multimedia".
 * 2 Nuevas funciones en el apartado: "Voz y multimedia" (Activar/desactivar la webcam).
 * Nueva función: "Limpiar caché DNS" (en el apartado Reparación y optimización").

@@ -14,6 +14,7 @@ from time import sleep
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from TCA_SU import t_fun as tsu
 from TCA_SU import t_menu as tm 
+from TCA_SU.consolas import Lanzar_consolas 
 sys.path.remove(os.path.dirname(os.path.abspath(__file__)))
 
 addonHandler.initTranslation()
@@ -48,7 +49,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		
 		tsu.T_h(self, 2)
 	
-	@script(description=_('Anular apagado'), category='TCA-SystemUtilities')
+	@script(description=_('Anular apagado'), category='TCA-SystemUtilities' )
 	def script_TCAShutA(self,gesture):
 		tsu.T_h(self, 3)
 	
@@ -84,11 +85,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_('Ruta copiada '))
 		else:
 			ui.message(_("No se pudo copiar la ruta"))
+
 	@script(description= _('Abrir el administrador de discos'), category='TCA-SystemUtilities')
 	def script_TCAdisk(self,gesture):
 		subprocess.Popen('diskmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities', gesture='kb:nvda+x')
+	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities')
 	def script_TCAtien(self,gesture):
 		webbrowser.open_new_tab('https://addons.nvda-project.org/index.es.html')
 	
@@ -96,7 +98,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAmon(self, gesture):
 		subprocess.Popen('resmon')
 	
-	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+l')
+	@script(description=_('Copiar al portapapeles la lista de carpetas y archivos'), category='TCA-SystemUtilities')
 	def script_TCAList(self, gesture):
 		tsu.T_h(self, 5)
 	
@@ -108,7 +110,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAdispo(self,gesture):
 		subprocess.Popen('devmgmt.msc', shell=True)
 	
-	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+0')
+	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities')
 	def script_TCAcar(self,gesture):
 		subprocess.Popen('control folders')
 		tones.beep(350,100)
@@ -126,7 +128,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAchar(self, gesture):
 		subprocess.Popen('charmap')
 	
-	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+8')
+	@script(description=_('Abrir Asistente guardar contraseñas de usuarios'), category='TCA-SystemUtilities')
 	def script_TCAa_usu(self, gesture):
 		subprocess.Popen('credwiz')
 		
@@ -150,7 +152,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
-	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -283,13 +284,8 @@ Acceso a Internet'''
 	@script(description=_('Borrar el portapapeles y su historial'), category='TCA-SystemUtilities')
 	def script_TCA_clean_clip(self,gesture):
 		tsu.T_h(self, 34)
-	
-	@script(description=_('Tomar la ruta con z_path'), category='TCA-SystemUtilities')
-	def script_TCA_z_paht(self,gesture):
-		tsu.T_h(self, 35)
+		
 
-
-	
 	@script(description=_('Cerrar taréas que no responden'), category='TCA-SystemUtilities')
 	def script_TCA_des_explo(self,gesture):
 		tsu.T_h(self, 36)
@@ -301,7 +297,7 @@ Acceso a Internet'''
 
 	
 	
-	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities', gesture='kb:nvda+9')
+	@script(description=_('Abrir carpeta Roaming'), category='TCA-SystemUtilities' )
 	def script_TCARoa(self,gesture):
 		tsu.T_h(self, 38)
 	
@@ -313,9 +309,28 @@ Acceso a Internet'''
 	@script(description=_('Activar el Control de cuentas de usuario (uac)'), category='TCA-SystemUtilities')
 	def script_TCAuac_on(self,gesture):
 		tsu.T_h(self, 40)
-		
-	@script(description=_('Matar los procesos de cualquier aplicación activa'), category='TCA-SystemUtilities')
+
+	@script(description=_('Terminar los procesos de cualquier aplicación activa'), category='TCA-SystemUtilities')
 	def script_TCA_close_app2(self, gesture):
 		tsu.T_h(self, 41)
+	
+	#consolas por héctor.
+	@script(
+		description=_('Abrir el lanzador de consolas de Windows'), 
+		category='TCA-SystemUtilities',
+		gesture=None
+	)
+	def script_run(self, gesture):
+		"""Llama a la función lanzar para abrir el dialogo de consolas"""
+		lc = Lanzar_consolas(self)
+		wx.CallAfter(lc.lanzar)
 
-		
+	
+	@script(description=_('Activar el Plan alto rendimiento de Windows'), category='TCA-SystemUtilities')
+	def script_TCA_hihgt_pw(self,gesture):
+		tsu.T_h(self, 42)
+
+	
+	@script(description=_('Activar el Plan Equilibrado de Windows'), category='TCA-SystemUtilities')
+	def script_TCA_balanced_pw(self,gesture):
+		tsu.T_h(self, 43)

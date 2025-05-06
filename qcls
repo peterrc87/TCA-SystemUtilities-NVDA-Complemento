@@ -1,0 +1,701 @@
+[33mcommit b29937b00042c6273198e91daaf8906babf539f8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: c97554b b6011d7
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Tue Apr 23 15:06:17 2024 +0200
+
+    Merge pull request #7 from MesterPerfect/master
+    
+    Update the Arabic language files
+
+[33mcommit b6011d74090e00f6425ff468389319137c08c40b[m
+Author: AhmedBakr <44323153+MesterPerfect@users.noreply.github.com>
+Date:   Thu Apr 18 07:13:27 2024 +0200
+
+    Translating all updates in documents
+    
+    Translating all updates in documents
+
+[33mcommit 2f211cdf291b350bf59361a38a0275b984112428[m
+Author: AhmedBakr <44323153+MesterPerfect@users.noreply.github.com>
+Date:   Thu Apr 18 06:57:38 2024 +0200
+
+    Update the Arabic language file
+    
+    Update the Arabic language file
+    All the new phrases have been translated, and some old ones have been rephrased.
+
+[33mcommit c97554b1d345675e9f9d4f53b84c071f6a757fec[m
+Merge: b698d70 9610315
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Tue Jan 16 20:05:18 2024 +0100
+
+    Merge pull request #6 from VovaMobile/UA2024
+    
+    Ua2024
+
+[33mcommit 9610315dc2f31661567771272b902cc4fe763e04[m
+Author: VovaMobile <70543522+VovaMobile@users.noreply.github.com>
+Date:   Tue Jan 16 20:04:15 2024 +0200
+
+    Corrected previous commit
+    
+    Please, include this po-file
+
+[33mcommit 3a5202fe81607d5eb5b99bb7f7504c80359c3ca3[m
+Author: VovaMobile <70543522+VovaMobile@users.noreply.github.com>
+Date:   Tue Jan 16 20:00:05 2024 +0200
+
+    Update Ukrainian
+    
+    This is an updated Ukrainian translation for this addon.
+
+[33mcommit b698d70c064e6962e5a714dfe93b0789dc748a15[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jan 15 12:34:15 2024 +0100
+
+    actualizadas cadenas traducidas al turco versión 0.9
+
+[33mcommit c10f8a6663efa0e55ee3d7576c60cfc66e07efe9[m[33m ([m[1;33mtag: [m[1;33mv.0.9[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Jan 14 19:45:25 2024 +0100
+
+    corregido readme.md lista versión 0.9 final
+
+[33mcommit 70dbf016e79bf481b5f24197ed884319c00079b2[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Jan 14 18:20:25 2024 +0100
+
+    otra corrección para la función cmd
+
+[33mcommit df515514a0398272d04456d8da42d4c60cea1968[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Jan 13 15:41:21 2024 +0100
+
+    Lista versión 0.9.3
+
+[33mcommit 31b5c335dc9275b327f57dccaa49246f258001c3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Jan 12 12:27:09 2024 +0100
+
+    corregida función get_paht, añadida función matar procesos
+
+[33mcommit c855b77ccea7464a7c70ffd6248508be62bef582[m
+Merge: ea22ae4 6e4b055
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Sun Nov 26 19:28:33 2023 +0100
+
+    Merge pull request #4 from MesterPerfect/master
+    
+    arabic translation
+
+[33mcommit ea22ae4b8e3c44892aefb0e400644d53750698ee[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Sep 27 12:17:30 2023 +0200
+
+    Corregida cadena versión 0.8
+
+[33mcommit 080f59bd7954840c598cb22b083e3685788239ce[m
+Merge: 6e407d2 24d6ad3
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Wed Sep 27 12:12:12 2023 +0200
+
+    Merge pull request #5 from VovaMobile/ukr-trans-sept
+    
+    Update Ukrainian
+
+[33mcommit 24d6ad34c4092c7116904092ecab4087c5150d6a[m
+Author: VovaMobile <70543522+VovaMobile@users.noreply.github.com>
+Date:   Wed Sep 27 12:39:53 2023 +0300
+
+    Update Ukrainian
+
+[33mcommit 6e407d2a871a8930dd2ef771bc08bd3883ee7d33[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue Sep 26 19:30:58 2023 +0200
+
+    Versión 0.8 actualizadas cadenas al francés
+
+[33mcommit 7feaf33bac1c0e45c6c81949d97c77c655647ef6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Sep 25 18:56:14 2023 +0200
+
+    Actualizado idioma turco, correcciones en readme
+
+[33mcommit d8189f39a724e9b7b61acafe58501c6e7819c7a3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Sep 22 14:18:00 2023 +0200
+
+    Version 0.8.2 compatibilidad con NVDA 2023.3, funciones uac
+
+[33mcommit 6e4b055745e705f7a7883f4c4c7f38bd82d78fcc[m
+Author: MesterPerfect <ahmedbakr593@gmail.com>
+Date:   Thu May 11 13:31:17 2023 +0300
+
+    arabic translation
+    
+    This is arabic translation.
+
+[33mcommit caea02b2c975c38d7e1f15540f9fa9a8c8868600[m
+Merge: 8a07cc7 e0be181
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Tue May 9 13:04:57 2023 +0200
+
+    Merge pull request #2 from MesterPerfect/master
+    
+    Translate the add-on into English
+
+[33mcommit e0be1811b9be08a2e78dc9ef790b74a7b6fb1df0[m
+Author: MesterPerfect <ahmedbakr593@gmail.com>
+Date:   Tue May 9 13:35:23 2023 +0300
+
+    Translate the add-on into English
+    
+    Translate the add-on into English
+
+[33mcommit 8a07cc7a72a516109bced7fe761423e3913f91d3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Feb 18 01:18:12 2023 +0100
+
+    actualizado pywintypes37.dll en versión 07
+
+[33mcommit a2dce7a5fb18619c07d0f303d80b2ef7ceaca396[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Feb 17 19:09:17 2023 +0100
+
+    Versión 07 compatible con NVDA 2023.1.0
+
+[33mcommit fa3bb1667bbfd97d5bfb24fc21b96ac5f25b50ee[m
+Merge: 54ecfff d309233
+Author: peterrc87 <84045593+peterrc87@users.noreply.github.com>
+Date:   Mon Dec 26 13:44:58 2022 +0100
+
+    Merge pull request #1 from VovaMobile/ukrtrans
+    
+    Ukrainian translation
+
+[33mcommit d30923349da9b05691338aa0f11953b8fc8713f3[m
+Author: VovaMobile <70543522+VovaMobile@users.noreply.github.com>
+Date:   Thu Dec 8 18:07:57 2022 +0200
+
+    Ukrainian translation
+    
+    This is a Ukrainian translation. Please include it in addon.
+
+[33mcommit 54ecfff1843c18a329807f96dd152f7b7cc8b172[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Oct 30 23:47:44 2022 +0100
+
+    añadido idioma italiano a versión 06ç
+
+[33mcommit 13cf2b1b7df2e517a8bea965b6599ccd7252980f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Oct 27 13:01:53 2022 +0200
+
+    versión 06b6, con actualización de idiomas turco y francés, corrección de dll
+
+[33mcommit 76f7ade9b3ed61fd1c1356198ce54ee8d671d2ee[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Oct 27 12:44:01 2022 +0200
+
+    Sctualizadas dll: pywintypes37, y win32clipboard.pyd
+
+[33mcommit e56e739fd35e10956f0e778b60b0294fbbee6eba[m[33m ([m[1;33mtag: [m[1;33mTCA_SystemUtilities_06b5[m[33m)[m
+Merge: 69b7f85 dc45226
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Oct 22 21:17:00 2022 +0200
+
+    versión 06 correción traducciones
+
+[33mcommit 69b7f854d77f7b2dcafe009fe6f89e7058f470e3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Oct 22 20:49:56 2022 +0200
+
+    versión 06 final
+
+[33mcommit b1285647ac8e55f8bc3c54a7c030c821dcc2ca2b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Oct 19 22:45:27 2022 +0200
+
+    corregido path en función obj
+
+[33mcommit ff37ae4a092238a42b31355c07c0d1176077c4e3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Oct 19 21:25:50 2022 +0200
+
+    preparada versión 06
+
+[33mcommit 28cb5b2b5b1df3dbad69e58e0d531e817d57d5b9[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue Sep 13 12:15:43 2022 +0200
+
+    corregido eliminarción de atajos en apagar, reiniciar y anular apagado
+
+[33mcommit dc45226e00dadbb3df79c55d5b40abae33710fb9[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Jul 29 20:24:25 2022 +0200
+
+    eliminados atajos para apagar y reiniciar el Pc
+
+[33mcommit e6507a9c4edb24f4a787a26b8ceba421b10cfa99[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Jun 23 15:11:39 2022 +0200
+
+    corregidos los .pot de lenguajesç
+
+[33mcommit 2d99610b8528ee15d4ca66fb378f5a0624d90e04[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 22 21:04:32 2022 +0200
+
+    añadida traducción al francés
+
+[33mcommit 91843646545499cffb63f449ced9cccf4a7026dc[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 19:55:50 2022 +0200
+
+    corregido sites tools
+
+[33mcommit f43ae793026ebc389ecf2afcc9f4cc0aff5d2bb5[m
+Merge: 349095e 5aa4ae3
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 19:54:54 2022 +0200
+
+    Merge branch 'master' of https://github.com/peterrc87/TCA-Systemutilities-NVDA-Complmento
+
+[33mcommit 349095e98adc6a384d05e1d4cc50c59ec5cd21d5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 19:49:03 2022 +0200
+
+    otra corrección del idioma portugués
+
+[33mcommit 5aa4ae39a0ff2157d9fdf6e02e0c97ac5f51ee71[m
+Merge: 775fc74 5ded037
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 19:23:44 2022 +0200
+
+    Merge branch 'master' of https://github.com/peterrc87/TCA-Systemutilities-NVDA-Complmento
+
+[33mcommit 775fc74364dfe221ac8f659d71729e1936232800[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 19:22:38 2022 +0200
+
+    corregida actualización al portugués
+
+[33mcommit 5ded037ec3424dd9d7583ceb4d15bb112d70e518[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 15 18:50:05 2022 +0200
+
+    actualizado idioma portugués a la versión 05
+
+[33mcommit feb0cd23208f707a2f525e0e23cd8422111981f3[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue Jun 14 00:12:00 2022 +0200
+
+    actualizados idioma italiano, pot y readme
+
+[33mcommit ede32bc6c99e1d64428cc1abc33f0616c518add2[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jun 13 16:30:05 2022 +0200
+
+    añadidas cadenas lal idioma turco y el readme.md
+
+[33mcommit d650986cd086e4ff92149549c0a1a65157dd6882[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Jun 12 20:22:56 2022 +0200
+
+    Versión 05 final
+
+[33mcommit 419c605b083d4c2263422364ae40aa08433697b0[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Jun 3 13:16:05 2022 +0200
+
+    corregido el obj en w11
+
+[33mcommit b114494efc2abb15fec5029d896f30a8ac9f906b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jun 1 22:23:28 2022 +0200
+
+    Listo readme versión 05
+
+[33mcommit e38c2b5ab26ea57ddb1081f734cc37806f994e5d[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue May 17 12:17:29 2022 +0200
+
+    añadidos al menú funciones de la versión 05, corregidos messagedialog
+
+[33mcommit 1f88c6922a0a1bb4628ee0a692d14bfb0fcc4a42[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 13 22:16:39 2022 +0200
+
+    corregido tones
+
+[33mcommit c1a2263d46693cd33198ae210ba968deef496617[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 13 21:59:49 2022 +0200
+
+    cambiado wwinsound por tones, y depuración del código
+
+[33mcommit 0adcb227a0e4496dea4095c34f122a6d8867296b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 13 13:05:42 2022 +0200
+
+    añadida función limpiar en pantallas seguras, corregida función obj
+
+[33mcommit 79cfecaf38a4ee54482f7f52e30489525a79c4db[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 11 23:16:43 2022 +0200
+
+    corregida la ruta een carpetas de usuario: Documentos, Vídeos
+
+[33mcommit 7cd72af2c461fc71c286f7d2b9cb43b58cd9f287[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue May 10 21:58:29 2022 +0200
+
+    versión 05 corregidas funciones del t_obj, copiar ruta, mostrar/ocultar carpetas, función cmd, funciones activar desactivar espacio reservado
+
+[33mcommit 770dca8a366a89c3fa0846c5cd969cee59dca89e[m
+Author: Peter Reina <peterrc87@gmail.com>
+Date:   Mon Mar 28 21:01:48 2022 +0200
+
+    Añadido idioma turco
+
+[33mcommit 1a1a98851260aea7928bb53e897a0272e22e4037[m
+Author: Peter Reina <peterrc87@gmail.com>
+Date:   Mon Mar 21 17:09:14 2022 +0100
+
+    versión 04b8
+
+[33mcommit e8955fbd21f86686f65578f76bdfa4254f4e7877[m
+Author: Peter Reina <peterrc87@gmail.com>
+Date:   Mon Mar 21 16:44:47 2022 +0100
+
+    Compatible con NVDA 2022, traducido al italiano
+
+[33mcommit 85770c0aaf04bace031d28428d049b39617f4d8a[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Mar 3 13:48:06 2022 +0100
+
+    añadido idioma italiano
+
+[33mcommit 5ce414d84d9b26ac0182dffe1d1817194043957f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Feb 18 17:08:15 2022 +0100
+
+    actualizado buildvar.py versión 04b7 final
+
+[33mcommit 9459a749ad081e2506e41a72606e66d6bac8f1b6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Feb 17 16:53:21 2022 +0100
+
+    Actualizado readme.md
+
+[33mcommit 43854e8636cd9fbe3cf77cb046c4844b03f9a501[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Feb 17 13:41:18 2022 +0100
+
+    Reemplazado menú Sonido  por Multimedia, enviadas al nuevo menú las funciones webcam
+
+[33mcommit 2318dbf8ea67694b44241c2bd1c0c2561958943a[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue Feb 15 17:49:44 2022 +0100
+
+    Añadida línea sys.path.remove
+
+[33mcommit 9e4ffb08f604698c2ece9a30bc2c029cc9363012[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Feb 12 23:20:06 2022 +0100
+
+    Añadida limpieza DNS
+
+[33mcommit 43ea63c42acc3f5b3d2d326d4c3598003e7b2c85[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Jan 21 21:28:21 2022 +0100
+
+    Añadido diálogo para BIOS-UEFI
+
+[33mcommit e58c1761af8fb70c37a3b97cda80985a9b2dc87f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jan 17 14:01:26 2022 +0100
+
+    Agregado menú BIOS-UEFI, método BIOS
+
+[33mcommit 9a1df9883f4e528c7ac57fcaa8b3db11770f2257[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Nov 26 00:26:35 2021 +0100
+
+    actualizado archivo ini a webcam,  y wilvar
+
+[33mcommit 4c8be28d5bd8c7ff000dfecc6b65638195afca2c[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Nov 25 23:55:21 2021 +0100
+
+    añadidos métodos y menús para  webcam
+
+[33mcommit 82ad2f4a53395df5ffbb0efcc05def1021f969bf[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Oct 20 21:35:56 2021 +0200
+
+    Actualizado wilvar a la versión 03
+
+[33mcommit f6c0b87265b2084fa4ffc55d508d195121d33f83[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Oct 20 21:26:29 2021 +0200
+
+    Actualizado readme  v.03
+
+[33mcommit 4bc4a770319444b165ee8064b5e1097d58733278[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Oct 20 21:18:27 2021 +0200
+
+    Enlazados eventos con el menú
+
+[33mcommit 760a8039a496c69062d37b64d29f18c35c949687[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue Oct 19 14:02:43 2021 +0200
+
+    añadidas funciones escanéo de archivos comprimidos
+
+[33mcommit 6d46b7d0b9100ed0c71fde2eb21f06f09f7b8f38[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Oct 10 21:39:59 2021 +0200
+
+    Añadidas funciones: análisis completo y boot sector
+
+[33mcommit 80e6d36b042f422a192901ab0560f2d516e57109[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri Oct 8 21:46:37 2021 +0200
+
+    Añadidas funciones lista cuarentena y escanéo rápido
+
+[33mcommit 71e8d8bf2c71608c7220d3845758afb567ee7088[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Oct 7 23:12:04 2021 +0200
+
+    compatiblidad con Windows 11
+
+[33mcommit 98947d892e26bb01bdb55a44068c8e926e3843f6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Sep 20 23:48:41 2021 +0200
+
+    Añadida función Restablecer
+
+[33mcommit 16ceeb9e392ae4cfb9be2a67bb593c6fb2a3063e[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat Sep 4 19:36:10 2021 +0200
+
+    Añadida función Suspender
+
+[33mcommit 195b70f38fe8752f580cb0772948a227ce360c6b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Aug 25 19:28:45 2021 +0200
+
+    Añadida traducción al árabe
+
+[33mcommit b46fbe7f1a2922f2113b7824b9821169c3c58f6f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Aug 11 12:45:48 2021 +0200
+
+    Añadidas traducciones: portugués Brasil y Portugál, y Rumano
+
+[33mcommit 51d6a97327ce170cd3b2ac89c96c19d415b1eb7f[m[33m ([m[1;33mtag: [m[1;33mv02b3[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sun Jul 25 17:46:21 2021 +0200
+
+    Actualizada versión 02b3
+
+[33mcommit 25c75cc5820129306b0490d52385ca808ebd6c98[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed Jul 21 23:18:07 2021 +0200
+
+    Agregada función sndvol
+
+[33mcommit 52b0d66142a9010c454eb93895df3f08d0be1f00[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jul 5 21:51:22 2021 +0200
+
+    Menú apagar
+
+[33mcommit 09cab95854745f8c531514f16440cca36b335b72[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon Jun 21 13:48:23 2021 +0200
+
+    Creación de submenús
+
+[33mcommit b64c8d23abfdf7cdd8f3ec981c8997cb710ea4c6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Jun 10 21:17:33 2021 +0200
+
+    Builvars version 02b1
+
+[33mcommit 9826180ce52f1f5406fe14e8735f76cea9cdc1b4[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu Jun 10 21:12:58 2021 +0200
+
+    Añadida función dism
+
+[33mcommit 4c56fb888be468c60e67dc94c32ec5124d4b199c[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 29 22:26:34 2021 +0200
+
+    terminado menú
+
+[33mcommit a8df50757eef9fad33e06f3b8c5a481eb1723b2b[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 29 13:13:49 2021 +0200
+
+    Agregados mas ítems al menú ,  momodificada función sndOps
+
+[33mcommit f0d330fce83c859a949137badde20ea31c993295[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 28 11:11:50 2021 +0200
+
+    Creado módulo t_menu
+
+[33mcommit 8a72f9166124012c72a2f3db38075e1e6f95ec5d[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu May 27 23:44:42 2021 +0200
+
+    Avance toolbar métodos abrir
+
+[33mcommit fc0c96d3d33b5c2eab6d5b792992a79d130ade25[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Thu May 27 19:39:36 2021 +0200
+
+    Barra de herramientas iniciada
+
+[33mcommit 63676d57a5576d7bfd19682cb691b83c24456541[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 21:05:16 2021 +0200
+
+    decoradora en optimizar unidades
+
+[33mcommit 7f39ab6e575d7a4921b835cf8ab52c02de815df5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 12:00:40 2021 +0200
+
+    Coregida decoradora, insertada reinicio explorador
+
+[33mcommit a5352a7d65a26be7f2a4b3fc82e7223f72ce1184[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 11:56:35 2021 +0200
+
+    Mofificada decoradora, agregada función reiniciar explorador
+
+[33mcommit f43d7c9b866fe596b1bbe7dac3814637ce68b412[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Wed May 26 01:11:15 2021 +0200
+
+    Creada decoradora r_deco
+
+[33mcommit 41460ed8980e36cda849cf4274786600a222fb51[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue May 25 12:53:58 2021 +0200
+
+    Modificada función Ocultar, con shellapi.ShellExecute
+
+[33mcommit 37c8d9a9ab0d52e800e9f5afff0ca8f518997e4f[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Tue May 25 00:44:02 2021 +0200
+
+    reemplazada función ejecutar por shellapi.ShellExecute
+
+[33mcommit 9b4e546fe4526cf34ad5b9daee2b131c1cbe5fb6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon May 24 20:56:18 2021 +0200
+
+    ´modificada función copiar ruta
+
+[33mcommit 78337aeed355688d79aad94b2a4a082355213ee5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Mon May 24 20:39:21 2021 +0200
+
+    Creada función t_obj
+
+[33mcommit 4ba2f2803cdca9044cbe2e39814a2900ccc8d6c9[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 23:46:12 2021 +0200
+
+    corregido pot
+
+[33mcommit f983081ecf54768a9e23cc52b8d7eb570466043a[m[33m ([m[1;33mtag: [m[1;33mTCA_SystemUtilities_01b9[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 20:35:50 2021 +0200
+
+    Candidata coregida 01b9, con cadenas listas para traducir
+
+[33mcommit 0ce3a783018de657d39d875db127656e83d10091[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 20:26:54 2021 +0200
+
+    Preparadas cadenas para traducir
+
+[33mcommit 23187c3485d45c74714471c2213f4bd3632b941a[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 19:18:35 2021 +0200
+
+    Actualizada documentación
+
+[33mcommit bdcdb0febbef3ed0306920e609161f77854124eb[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 15:47:29 2021 +0200
+
+    insertado módulo para traducir
+
+[33mcommit 75899f32a1b01712eaec6a4c4615c31d7631f2ff[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 15:38:04 2021 +0200
+
+    complemento compilado con la plantilla
+
+[33mcommit 5f45edca776f3d1562953158a3081ede5eaea107[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 14:40:19 2021 +0200
+
+    corregido python-sources
+
+[33mcommit be399972ed0075ad9c718c24aff7614d4c8a39d7[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 14:36:26 2021 +0200
+
+    Corregido Wildvars
+
+[33mcommit 856d75c68caecc2fd4c35fe5da1adfa50e864558[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 14:27:10 2021 +0200
+
+    cambio plantilla de complemento
+
+[33mcommit 2cc1d015f41dff6b0550e6fbb32c377a4abba541[m[33m ([m[1;33mtag: [m[1;33mTCA_SystemUtilities01b8[m[33m)[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 12:48:12 2021 +0200
+
+    Corregido regresar al path actual, actualizado manifest.ini
+
+[33mcommit 4c4a28d425dd10163219e7b2b4215b05d38f58c6[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 01:45:50 2021 +0200
+
+    Removidos atajos de teclado 1 - 7
+
+[33mcommit 836b9aa6d29fb240de62f7dc3b22f3647598bc8e[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 01:10:51 2021 +0200
+
+    Modificada ruta os.environ por: globalVars.appArgs.configPath
+
+[33mcommit edf46becf3db3a989a246764737e5fa78ea101d5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 00:42:00 2021 +0200
+
+    Removida función Wxplorador
+
+[33mcommit 6c9569ede8d86c74f6c0533daa84baee885930a5[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Sat May 22 00:27:19 2021 +0200
+
+    Corregido ejecución en pantallas seguras, coregido manifest.ini
+
+[33mcommit 7f212f581d560a8d4edadcad0460832c6d19d6d7[m
+Author: peterrc87 <peterrc87@gmail.com>
+Date:   Fri May 21 19:36:57 2021 +0200
+
+    Corregida función mos
