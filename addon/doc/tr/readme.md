@@ -108,6 +108,16 @@ Bu, sistemde sahip olduğumuz kullanıcı hesaplarının kimlik bilgilerini (adl
 Eklenti hala test aşamasındadır (Beta).  
 Ayrıca, klavye kısayollarının her biri, NVDA Tercihler > Girdi Hareketleri iletişim kutusundan kişisel zevkinize göre atanabilir.  
 
+## Sürüm 0.10'daki değişiklikler:
+* NVDA 2025.1 sürümüyle uyumluluk desteği.
+* Yeni özellik: Yüksek Performans Planını Etkinleştir (Windows Güç yönetimi).
+* Yeni işlev: Dengeli planı etkinleştirin (Windows güç yönetimi.).
+* Yeni özellik: Konsol başlatıcısını açın.
+* Düzeltilmiş Fonksiyon: Geçerli konumda CMD'yi açın.
+* Diski Temizle işlevi düzeltildi.
+* Diskleri birleştir işlevi düzeltildi.
+* Kapat, Yeniden Başlat ve yeniden başlatmayı iptal et özellikleri optimize edildi.
+
 ## Sürüm 0.9'daki değişiklikler:
 * NVDA 2024.1 ile uyumluluk.
 * Yeni özellik Herhangi bir aktif uygulamanın işlemlerini sonlandırın.
