@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'TCA_SystemUtilities' '09b3'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-01-16 09:04+0200\n"
-"PO-Revision-Date: 2024-01-16 19:59+0200\n"
+"POT-Creation-Date: 2025-05-06 16:31+0300\n"
+"PO-Revision-Date: 2025-05-07 15:15+0300\n"
 "Last-Translator: Heorhii Halas <nvda.translation.uk@gmail.com>\n"
 "Language-Team: Heorhii Halas\n"
 "Language: uk\n"
@@ -17,292 +17,371 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:42
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:43
 msgid "Apagar el sistema"
 msgstr "Завершити роботу системи"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:46
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:47
 msgid "Reinicio del sistema"
 msgstr "Перезавантажити систему"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:51
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:52
 msgid "Anular apagado"
 msgstr "Скасувати вимкнення"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:55
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:56
 msgid "Abrir opciones de sonido"
 msgstr "Відкрити параметри звуку"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:61
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:62
 msgid "Abrir Asistente transferir archivos por Bluetooth"
 msgstr "Відкрити майстер передачі файлів через Bluetooth"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:65
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:66
 msgid "Saber la arquitectura del sistema"
 msgstr "Дізнатись архітектуру системи"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:72
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:73
 msgid "Su sistema operativo es de: {} Bits"
 msgstr "Ваша операційна система: {} біт"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:74
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:75
 msgid "Abrir el asistente para guardar la contraseña del sistema"
 msgstr "Відкрити майстер збереження системного пароля"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:76
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:77
 msgid "Abriendo restablecer   contraseñas de Windows"
 msgstr "Відкрити відновлення пароля Windows"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:79
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:80
 msgid "Copiar al portapapeles la ruta"
 msgstr "Скопіювати шлях до буфера обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:84
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:85
 msgid "Ruta copiada "
 msgstr "Шлях скопійовано "
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:86
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:87
 msgid "No se pudo copiar la ruta"
 msgstr "Не вдалося скопіювати шлях"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:87
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:89
 msgid "Abrir el administrador de discos"
 msgstr "Відкрити диспетчер дисків"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:91
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:93
 msgid "Abrir la tienda oficial de complementos"
 msgstr "Відкрити офіційний магазин додатків"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:95
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:97
 msgid "Abrir monitor de recursos"
 msgstr "Відкрити монітор ресурсів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:99
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:101
 msgid "Copiar al portapapeles la lista de carpetas y archivos"
 msgstr "Скопіювати список папок і файлів в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:103
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:125
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:105
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:131
 msgid "Saber la versión de Windows"
 msgstr "Дізнатись версію Windows"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:107
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:109
 msgid "Abrir el administrador de dispositivos"
 msgstr "Відкрити Диспетчер пристроїв"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:111
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:113
 msgid "Abrir Opciones de carpeta"
 msgstr "Відкрити параметри папки"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:116
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:118
 msgid "Hacer análisis del sistema Con SFC  "
 msgstr "Виконати сканування системи за допомогою SFC "
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:120
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:122
 msgid "Copiar información de todo el sistema al portapapeles"
 msgstr "Скопіювати загальносистемну інформацію в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:123
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:125
 msgid "información del sistema copiada al portapapeles"
 msgstr "системну інформацію скопійовано в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:125
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:127
 msgid "Abrir mapa de caracteres"
 msgstr "Відкрити таблицю символів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:129
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:131
 msgid "Abrir Asistente guardar contraseñas de usuarios"
 msgstr "Відкрити майстер збереження паролів користувачів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:133
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:135
 msgid "Abrir opciones de voz"
 msgstr "Відкрити налаштування мовлення"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:137
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:139
 msgid "Copiar al portapapeles la información sobre las tarjetas de sonido"
 msgstr "Скопіювати інформацію про звукову карту в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:141
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:143
 msgid "Ocultar carpetas"
 msgstr "Приховати папки"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:145
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:147
 msgid "Mostrar carpetas ocultas"
 msgstr "Показати приховані папки"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:149
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:63
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:151
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:69
 msgid "Limpiar disco"
 msgstr "Очищення дисків"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:154
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:155
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:47
 msgid "Reiniciar Explorador"
 msgstr "Перезапустити Провідник"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:158
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:159
 msgid "Abrir Optimizar las unidades"
 msgstr "Відкрити оптимізацію дисків"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:162
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:163
 msgid "Hibernar el sistema"
 msgstr "Перевести систему в режим глибокого сну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:167
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:168
 msgid "Volumen"
 msgstr "Обсяг"
 
 #. winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:189
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:69
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:190
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:75
 msgid "Reparar sistema con Dism"
 msgstr "Ремонт системи за допомогою Dism"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:194
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:195
 msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
 msgstr "Перезавантажити систему і увійти в безпечний режим з підтримкою мережі"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:198
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:199
 msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
 msgstr "Вимкнути безпечний режим та перезавантажити систему"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:202
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:203
 msgid "Abrir Mezclador de volumen"
 msgstr "Відкрити мікшер гучності"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:207
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:208
 msgid "Suspender el sistema"
 msgstr "Режим сну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:211
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:212
 msgid "Abrir Restablecer éste PC"
 msgstr "Відкрити Скидання налаштувань цього ПК"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:216
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:217
 msgid "Copiar al portapepeles la lista de archivos en cuarentena"
 msgstr "Скопіювати список файлів на карантині в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:221
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:222
 msgid "Análisis rápido"
 msgstr "Швидкий аналіз"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:226
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:79
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:227
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:85
 msgid "Análisis completo"
 msgstr "Повний аналіз"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:231
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:232
 msgid "Análisis del sector de arranque"
 msgstr "Аналіз сектора завантаження"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:236
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:237
 msgid "Activar escanéo de archivos comprimidos"
 msgstr "Увімкнути сканування стиснутих файлів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:240
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:241
 msgid "Desactivar escanéo de archivos comprimidos"
 msgstr "Вимкнути сканування стиснутих файлів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:244
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:245
 msgid "Desactivar la Webcam"
 msgstr "Вимкнути веб-камеру"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:249
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:250
 msgid "Activar la Webcam"
 msgstr "Увімкнути веб-камеру"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:253
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:254
 msgid "Reiniciar el sistema y entrar en la BIOS-UEFI"
 msgstr "Перезавантажити систему і увійти в BIOS-UEFI"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:257
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:59
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:258
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:65
 msgid "Limpiar caché DNS"
 msgstr "Очистити кеш dns"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:262
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:263
 msgid "Desactivar el espacio reservado"
 msgstr "Вимкнути зарезервований простір"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:267
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:268
 msgid "Activar el espacio reservado"
 msgstr "Увімкнути зарезервований простір"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:271
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:272
 msgid "AbrircConsola CMD en la ruta actual"
 msgstr "Відкрити командний рядок у цьому шляху"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:275
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:276
 msgid "AbrircConsola CMD Administrador"
 msgstr "Відкрити командний рядок з правами адміністратора"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:279
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:280
 msgid "Limpiar configuración guardada para ejecutarse en pantallas seguras"
 msgstr "Очистити збережену конфігурацію для запуску на захищених екранах"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:283
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:284
 msgid "Borrar el portapapeles y su historial"
 msgstr "Очистити буфер обміну та його історію"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:287
-msgid "Tomar la ruta con z_path"
-msgstr "Оберіть шлях за допомогою z_path"
-
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:293
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:289
 msgid "Cerrar taréas que no responden"
 msgstr "Закрити процеси, які не відповідають"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:298
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:294
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:36
 msgid "Cerrar todas las aplicaciones"
 msgstr "Закрити всі програми"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:304
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:300
 msgid "Abrir carpeta Roaming"
 msgstr "Відкрити папку Roaming"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:308
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:304
 msgid "Desactivar el Control de cuentas de usuario (uac)"
 msgstr "Вимкнути контроль облікових записів користувачів (uac)"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:313
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:309
 msgid "Activar el Control de cuentas de usuario (uac)"
 msgstr "Увімкнути Контроль облікових записів користувачів (uac)"
 
-#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:317
-msgid "Matar los procesos de cualquier aplicación activa"
-msgstr "Припинити процес будь-якої активної програми"
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:313
+msgid "Terminar los procesos de cualquier aplicación activa"
+msgstr "Завершити процеси будь-якої активної програми"
 
-#. Si no hay nada informamos
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:37
-msgid "No se pudo tomar el foco, seleccione algún elemento"
-msgstr "Не вдається сфокусуватися, виберіть якийсь елемент"
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:319
+msgid "Abrir el lanzador de consolas de Windows"
+msgstr "Відкрити панель консолей Windows"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:42
-#, python-format
-msgid "Ha seleccionado %s ficheros. Seleccione solo un fichero."
-msgstr "Ви вибрали %s файлів. Виберіть лише один файл."
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:329
+msgid "Activar el Plan alto rendimiento de Windows"
+msgstr "Активувати план високої продуктивності Windows"
+
+#: addon\globalPlugins\TCA_SystemUtilities\__init__.py:334
+msgid "Activar el Plan Equilibrado de Windows"
+msgstr "Активувати план збалансованої продуктивності Windows"
+
+#. Inicializa las traducciones para el complemento (si es necesario).
+#. addonHandler.initTranslation()
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:32
+msgid ""
+" *** Agradecimientos ***\n"
+"*** Módulo Lanzar_consolas ***\n"
+"Este módulo ha sido desarrollado por: Héctor J. Benítez Corredera "
+"<xebolax@gmail.com\n"
+"Copyright (C) 2024\n"
+"Agradecemos por haberlo cedido gentilmente para utilizarse en el complemento "
+"TCA SystemUtilities.\n"
+"Se agradece también a los desarrolladores del complemento Nao: (Autores: "
+"Alessandro Albano, Davide De Carne y Simone Dal Maso);\n"
+"De dicho complemento se han extraído las siguiente funciones para extraer "
+"rutas:\n"
+" : is_explorer, get_selected_files_explorer_ps y get_selected_file_explorer"
+msgstr ""
+" *** Подяки ***\n"
+"*** Модуль Lanzar_consolas ***\n"
+"Цей модуль було розроблено: Héctor J. Benítez Corredera <xebolax@gmail.com "
+"xebolax@gmail.com xebolax@gmail.com\n"
+"Copyright (C) 2024\n"
+"Ми дякуємо їм за те, що вони люб'язно надали його для використання в додатку "
+"TCA SystemUtilities.\n"
+"Ми також дякуємо розробникам доповнення Nao: (Автори: Alessandro Albano, "
+"Davide De Carne та Simone Dal Maso);\n"
+"З цього додатка було взято наступні функції для отримання шляхів:\n"
+" : is_explorer, get_selected_files_explorer_ps та get_selected_file_explorer"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:244
+msgid "Tipo de terminal no soportado."
+msgstr "Тип терміналу не підтримується."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:256
+msgid "No se encontró una selección válida."
+msgstr "Не знайдено дійсного вибору."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:264
+msgid "Ya hay una instancia de lanzador de consolas abierta."
+msgstr "Вже відкрито екземпляр консолі."
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:267
+msgid "Lanzador de consolas"
+msgstr "Запуск консолей"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:278
+msgid "Abrir CMD aquí"
+msgstr "Відкрити CMD тут"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:279
+msgid "Abrir CMD como Administrador"
+msgstr "Відкрити CMD від імені Адміністратора"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:280
+msgid "Abrir PowerShell aquí"
+msgstr "Відкрити PowerShell тут"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:281
+msgid "Abrir PowerShell como Administrador"
+msgstr "Відкрити PowerShell від імені адміністратора"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:282
+msgid "Abrir Windows Terminal aquí"
+msgstr "Відкрити термінал Windows тут"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:283
+msgid "Abrir Windows Terminal como Administrador"
+msgstr "Відкрити термінал Windows від імені адміністратора"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:284
+msgid "Abrir git-bash aquí"
+msgstr "Відкрити тут Git-Bash"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\consolas.py:285
+msgid "Abrir git-bash como Administrador"
+msgstr "Відкрити git-bash від імені Адміністратора"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:48
+msgid "Error: {}. Por favor seleccione el elemento nuevamente"
+msgstr "Помилка: {}. Будь ласка, виберіть елемент ще раз"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:55
 msgid "No se tomó el foco, mueva la flecha o seleccione algún elemento"
 msgstr "Фокус не отримано, перемістіть стрілку або виберіть елемент"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:107
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:110
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:114
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:117
 msgid "Dirección: "
 msgstr "Адреса: "
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:110
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:117
 msgid "Vídeos"
 msgstr "Відео"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:110
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\path_func.py:117
 msgid "Videos"
 msgstr "Відео"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:58
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:59
 msgid "Apagando el Pc."
 msgstr "Вимкнути ПК."
 
@@ -310,7 +389,7 @@ msgstr "Вимкнути ПК."
 msgid "Reiniciando el PC."
 msgstr "Перезавантажети ПК."
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:72
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:70
 msgid "anulando el apagado o reinicio del pc."
 msgstr "скасування вимкнення або перезавантаження ПК."
 
@@ -326,15 +405,15 @@ msgstr "Не вдалося скопіювати список у буфер об
 msgid "Copiada la info del sonido al portapapeles"
 msgstr "Інформацію про звукову карту скопійовано в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:111
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:112
 msgid "No fue posible ocultar los elementos"
 msgstr "Не вдалося приховати елементи"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:122
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:124
 msgid "no se pudieron mostrar los archivos"
 msgstr "не вдалося відобразити файли"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:128
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:130
 msgid ""
 "Si es la primera vez que ejecuta ésta acción.\n"
 " es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n"
@@ -347,15 +426,15 @@ msgstr ""
 "наявний, або ви можете позначити прапорець, щоб більше не показувати це "
 "повідомлення."
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:129
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:131
 msgid "Crear perfil"
 msgstr "Створити профіль"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:130
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:132
 msgid "No volver  a mostrar este mensaje"
 msgstr "Більше не показувати це повідомлення"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:174
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:176
 msgid ""
 "Está a punto de reiniciar el sistema, y activar el modo Seguro con funciones "
 "de red.\n"
@@ -374,39 +453,39 @@ msgstr ""
 "допомогою TCA System Utilities у розділі: завершення роботи системи.\n"
 " Ви впевнені, що хочете продовжити?"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:174
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:176
 msgid "Atención activación del Modo seguro!"
 msgstr "Увага! активація безпечного режиму!"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:180
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:182
 msgid "Modo seguro activado, se va a reiniciar el Pc"
 msgstr "Безпечний режим активовано, ПК перезавантажиться"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:189
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:191
 msgid "Modo normal, reiniciando el Pc"
 msgstr "Звичайний режим, перезавантаження ПК"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:194
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:196
 msgid "Suspendiendo el sistema"
 msgstr "Режим сну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:222
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:224
 msgid "Se activó el escanéo de archivos comprimidos"
 msgstr "Сканування стиснутих файлів увімкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:228
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:230
 msgid "Se desactivó el escanéo de archivos comprimidos"
 msgstr "Сканування стиснутих файлів вимкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:236
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:238
 msgid "Se desactivó la Webcam"
 msgstr "Веб-камеру вимкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:244
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:246
 msgid "Se activó la Webcam"
 msgstr "Веб-камеру увімкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:248
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:250
 msgid ""
 "Está a punto de activar entrar a la BIOS-UEFI\n"
 " El PC se va a reiniciar en unos segundos. \n"
@@ -420,28 +499,39 @@ msgstr ""
 "доведеться звертатися по візуальну допомогу.\n"
 " Ви впевнені, що хочете продовжити?"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:248
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:250
 msgid "¿Atención Se intentará activar la entrada a la BIOS-UEFI!"
 msgstr "Увага! буде зроблено спробу активувати вхід в BIOS-UEFI!"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:259
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:261
 msgid "Se limpió la Caché DNS "
 msgstr "Кеш DNS очищено "
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:266
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:268
 msgid "Se desactivó el espacio reservado"
 msgstr "Зарезервований простір вимкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:272
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:274
 msgid "Se activó el espacio reservado"
 msgstr "Зарезервований простір увімкнено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:284
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:296
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:280
+msgid "Active una ventana del explorador antes de abrir CMD"
+msgstr "\"Активуйте вікно провідника перед відкриттям CMD.\""
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:303
+msgid "La ruta seleccionada no existe"
+msgstr "Вибраного шляху не існує"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:320
+msgid "Error al abrir CMD: {}"
+msgstr "Помилка при відкритті CMD: {}"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:329
 msgid "No se pudo obtener la ruta para el CMD"
 msgstr "Не вдалося отримати шлях для командного рядка"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:307
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:341
 msgid ""
 "Este proceso eliminará todos los complementos y configuraciones que están en "
 "pantallas seguras.\n"
@@ -459,31 +549,31 @@ msgstr ""
 "можливо, вам доведеться надати йому дозволи кілька разів, щоб продовжити.\n"
 " Ви впевнені, що хочете продовжити?"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:307
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:341
 msgid "Atención borrando addons y configuraciones de pantallas seguras"
 msgstr "Увага! видалення додатків і налаштувань з захищених екранів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:330
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:364
 msgid "Se limpió la configuración en pantallas seguras  "
 msgstr "Налаштування на захищених екранах очищено  "
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:335
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:369
 msgid "No existen configuraciones guardadas en pantallas seguras"
 msgstr "На захищених екранах немає збережених налаштувань"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:342
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:376
 msgid "no hay nada en el historial del portapapeles"
 msgstr "в історії буфера обміну нічого немає"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:346
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:380
 msgid "No fue posible eliminar el portapapeles"
 msgstr "Не вдалося очистити буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:348
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:382
 msgid "Se limpió correctamente el portapapeles"
 msgstr "Буфер обміну успішно очищено"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:373
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:407
 msgid ""
 "No fue posible desactivar el control de cuentas de usuario\n"
 " Error: {}"
@@ -491,7 +581,7 @@ msgstr ""
 "Не вдалося вимкнути контроль облікових записів користувачів\n"
 " Помилка: {}"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:375
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:409
 msgid ""
 "Se ha desactivado el control de cuentas de usuario (uac).\n"
 " Es necesario reiniciar el sistema para que surtan los cambios. \n"
@@ -501,12 +591,12 @@ msgstr ""
 " Необхідно перезавантажити систему, щоб зміни вступили в силу.\n"
 " Ви хочете зробити це зараз?"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:375
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:391
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:409
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:425
 msgid "Atención !Reinicio necesario"
 msgstr "Увага! Потрібен перезапуск"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:389
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:423
 msgid ""
 "No fue posible activar el control de cuentas de usuario\n"
 " Error: {}"
@@ -514,7 +604,7 @@ msgstr ""
 "Не вдалося увімкнути контроль облікових записів користувачів\n"
 " Помилка: {}"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:391
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:425
 msgid ""
 "Se ha activado el control de cuentas de usuario (uac).\n"
 " Es necesario reiniciar el sistema para que surtan los cambios. \n"
@@ -524,15 +614,15 @@ msgstr ""
 " Необхідно перезавантажити систему, щоб зміни вступили в силу.\n"
 " Ви хочете зробити це зараз?"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:401
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:435
 msgid "Escriba aquí el nombre de la aplicación"
 msgstr "Введіть тут назву програми"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:401
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:435
 msgid "Ingrese el nombre:"
 msgstr "Введіть ім'я:"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:410
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:444
 msgid ""
 "No fue posible termninar el proceso {}\n"
 " Ocurrió el error: {}"
@@ -540,37 +630,30 @@ msgstr ""
 "Не вдалося закрити процес {}\n"
 " Виникла помилка: {}"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:413
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:447
 msgid "Se terminaron todos los procesos de: {} de forma correcta"
 msgstr "Усі процеси: {} припинено правильно"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:416
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:450
 msgid "Debe escribir el nombre de una aplicación"
 msgstr "Ви повинні ввести назву програми"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:428
-msgid ""
-"No fue posible habilitar el Bluetooth\n"
-" Ocurrió el error: {}"
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:463
+msgid "No fue posible activar el plan alto rendimiento. Ocurrió el error: {}"
+msgstr "Не вдалося активувати план високої продуктивності. Виникла помилка: {}"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:466
+msgid "Plan alto rendimiento activado"
+msgstr "План високої продуктивності активовано"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:474
+msgid "No fue posible activar el plan Equilibrado. Ocurrió el error: {}"
 msgstr ""
-"Не вдалося увімкнути Bluetooth\n"
-" Помилка: {}"
+"Не вдалося активувати план збалансованої продуктивності. Сталася помилка: {}"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:430
-msgid "Bluetooth habilitado"
-msgstr "Bluetooth увімкнено"
-
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:442
-msgid ""
-"No fue posible deshabilitar el Bluetooth\n"
-" Ocurrió el error: {}"
-msgstr ""
-"Не вдалося вимкнути Bluetooth\n"
-" Виникла помилка: {}"
-
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:445
-msgid "Bluetooth deshabilitado"
-msgstr "Bluetooth вимкнено"
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:477
+msgid "Plan Equilibradoactivado"
+msgstr "Збалансований план активовано"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:16
 msgid "Apagar"
@@ -632,115 +715,124 @@ msgstr "Увімкнути резервне сховище"
 msgid "Desactivar almacenamiento reservado"
 msgstr "Вимкнути резервне сховище"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:57
+#. version 1.0
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:58
+msgid "Activar el plan alto rendimiento"
+msgstr "Активувати план високої продуктивності"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:60
+msgid "Activar el plan equilibrado"
+msgstr "Активувати план збалансованої продуктивності"
+
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:63
 msgid "Análisis del sistema Con SFC    "
 msgstr "Аналіз системи за допомогою SFC "
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:61
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:67
 msgid "Limpiar configuración guardada en pantallas seguras"
 msgstr "Очистити збережені налаштування на захищених екранах"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:65
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:71
 msgid "Optimizar las unidades"
 msgstr "Оптимізувати диски"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:67
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:73
 msgid "Restablecer PC"
 msgstr "Скидання налаштувань ПК"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:71
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:77
 msgid "Reparación y optimización"
 msgstr "Ремонт і оптимізація"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:74
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:80
 msgid "Activar el control de cuentas de usuario (uac)"
 msgstr "Увімкнути Контроль облікових записів користувачів (uac)"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:77
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:83
 msgid "Analizar arranque del sistema"
 msgstr "Проаналізувати  завантаження системи"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:81
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:87
 msgid "análisis rápido"
 msgstr "швидкий аналіз"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:83
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:89
 msgid "Escanear archivos comprimidos"
 msgstr "Сканувати стиснуті файли"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:85
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:91
 msgid "No escanear archivos comprimidos"
 msgstr "Не сканувати стиснуті файли"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:87
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:93
 msgid "Desactivar el control de cuentas de usuario (uac)"
 msgstr "Вимкнути контроль облікових записів користувачів (UAC)"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:90
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:96
 msgid "Listado de archivos en cuarentena al portapapeles"
 msgstr "Список файлів, розміщених на карантині в буфер обміну"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:92
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:98
 msgid "Seguridad de Windows"
 msgstr "Безпека Windows"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:96
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:102
 msgid "Activar Webcam"
 msgstr "Увімкнути веб-камеру"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:98
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:104
 msgid "Desactivar Webcam"
 msgstr "Вимкнути веб-камеру"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:100
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:106
 msgid "Mezclador de volumen"
 msgstr "Мікшер гучності"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:102
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:108
 msgid "Opciones de sonido"
 msgstr "Параметри звуку"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:104
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:110
 msgid "Opciones de voz"
 msgstr "Налаштування мовлення"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:106
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:112
 msgid "Voz y multimedia"
 msgstr "Мовлення й медіа"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:109
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:115
 msgid "Asistente guardar contraseñas de usuarios"
 msgstr "Майстер збереження паролів користувачів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:111
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:117
 msgid "Asistente transferir archivos por Bluetooth"
 msgstr "Майстер передачі файлів через Bluetooth"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:113
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:119
 msgid "Carpeta Roaming"
 msgstr "Папка Roaming"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:115
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:121
 msgid "administrador de discos"
 msgstr "диспетчер дисків"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:117
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:123
 msgid "administrador de dispositivos"
 msgstr "диспетчер пристроїв"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:119
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:125
 msgid "asistente para guardar la contraseña del sistema"
 msgstr "майстер збереження системного пароля"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:121
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:127
 msgid "mapa de caracteres"
 msgstr "таблиця символів"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:123
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:129
 msgid "Opciones de carpeta"
 msgstr "Параметри папки"
 
-#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:127
+#: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:133
 msgid "Utilidades del sistema"
 msgstr "Системні утиліти"
 
@@ -762,3 +854,26 @@ msgstr ""
 "Вимкнення та перезавантаження ПК з класичним звуком Windows.\n"
 "Це також дозволяє відкрити папку Roaming і безпосередньо запустити деякі "
 "системні інструменти."
+
+#~ msgid "Tomar la ruta con z_path"
+#~ msgstr "Оберіть шлях за допомогою z_path"
+
+#~ msgid "No se pudo tomar el foco, seleccione algún elemento"
+#~ msgstr "Не вдається сфокусуватися, виберіть якийсь елемент"
+
+#, python-format
+#~ msgid "Ha seleccionado %s ficheros. Seleccione solo un fichero."
+#~ msgstr "Ви вибрали %s файлів. Виберіть лише один файл."
+
+#~ msgid "Bluetooth habilitado"
+#~ msgstr "Bluetooth увімкнено"
+
+#~ msgid ""
+#~ "No fue posible deshabilitar el Bluetooth\n"
+#~ " Ocurrió el error: {}"
+#~ msgstr ""
+#~ "Не вдалося вимкнути Bluetooth\n"
+#~ " Виникла помилка: {}"
+
+#~ msgid "Bluetooth deshabilitado"
+#~ msgstr "Bluetooth вимкнено"
