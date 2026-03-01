@@ -10,7 +10,7 @@ import os, subprocess, platform, ctypes, winsound, sys
 from threading import Thread
 import wx
 from comtypes.client import CreateObject as COMCreate
-from .path_func import z_path, t_obj, fs_path
+from .path_func import *  
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
@@ -75,11 +75,13 @@ class T_h(Thread):
 			subprocess.Popen('Systeminfo | clip', shell=True)
 			
 		def TCAList():
-			#t_obj(self)
 			fs_path(self)
+			if os.path.isfile(self.path): 
+				self.path = os.path.dirname(self.path)
 			if self.path  is not False:
 				os.chdir(self.path    )
-				subprocess.Popen('dir /b|clip', shell=True)
+				subprocess.Popen('dir /og /on /b | clip', shell=True)
+				sleep(0.5)
 				os.chdir(a_path)
 				ui.message(_('Copiada la lista al portapapeles'))
 			else:
@@ -94,34 +96,76 @@ class T_h(Thread):
 			subprocess.run(lt, shell=True)
 			ui.message(_('Copiada la info del sonido al portapapeles'))
 			
-		@rdt
 		def ocu():
-			fs_path(self)
-			if self.path  is not False:
+			obj = explorer_active()
+			if not obj:
+				return
 
-				d=os.path.dirname(self.path)
-				b=os.path.basename(self.v_path)
-				os.chdir(d)
-				shellapi.ShellExecute(None, None, 'cmd.exe', '/c' + r'attrib +s +h "{}"'.format(b), None, 0)	
-				sleep(0.5)
-				keyboardHandler.KeyboardInputGesture.fromName("alt+f4").send()
-				os.startfile(d)
-				tones.beep(900,50)
-				os.chdir(a_path)
-			else:
-				ui.message(_('No fue posible ocultar los elementos'))
+			ui.message('Ocultando elemento seleccionado...')
+			
+			try:
+				target_path = get_explorer_path(self, obj)
+				
+				if not target_path:
+					ui.message('No se pudo obtener la ruta del elemento. Seleccione un archivo o carpeta')
+					return
+
+				# Ejecutar comando attrib usando shellapi
+				full_path = os.path.abspath(target_path)
+				item_name = os.path.basename(full_path)
+				
+				cmd_command = '/c attrib +h "{}"'.format(full_path)
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', cmd_command, None, 0)
+				
+				sleep(1.0)
+				
+				# Refrescar el explorador múltiples veces
+				for _ in range(3):
+					keyboardHandler.KeyboardInputGesture.fromName("f5").send()
+					sleep(0.4)
+				
+				tones.beep(900, 50)
+				ui.message('Elemento "{}" oculto correctamente. Si aún lo ve, desactive la vista de elementos ocultos'.format(item_name))
+					
+			except Exception as e:
+				ui.message('Error al ocultar el elemento: {}'.format(str(e)))
 
 		@rdt
 		def mos():
-			fs_path(self)
-			if self.path  is not False:
+			obj = explorer_active()
+			if not obj:
+				return
 
-				os.chdir(self.v_path)
-				shellapi.ShellExecute(None, None, 'cmd.exe','/c' + r'attrib /d -s -h', None, 0)
-				sleep(0.5)
-				os.chdir(a_path)
-			else:
-				ui.message(_('no se pudieron mostrar los archivos'))
+			ui.message('Mostrando archivos ocultos...')
+
+			try:
+				target_path = get_explorer_path(self, obj)
+				
+				if not target_path:
+					ui.message('No se pudo obtener la ruta del elemento con foco')
+					return
+
+				# Si es un archivo, obtener el directorio padre
+				if os.path.isfile(target_path):
+					target_directory = os.path.dirname(target_path)
+				else:
+					target_directory = target_path
+
+				cmd_command = '/c attrib -h -s "{}\*" /s /d && exit'.format(target_directory)
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', cmd_command, None, 7)
+
+				sleep(1.2)
+
+				# Refrescar 3 veces para asegurar
+				for _ in range(3):
+					keyboardHandler.KeyboardInputGesture.fromName("f5").send()
+					sleep(0.4)
+
+				tones.beep(950, 50)
+				ui.message('Archivos ocultos mostrados en: {}'.format(os.path.basename(target_directory)))
+
+			except Exception as e:
+				ui.message('Error al mostrar archivos ocultos: {}'.format(str(e)))
 			
 		def clean():
 			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
@@ -141,21 +185,25 @@ class T_h(Thread):
 					try:
 						os.environ['PROGRAMFILES(X86)']
 						with disable_file_system_redirection(): 
-							shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, None)	
+							#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sageset:1', None, None)	
+							shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 1)		
+
 							
 					except:
-						shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sageset:1', None, None)		
+						#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sageset:1', None, None)		
+						shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 1)
 				else:
 					dlg.Destroy()
 			
 			try:
 				os.environ['PROGRAMFILES(X86)']
 				with disable_file_system_redirection():  
-					shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, None)	
-					
+					#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sagerun:1', None, None)	
+					shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 1)
 			except:
-				shellapi.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, None)	
-				
+				#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sagerun:1', None, None)	
+				shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 1)		
+		
 		@rdt
 		def r_explo():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /f /im explorer.exe' + '& start explorer', None, 10)	
@@ -275,38 +323,20 @@ class T_h(Thread):
 		
 		@rdt
 		def cmd():
-			obj = api.getForegroundObject()
-			if not obj or not obj.appModule or obj.appModule.appName != 'explorer':
-				ui.message(_('Active una ventana del explorador antes de abrir CMD'))
+			obj = explorer_active()
+			if not obj:
 				return
 
 			try:
-				if not hasattr(self, '_shell'):
-					self._shell = COMCreate('shell.application')
-				for window in self._shell.Windows():
-					if window.hwnd == obj.windowHandle:
-						target_path = str(window.Document.FocusedItem.path)
-						break
-				else:
-					target_path = None
-
+				target_path = get_explorer_path(self, obj)
+				
 				if not target_path:
-					windows = self.get_selected_files_explorer_ps()
-					if windows and str(obj.windowHandle) in windows:
-						target_path = windows[str(obj.windowHandle)]
-
-				if not target_path:
-					desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
-					target_path = desktop_path + '\\' + api.getDesktopObject().objectWithFocus().name
-
-				if not os.path.exists(target_path):
-					ui.message(_('La ruta seleccionada no existe'))
+					ui.message(_('No se pudo obtener la ruta del elemento con foco'))
 					return
 
-				if os.path.isdir(target_path):
+				# Si es un archivo, obtener el directorio padre
+				if os.path.isfile(target_path):
 					target_path = os.path.dirname(target_path)
-				else:
-					target_path = os.path.dirname(os.path.abspath(target_path))    
 
 				shellapi.ShellExecute(
 					None,
@@ -324,14 +354,22 @@ class T_h(Thread):
 			fs_path(self)
 			if self.path is not False:
 				try:
-					os.chdir('{}'.format(self.path))
-				except:
-					ui.message(_('No se pudo obtener la ruta para el CMD'))
+					# Obtener la ruta absoluta
+					target_path = os.path.abspath(self.path)
+					
+					# Si es un archivo, obtener el directorio padre
+					if os.path.isfile(target_path):
+						target_path = os.path.dirname(target_path)
+					
+					# Ejecutar CMD como administrador con el comando cd para cambiar a la ruta
+					cmd_command = '/k cd /d "{}"'.format(target_path)
+					shellapi.ShellExecute(None, 'runas', 'cmd.exe', cmd_command, None, 1)
+					
+				except Exception as e:
+					ui.message(_('Error al abrir CMD como administrador: {}').format(str(e)))
 					return
-				else: #anidado al try.
-					shellapi.ShellExecute(None, 'runas', 'cmd.exe','{}:'.format(os.path.abspath(self.path)), None, 10)
 			else:
-				ui.message("no se pudo ejecutar el cmd")
+				ui.message(_("No se pudo obtener la ruta para ejecutar el CMD"))
 		
 		def delete_config():
 			os.chdir("C:/Program Files (x86)/NVDA/systemConfig")
@@ -477,8 +515,36 @@ class T_h(Thread):
 				ui.message(_('Plan Equilibradoactivado'))
 				sleep(3)
 
-
+		def op_snd():
+			try:
+				shellapi.ShellExecute(None, 'runas','mmsys.cpl', None, None, 1)
+			except:
+				ui.message(_('no se pudo abrir  el panel de sonido'))
+				sleep(3)
 		
+		@rdt
+		def classic_context():
+			cmd =r'REG ADD "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /d "" /f'
+			try:
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + '{}'.format(cmd), None, 10)
+			except:
+				ui.message(_('no se pudo modificar el menú de contexto'))
+				sleep(3)
+			else:
+				r_explo()
+		
+		@rdt
+		def w11_context():
+			cmd = r'REG DELETE "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f'					
+			try:
+				shellapi.ShellExecute(None, 'runas', 'cmd.exe', '/c' + '{}'.format(cmd), None, 10)
+			except:
+				ui.message(_('no se pudo modificar el menú de contexto'))
+				sleep(3)
+			else:
+				r_explo()
+
+
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:
@@ -564,3 +630,9 @@ class T_h(Thread):
 			wx.CallAfter(hight_pw)
 		elif self.op == 43:
 			wx.CallAfter(balanced_pw)
+		elif self.op == 44:
+			wx.CallAfter(op_snd)
+		elif self.op == 45:
+			wx.CallAfter(classic_context)
+		elif self.op == 46:
+			wx.CallAfter(w11_context)

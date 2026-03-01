@@ -1,11 +1,11 @@
 ## TCA SystemUtilities.
 
 Pequeño complemento que nos permite ejecutar rápidamente algunas acciones de Windows mediante atajo de teclado. 
-Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portapapeles información del sistema, entrar a la BIOS y mucho más. 
-También podremos abrir el sitio oficial para conseguir complementos para NVDA de una forma directa, eliminar configuraciones y complementos en pantallas seguras.
+Es capaz de realizar una reparación del sistema con SFC. Puede copiar al portapapeles información del sistema, copiar un listado de todos los elementos que se encuentran en una ruta,cocultar o mostrar archivos  y carpetas, entrar a la BIOS y mucho más. 
+También eliminar configuraciones y complementos en pantallas seguras.
 
 * Autor: Peter Reina <peterrc87@gmail.com>
-* Compatibilidad: NVDA 2018 a 2025.1
+* Compatibilidad: ver requisitos por versión en Cambios 0.11/0.12
 
 ## Funciones del sistema:
 
@@ -38,13 +38,14 @@ Sin necesidad de pulsar, o saber la tecla, directamente y de forma sencilla.
 
 * Abrir CMD en la ruta actual: Con un simple atajo de teclado podremos abrir el símbolo del sistema en Windows (CMD), y tomará la ruta de cualquier carpeta donde se encuentre el foco.
 
-* Abrir el CMD como administrador: Con un sencillo atajo de teclado abriremos el símbolo del sistema de Windows, con todos los privilegios de administrador (Solo en sistemas anteriores a Windows 10, toma la ruta de la carpeta donde se encuentre el foco, en los demás se abrirá en System32).
+* Abrir el CMD como administrador: Con un sencillo atajo de teclado abriremos el símbolo del sistema de Windows, con privilegios de administrador, en la ruta actual en todos los Windows soportados por NVDA.
 
 •	Lanzador de consolas: Saca un menú donde se encuentran las consolas: CMD, Powershell, Windows terminal, Git Bash. Desde este, podremos abrir cualquiera de estas consolas (incluso con privilegios de administrador) en la ruta que tenga el foco del NVDA.
 •	Este módulo fue desarrollado por: Héctor Benítez Corredera.
 
 * Borrar el portapapeles y su historial: Cómoda funcionalidad que vacía todo lo que tengamos en el portapapeles, en Windows 10 y 11, también limpia todo lo que tengamos en el historial si lo tenemos activado.
-
+* Habilitar menú de contexto clásico de Windows: Nos devuelve al clásico menú de contexto, utilizado en Windows 10 o anteriores.
+* Habilitar menú de contexto tipo: Windows 11: Activa el menú de contexto tipo Windows 11 si así lo deseamos.
 * Matar los procesos de cualquier aplicación activa: Intenta terminar cualquier proceso activo que no sea de Windows, incluso si están en segundo plano. 
 
 * Reiniciar Explorador: Nos reinicia cómodamente desde NVDA el Explorador de Windows. 
@@ -54,11 +55,9 @@ Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA 
 
 * Cerrar tareas que no responden: TCA SystemUtilities intentará cerrar los procesos que no responden. 
 
-* Saber arquitectura del sistema: Nos dirá cuál es la arquitectura de Windows (32 o 64 Bits). 
- 
-* Ocultar carpetas: Nos permite ponerle el atributo de ocultas a la carpeta donde nos encontremos, es decir no se mostrará dicha carpeta (debemos entrar en la misma para que surta efecto).
+* Ocultar archivos o carpetas (según foco): Permite poner el atributo Oculto al archivo o carpeta que tenga el foco.
 
-* Mostrar carpetas ocultas: Esta función nos permite hacer visibles todas las carpetas y archivos que estén ocultos (vale en pendrives USB, discos externos y más), muy útil a la hora de enchufar cualquier dispositivo externo. Debemos entrar en la carpeta y pulsar el atajo de teclado.
+* Mostrar archivo o carpeta oculto (según foco): Quita el atributo Oculto del archivo o carpeta que tenga el foco.
  
 
 ## Funciones de reparación del sistema. 
@@ -69,14 +68,13 @@ Podemos hacerlo mediante algún atajo que le asignemos, o desde el menú de TCA 
 
 * Activar almacenamiento reservado: Si aún deseas activar esta función de Windows y forzar a tu disco duro a dejar reservados casi 10Gb, con esta acción lo activarás.
 
-•	Activar el plan alto rendimiento: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan alto rendimiento de Windows. No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
-•	Activar plan Equilibrado: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan equilibrado de Windows. No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
-•	 
-* Limpiar caché DNS: borra de forma rápida y directa toda la caché DNS de Windows (puede mejorar problemas con la navegación por internet). (
-
+* Activar el plan alto rendimiento: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan alto rendimiento de Windows. No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
+* Activar plan Equilibrado: Desde un atajo de teclado, o desde el menú de TCA SystemUtilities, podremos activar de forma sencilla, rápida y directa el plan equilibrado de Windows, No habrá necesidad de ir a las configuraciones de energía avanzadas del panel de control.
+* Limpiar caché DNS: borra de forma rápida y directa toda la caché DNS de Windows (puede mejorar problemas con la navegación por internet).
 * Limpiar configuración guardada en pantallas seguras: Elimina todos los complementos y configuraciones que hayamos copiado para ejecutarse en las pantallas seguras, dejando a NVDA como viene de forma nativa. 
 
 * Limpiar disco: Nos permite lanzar el limpiador de Discos de Windows, pero con opciones mucho más avanzadas. Nos limpiará todos y cada uno de los discos y dispositivos de almacenamiento que tengamos conectados al sistema. 
+La lógica se ha mejorado y se corrigió un problema por el que el limpiador podía cerrarse de forma repentina.
 La primera vez que lo ejecutemos, nos sacará una ventana de diálogo, para crear un perfil de limpieza, podremos marcar todas las casillas que deseemos para limpiar de forma más exhaustiva. es conveniente que pulsemos el botón: "Crear perfil" esto solo es necesario hacerlo una vez. Disponemos de una casilla de verificación que podemos marcar si no queremos que salga más este diálogo. 
  
 * Reparar sistema con Dism: Realiza un análisis profundo e intenta reparar problemas en Windows.
@@ -86,7 +84,7 @@ La primera vez que lo ejecutemos, nos sacará una ventana de diálogo, para crea
 ## Funciones directas del portapapeles:
 
 * Copiar al portapapeles el listado de carpetas o archivos de la ruta actual: 
-Nos copia directamente al portapapeles la lista de elementos de la ruta donde nos encontremos, así podremos pegarla en cualquier sitio editable.
+Nos copia directamente al portapapeles la lista de elementos de la ruta donde nos encontremos, ahora de forma ordenada en todas las rutas; así podremos pegarla en cualquier sitio editable.
 
 * Copiar al portapapeles la información sobre las tarjetas de sonido: Nos permite copiar de forma directa al portapapeles la información sobre todos los dispositivos de sonido que tengamos en el sistema.
 así podremos pegarla en cualquier sitio editable. 
@@ -94,8 +92,8 @@ así podremos pegarla en cualquier sitio editable.
 * Copiar información de todo el sistema al portapapeles: Nos permite copiar de forma directa, todo un resumen de nuestro sistema. 
 así podremos pegarla en cualquier sitio editable. 
 
-* Copiar la ruta: Nos copiará al portapapeles la ruta de la carpeta donde estemos. 
- así podremos pegarla en cualquier sitio editable. 
+* Copiar la ruta: Copia al portapapeles la ruta de la carpeta o la ruta completa del archivo que tenga el foco. 
+así podremos pegarla en cualquier sitio editable. 
  
 
 ## Opciones de Seguridad de Windows.
@@ -124,8 +122,6 @@ Windows Defender.
 
 * Desactivar Webcam: Nos permite cómodamente desde NVDA desactivar la webcam si la tenemos (deshabilitarla, ningún programa podrá utilizarla).
 
-* Mezclador de volumen: Nos permite abrir cómodamente desde NVDA el mezclador de volumen de Windows. 
-Lo podemos hacer desde el menú TCA SystemUtilities, en el apartado: "Voz y multimedia", o le podemos establecer algún atajo de teclado.
 
 * Abrir opciones de voz: Nos abre rápidamente las Opciones o Propiedades de texto a voz. Aquí podemos elegir nuestra voz TTS instalada en el sistema por defecto. 
  
@@ -142,9 +138,7 @@ Muy útil para saber signos raros o difíciles de sacar con el teclado.
 * Abrir Asistente guardar contraseñas de usuarios: Abre el asistente de esta muy útil pero poco conocida utilidad de Windows.
 Que nos permite guardar las credenciales (nombres, contraseñas y más), de las cuentas de usuario que tengamos en el sistema. 
 * Abrir Asistente transferir archivos por BlueTooth: Nos permite lanzar directamente este asistente para recibir o enviar archivos mediante nuestros dispositivos BlueTooth. 
-* Abrir Opciones de carpeta: Abre directamente esta funcionalidad muy utilizada, para gestionar el explorador de Windows, las vistas de las carpetas, la visualización de las extensiones de archivos y más. 
 * Abrir Carpeta Roaming: Abre de forma directa la carpeta Appdata>Roaming (Aquí encontramos la carpeta de configuración del NVDA, y de muchos otros programas).).
-* Abrir Administrador de discos: Nos permite abrir directamente ésta interesante funcionalidad para gestionar los discos, particiones y otros dispositivos de almacenamiento, instalados en nuestro PC.
  
 * Abrir el asistente para guardar la contraseña del sistema: 
 Nos abrirá este útil Asistente poco conocido que nos permite hacer un respaldo de la contraseña de Windows, para poder recuperarla desde un dispositivo externo.
@@ -152,14 +146,32 @@ Nos abrirá este útil Asistente poco conocido que nos permite hacer un respaldo
 * abrir Monitor de Recursos: podremos abrir de forma directa esta potente herramienta de Windows, poco conocida. Es como un administrador de tareas mejorado, podemos gestionar todos los servicios, aplicaciones y procesos que estén corriendo en nuestro sistema.
 Aparte podremos saber cuánta memoria, disco, red y más consumen.
  
-* Abrir el administrador de dispositivos: Nos permite abrir esta útil funcionalidad de Windows para gestionar el hardware y los controladores del equipo.
  
-* Saber la versión de Windows: Nos abrirá la información con la versión del sistema operativo. 
-* Abrir el sitio oficial de complementos: Se abrirá con nuestro navegador predeterminado, el sitio oficial para poder obtener los complementos para NVDA.
 
 ## ¿Nota importante!
 
 Todos y cada uno de los atajos de teclado, se pueden asignar a gusto personal, desde el diálogo de: Preferencias > Gestos de entrada de NVDA.
+
+## Cambios en la versión 0.12:
+* Compatibilidad: mínima versión soportada: NVDA 2026.1 (64 bits).
+* Se retiran funciones: Administrador de discos, Administrador de dispositivos, Sitio oficial de complementos, Opciones de carpeta, Mezclador de volumen, Saber arquitectura del sistema, Saber la versión de Windows.
+* Nueva función: Habilitar menú de contexto clásico de Windows.
+* Nueva función: Habilitar menú de contexto tipo: Windows 11.
+* Nueva lógica interna para obtener la ruta del sistema, mejorándo las siguientes funciones:
+  - Copiar la ruta (ahora copia también la ruta completa de archivos).
+  - Abrir CMD en la ruta actual.
+  - Abrir CMD como administrador en la ruta actual (funciona en todos los Windows soportados por NVDA).
+  - Ocultar/Mostrar ahora actúa sobre archivos y carpetas que tengan el foco.
+  - Copiar listado de archivos y carpetas  al portapapeles ahora se muestran ordenados en todas las rutas.
+* Mejorada la lógica de “Limpiar disco” y corregido cierre repentino del limpiador.
+
+## Cambios en la versión 0.11:
+* Esta será la última versión lanzada, compatible con NVDA de 32 bits.
+* Lanzada junto con la versión 0.12.
+* Mismas nuevas  funciones del menú de contexto de Windows que en la versión: 0.12.
+* Incluye la nueva lógica interna para la ruta del sistema y las mejoras en: Copiar ruta, abrir CMD en ruta actual, abrir CMD como administrador en la ruta actual, ocultar/mostrar por foco y copiar listado ordenado.
+* Se retiran las mismas funciones indicadas en la versión 0.12.
+* Mejora y corrección en la función: Limpiar disco.
 
 ## Cambios en la versión 0.10:
 * Compatibilidad con NVDA 2025.1.

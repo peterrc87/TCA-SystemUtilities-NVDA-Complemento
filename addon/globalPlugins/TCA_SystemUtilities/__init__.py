@@ -6,9 +6,9 @@
 from scriptHandler import script
 from NVDAObjects.IAccessible import IAccessible
 
-import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui
+import api, keyboardHandler, globalPluginHandler, tones, ui, globalVars, addonHandler,winUser, gui, shellapi
 import subprocess, os, sys, threading
-import webbrowser, wx
+import wx
 from time import sleep
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -54,23 +54,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tsu.T_h(self, 3)
 	
 	@script(description= _('Abrir opciones de sonido'), category='TCA-SystemUtilities')
-	def script_TCAsndOp(self,gesture):
-		subprocess.Popen('mmsys.cpl', shell=True)
-	
-	
 	
 	@script(description=_('Abrir Asistente transferir archivos por Bluetooth'), category='TCA-SystemUtilities', gesture='kb:nvda+shift+9')
 	def script_TCAblue(self,gesture):
 		subprocess.Popen('fsquirt')
 			 
-	@script(description=_('Saber la arquitectura del sistema'), category='TCA-SystemUtilities')
-	def script_TCAar(self,gesture):
-		try:
-			os.environ['PROGRAMFILES(X86)']
-			version_sys=64
-		except:
-			version_sys=32
-		ui.message(_('Su sistema operativo es de: {} Bits').format(version_sys))
+
 		
 	@script(description=_('Abrir el asistente para guardar la contraseña del sistema'), category='TCA-SystemUtilities')
 	def script_TCArcon(self,gesture):
@@ -86,13 +75,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			ui.message(_("No se pudo copiar la ruta"))
 
-	@script(description= _('Abrir el administrador de discos'), category='TCA-SystemUtilities')
-	def script_TCAdisk(self,gesture):
-		subprocess.Popen('diskmgmt.msc', shell=True)
+
 	
-	@script(description=_('Abrir la tienda oficial de complementos'), category='TCA-SystemUtilities')
-	def script_TCAtien(self,gesture):
-		webbrowser.open_new_tab('https://addons.nvda-project.org/index.es.html')
+
 	
 	@script(description=_('Abrir monitor de recursos'), category='TCA-SystemUtilities')
 	def script_TCAmon(self, gesture):
@@ -102,18 +87,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAList(self, gesture):
 		tsu.T_h(self, 5)
 	
-	@script(description=_('Saber la versión de Windows'), category='TCA-SystemUtilities')
-	def script_TCAver(self, gesture):
-		subprocess.Popen('winver')
+
 	
-	@script(description=_('Abrir el administrador de dispositivos'), category='TCA-SystemUtilities')
-	def script_TCAdispo(self,gesture):
-		subprocess.Popen('devmgmt.msc', shell=True)
+
 	
-	@script(description=_('Abrir Opciones de carpeta'), category='TCA-SystemUtilities')
-	def script_TCAcar(self,gesture):
-		subprocess.Popen('control folders')
-		tones.beep(350,100)
+
 	
 	@script(description=_('Hacer análisis del sistema Con SFC  '), category='TCA-SystemUtilities')
 	def script_TCAsfc(self, gesture):
@@ -152,6 +130,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAclean(self, gesture):
 		tsu.T_h(self, 10)
 		
+	
+	#@script(description='Abrir Explorador Windows', category='TCA-SystemUtilities', gesture='kb:nvda+e')
+	#def script_OpenEx(self,gesture):
+		#subprocess.Popen('explorer', shell=True)
+	
 	@script(description=_('Reiniciar Explorador'), category='TCA-SystemUtilities')
 	def script_TCAr_explo(self, gesture):
 		tsu.T_h(self, 11)
@@ -164,29 +147,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_TCAhiber(self, gesture):
 		tsu.T_h(self, 13)
 
-	
-	@script(description=_('Volumen'), category='TCA-SystemUtilities')
-	def script_TCAvolu(self, gesture):
-		fg = api.getForegroundObject()
-		obj = fg.children[5].children[2].children[0].children[7]
-		ui.message("el nombre es: {}".format(obj.name))
-		
-		api.moveMouseToNVDAObject(obj)
-		keyboardHandler.KeyboardInputGesture.fromName("space").send()
-
-		os.chdir(tsu.a_path)
-		focus = api.getFocusObject()
-		focus = focus.parent
-		a = '''Red
-Acceso a Internet'''
-		if focus.name ==a:
-			recButton = focus.parent.next.firstChild
-			api.moveMouseToNVDAObject(recButton)
-			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTDOWN,0,0,None,None)
-			winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP,0,0,None,None)
-			#winsound.PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav", winsound.SND_FILENAME)
-
-	
 	@script(description=_('Reparar sistema con Dism'), category='TCA-SystemUtilities')
 	def script_TCAa_dism(self, gesture):
 		tsu.T_h(self, 14)
@@ -200,9 +160,7 @@ Acceso a Internet'''
 	def script_TCA_sh_nor(self, gesture):	
 		tsu.T_h(self, 16)
 	
-	@script(description=_('Abrir Mezclador de volumen'), category='TCA-SystemUtilities')
-	def script_TCAa_mvol(self, gesture):
-		subprocess.Popen('sndvol.exe', shell = True)
+
 
 	
 	@script(description=_('Suspender el sistema'), category='TCA-SystemUtilities')
@@ -334,3 +292,15 @@ Acceso a Internet'''
 	@script(description=_('Activar el Plan Equilibrado de Windows'), category='TCA-SystemUtilities')
 	def script_TCA_balanced_pw(self,gesture):
 		tsu.T_h(self, 43)
+	
+	@script(description= _('Abrir opciones de sonido'), category='TCA-SystemUtilities')
+	def script_TCAsndOp(self,gesture):
+		tsu.T_h(self, 44)
+	
+	@script(description= _('Habilitar menú de contexto clásico de Windows'), category='TCA-SystemUtilities')
+	def script_TCA_ch_contextmenu(self,gesture):
+		tsu.T_h(self, 45)
+	
+	@script(description= _('Habilitar menú de contexto tipo: Windows 11'), category='TCA-SystemUtilities')
+	def script_TCA_ch_contextmenu11(self,gesture):
+		tsu.T_h(self, 46)

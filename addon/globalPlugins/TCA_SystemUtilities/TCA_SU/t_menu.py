@@ -38,6 +38,14 @@ def create_menu(self):
 
 	t_des_explo = self.menuExplorador.Append(-1, _("Desbloquear explorador de Windows"))  
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_des_explo, t_des_explo)
+	
+	#versión 0.11 y 0.12 habilitar contextmenu 
+	t_context =self.menuExplorador.Append(-1, _("Habilitar menú de contexto clásico"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU,self.script_TCA_ch_contextmenu, t_context)
+	t_context11 =self.menuExplorador.Append(-1, _("Habilitar menú de contexto tipo: Windows 11"))
+	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU,self.script_TCA_ch_contextmenu11, t_context11)
+
+ 
 	t_process = self.menuExplorador.Append(-1, _('Matar procesos'))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_close_app2, t_process) 
 
@@ -103,8 +111,7 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_ac, t_wcam_ac)
 	t_wcam_d = self.menuMultimedia.Append(-1, _("Desactivar Webcam"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCA_webcam_d, t_wcam_d)
-	t_mvol = self.menuMultimedia.Append(-1, _("Mezclador de volumen"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAa_mvol, t_mvol)
+
 	t_soundOps = self.menuMultimedia.Append(-1, _("Opciones de sonido"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAsndOp, t_soundOps)
 	t_vo =self.menuMultimedia.Append(-1, _("Opciones de voz"))
@@ -118,18 +125,14 @@ def create_menu(self):
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAblue, t_blueTooth)
 	t_roa = self.menuUtilidades.Append(-1, _("Carpeta Roaming"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCARoa, t_roa)
-	t_adDisk = self.menuUtilidades. Append(-1, _("administrador de discos"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdisk, t_adDisk)
-	t_adDev = self.menuUtilidades.Append(-1, _("administrador de dispositivos"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAdispo, t_adDev)
+
+
 	t_savePass = self.menuUtilidades.Append(-1, _("asistente para guardar la contraseña del sistema"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCArcon, t_savePass)
 	t_char = self.menuUtilidades.Append(-1, _("mapa de caracteres"))
 	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAchar, t_char)
-	t_foldOps = self.menuUtilidades.Append(-1, _("Opciones de carpeta"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAcar, t_foldOps)
-	t_wVer = self.menuUtilidades.Append(-1, _("Saber la versión de Windows"))
-	gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_TCAver, t_wVer)
+
+
 	self.subUtilidades = self.menuGeneral.AppendSubMenu(self.menuUtilidades, _("Utilidades del sistema"))
 	self.menuPrincipal = self.tools_menu.AppendSubMenu(self.menuGeneral, "&TCA_SystemUtilities")
 	return self.tools_menu, self.menuPrincipal
