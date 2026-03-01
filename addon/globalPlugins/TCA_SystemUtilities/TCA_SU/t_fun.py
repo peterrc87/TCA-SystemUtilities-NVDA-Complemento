@@ -5,12 +5,13 @@
 # This file is covered by the GNU General Public License.
 
 import ui, api, keyboardHandler, globalVars, addonHandler, shellapi, tones
+from winBindings import shell32
 from time import sleep
 import os, subprocess, platform, ctypes, winsound, sys  
 from threading import Thread
 import wx
 from comtypes.client import CreateObject as COMCreate
-from .path_func import *  
+from .path_func import *
 a_path = os.getcwd()
 w_pt = os.path.join(os.environ['programfiles'].replace('Program Files (x86)', 'Program Files'), 'Windows Defender')
 
@@ -114,6 +115,7 @@ class T_h(Thread):
 				full_path = os.path.abspath(target_path)
 				item_name = os.path.basename(full_path)
 				
+				# Comando para ocultar el archivo/carpeta
 				cmd_command = '/c attrib +h "{}"'.format(full_path)
 				shellapi.ShellExecute(None, 'runas', 'cmd.exe', cmd_command, None, 0)
 				
@@ -135,7 +137,7 @@ class T_h(Thread):
 			obj = explorer_active()
 			if not obj:
 				return
-
+			
 			ui.message('Mostrando archivos ocultos...')
 
 			try:
@@ -151,6 +153,7 @@ class T_h(Thread):
 				else:
 					target_directory = target_path
 
+				# Comando optimizado con ventana visible pero que se cierra rápido
 				cmd_command = '/c attrib -h -s "{}\*" /s /d && exit'.format(target_directory)
 				shellapi.ShellExecute(None, 'runas', 'cmd.exe', cmd_command, None, 7)
 
@@ -166,10 +169,10 @@ class T_h(Thread):
 
 			except Exception as e:
 				ui.message('Error al mostrar archivos ocultos: {}'.format(str(e)))
-			
 		def clean():
-			if os.path.isfile(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
+			if os.path.exists(os.path.join(globalVars.appArgs.configPath,"tsu.ini")):
 				pass
+											
 			else:
 				dlg=wx.RichMessageDialog(None, _("Si es la primera vez que ejecuta ésta acción.\n es necesario crear un perfil de limpieza, solo debe hacerlo una vez.\n puede pulsar en Crear perfil también si desea modificar uno existente, o puede marcar  la casilla para no volver a mostrar éste mensaje."), style=wx.CANCEL) 
 				dlg.SetOKLabel(_("Crear perfil"))
@@ -178,32 +181,30 @@ class T_h(Thread):
 				if dlg.IsCheckBoxChecked():
 					with open(os.path.join(globalVars.appArgs.configPath,"tsu.ini"), "w") as tsu_i:
 						tsu_i.write("sageset: True")
-				else:
+				else: #no está marcada la casilla
 					pass
-				
+
 				if rp == wx.ID_OK:
 					try:
 						os.environ['PROGRAMFILES(X86)']
-						with disable_file_system_redirection(): 
-							#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sageset:1', None, None)	
-							shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 1)		
-
-							
+						#with disable_file_system_redirection(): 
+						shell32.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 0)	
 					except:
-						#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sageset:1', None, None)		
-						shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 1)
+						shell32.ShellExecute(None, 'runas','cleanmgr.exe', '/sageset:1', None, 0)	
+											
 				else:
 					dlg.Destroy()
-			
+					
 			try:
 				os.environ['PROGRAMFILES(X86)']
-				with disable_file_system_redirection():  
-					#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sagerun:1', None, None)	
-					shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 1)
+				#with disable_file_system_redirection():  
+				#shell32.ShellExecute(None, 'runas','cmd.exe','/c' + 'CLEANMGR /sagerun:1', None, 0)	
+				shell32.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 1)	
+								
 			except:
-				#shellapi.ShellExecute(None, 'runas','cmd.exe','/k' + 'CLEANMGR /sagerun:1', None, None)	
-				shellapi.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 1)		
-		
+				shell32.ShellExecute(None, 'runas','cleanmgr.exe', '/sagerun:1', None, 0)				
+
+							
 		@rdt
 		def r_explo():
 			shellapi.ShellExecute(None, 'runas','cmd.exe', '/c' + 'taskkill /f /im explorer.exe' + '& start explorer', None, 10)	
@@ -514,14 +515,15 @@ class T_h(Thread):
 			else:
 				ui.message(_('Plan Equilibradoactivado'))
 				sleep(3)
-
+		
 		def op_snd():
 			try:
 				shellapi.ShellExecute(None, 'runas','mmsys.cpl', None, None, 1)
 			except:
 				ui.message(_('no se pudo abrir  el panel de sonido'))
 				sleep(3)
-		
+
+
 		@rdt
 		def classic_context():
 			cmd =r'REG ADD "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /d "" /f'
@@ -544,7 +546,7 @@ class T_h(Thread):
 			else:
 				r_explo()
 
-
+		
 		if self.op == 4:
 			wx.CallAfter(TCAcopy_sys)
 		elif self.op == 1:

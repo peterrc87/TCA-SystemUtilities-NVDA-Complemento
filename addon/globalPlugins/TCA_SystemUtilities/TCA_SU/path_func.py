@@ -8,10 +8,10 @@ import ui, api, keyboardHandler, globalVars, addonHandler, shellapi, tones
 from time import sleep
 import os, ctypes, sys, platform  
 import wx
-if sys.version.startswith("3.11"):
-	from ._311 import win32clipboard as cb
-else:
-	from ._37 import win32clipboard as cb
+#if sys.version.startswith("3.11"):
+	#from ._311 import win32clipboard as cb
+if sys.version.startswith("3.13"):
+	from ._313 import win32clipboard as cb
 
 addonHandler.initTranslation()
 
@@ -148,7 +148,7 @@ def t_obj(self):
 		self.v_obj = False
 
 
-#Función que comprobará cual de los 3 métodos para obtener el path del sistema es válido.
+#Función que comprobará cual de los 2 métodos para obtener el path del sistema es válido.
 def fs_path(self):
 	obj = explorer_active()
 	target_path = get_explorer_path(self, obj)
@@ -171,6 +171,7 @@ def fs_path(self):
 		else:
 			self.path = False
 	return self.path
+
 
 #función que comprueba si está activa una ventana del explorador.
 def explorer_active():
@@ -202,4 +203,5 @@ def get_explorer_path(self, obj):
 	
 	if not os.path.exists(target_path):
 		return None
+	
 	return target_path
