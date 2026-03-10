@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'TCA_SystemUtilities' '06b6'\n"
 "POT-Creation-Date: 2022-12-03 15:02+0200\n"
-"PO-Revision-Date: 2023-05-06 16:35+0300\n"
+"PO-Revision-Date: 2023-05-09 20:13+0300\n"
 "Last-Translator: Ashraf Helal\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:40
 msgid "Apagar el sistema"
-msgstr "Shut down system"
+msgstr "Shut down the system"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:44
 msgid "Reinicio del sistema"
-msgstr "Restart system"
+msgstr "Restart the system"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:49
 msgid "Anular apagado"
@@ -165,11 +165,11 @@ msgstr "Repair system with Dism"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:193
 msgid "Reiniciar el sistema y entrar en Modo seguro con funciones de red"
-msgstr "Reboot system and enter Safe Mode with Networking"
+msgstr "Restart the system and enter Safe Mode with Networking"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:197
 msgid "Deshabilitar el Modo seguro y reiniciar el sistema"
-msgstr "Disable Safe Mode and reboot"
+msgstr "Disable Safe Mode and restart the system"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:201
 msgid "Abrir Mezclador de volumen"
@@ -214,11 +214,11 @@ msgstr "Disable webcam"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:248
 msgid "Activar la Webcam"
-msgstr "Activate the webcam"
+msgstr "Enable the webcam"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:252
 msgid "Reiniciar el sistema y entrar en la BIOS-UEFI"
-msgstr "Reboot the system and enter the BIOS-UEFI"
+msgstr "Restart the system and enter the BIOS-UEFI"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:256
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:55
@@ -231,7 +231,7 @@ msgstr "Disable reserved space"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:266
 msgid "Activar el espacio reservado"
-msgstr "Activate reserved space"
+msgstr "Enable reserved space"
 
 #: addon\globalPlugins\TCA_SystemUtilities\__init__.py:270
 msgid "AbrircConsola CMD en la ruta actual"
@@ -291,7 +291,7 @@ msgstr "Videos"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:58
 msgid "Apagando el Pc."
-msgstr "Shutting down the PC"
+msgstr "Shutting down PC"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:65
 msgid "Reiniciando el PC."
@@ -352,12 +352,11 @@ msgid ""
 "sistema.\n"
 " ¿Está seguro que desea continuar?"
 msgstr ""
-"You are about to reboot your system, and enable Safe mode with networking."
-"\\n\n"
+"You are about to restart your system, and enable Safe mode with networking.\n"
 " In this mode, Windows systems prior to 10 may not have sounds, therefore "
-"the screen reader will not have voice support.\\n\n"
+"the screen reader will not have voice support.\n"
 " You must disable this mode from the msconfig system settings, or using TCA "
-"SystemUtilities in the section: system shutdown.\\n\n"
+"SystemUtilities in the section: system shutdown.\n"
 " are you sure you want to continue?"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:174
@@ -366,7 +365,7 @@ msgstr "Attention Activation of Safe Mode!"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:180
 msgid "Modo seguro activado, se va a reiniciar el Pc"
-msgstr "Safe mode activated, the PC will restart"
+msgstr "Safe mode enabled, the PC will restart"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:188
 msgid "Modo normal, reiniciando el Pc"
@@ -390,7 +389,7 @@ msgstr "Webcam has been disabled"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:243
 msgid "Se activó la Webcam"
-msgstr "Webcam was activated"
+msgstr "Webcam is enabled"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:247
 msgid ""
@@ -400,10 +399,10 @@ msgid ""
 "tendrás que pedir ayuda visual.\n"
 " ¿está seguro que desea continuar?"
 msgstr ""
-"You are about to activate enter BIOS-UEFI\\n\n"
-" The PC will restart in a few seconds. \\n\n"
+"You are about to activate enter BIOS-UEFI \n"
+" The PC will restart in a few seconds. \n"
 " Remember that in BIOS-UEFI you will not be able to use a screen reader, you "
-"will have to ask for visual help.\\n\n"
+"will have to ask for visual help. \n"
 " are you sure you want to continue?"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:247
@@ -420,7 +419,7 @@ msgstr "Reserved space disabled"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:271
 msgid "Se activó el espacio reservado"
-msgstr "Reserved space has been activated"
+msgstr "Reserved space has been Enabled"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:281
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:293
@@ -437,12 +436,12 @@ msgid ""
 "deba darle varias veces permisos para continuar.\n"
 " ¿Está seguro que desea continuar?"
 msgstr ""
-"This process will remove all plugins and settings that are on secure screens."
-"\\n\n"
-" Windows explorer needs to be restarted, all explorer windows must be closed."
-"\\n\n"
+"This process will remove all plugins and settings that are on secure "
+"screens. \n"
+" Windows explorer needs to be restarted, all explorer windows must be "
+"closed. \n"
 " If you have uac (User Account Control) enabled, you may need to give it "
-"permissions multiple times to continue.\\n\n"
+"permissions multiple times to continue. \n"
 " are you sure you want to continue?"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_fun.py:304
@@ -487,11 +486,11 @@ msgstr "Restart"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:24
 msgid "Reiniciar y entrar en Modo seguro con funciones de red"
-msgstr "Reboot and enter Safe Mode with Networking"
+msgstr "Restart and enter Safe Mode with Networking"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:26
 msgid "Reiniciar en Modo normal"
-msgstr "Reboot in Normal Mode"
+msgstr "Restart in Normal Mode"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:28
 msgid "Suspender"
@@ -519,7 +518,7 @@ msgstr "Explorer and Processes"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:49
 msgid "Activar almacenamiento reservado"
-msgstr "Activate reserved storage"
+msgstr "Enable reserved storage"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:51
 msgid "Desactivar almacenamiento reservado"
@@ -571,7 +570,7 @@ msgstr "windows security"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:85
 msgid "Activar Webcam"
-msgstr "Activate webcam"
+msgstr "Enable webcam"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:87
 msgid "Desactivar Webcam"
@@ -587,11 +586,11 @@ msgstr "sound options"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:93
 msgid "Opciones de voz"
-msgstr "voice options"
+msgstr "Speech Properties"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:95
 msgid "Voz y multimedia"
-msgstr "voice and media"
+msgstr "voice and multimedia"
 
 #: addon\globalPlugins\TCA_SystemUtilities\TCA_SU\t_menu.py:98
 msgid "Asistente guardar contraseñas de usuarios"
@@ -644,6 +643,6 @@ msgid ""
 "También permite abrir la carpeta Roaming y ejecutar de forma directa algunas "
 "herramientas del sistema."
 msgstr ""
-"Shut down and restart the PC with the classic Windows sound.\\n\n"
+"Shut down and restart the PC with the classic Windows sound. \n"
 "It also allows you to open the Roaming folder and directly run some system "
 "tools."
